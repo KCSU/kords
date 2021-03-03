@@ -1,16 +1,16 @@
 <template>
   <div class="h-screen bg-gray-100">
-    <Nav :items="navItems" v-model="selected"/>  
+    <sidebar-nav :items="navItems" :subItems="navSubItems" v-model="selected"></sidebar-nav>
   </div>
 </template>
 
 <script>
-import Nav from './nav.vue'
+import SidebarNav from './SidebarNav.vue'
 
 export default {
   data() {
     return {
-      selected: "",
+      selected: "all",
       navItems: [
         {
           title: "All Rooms",
@@ -27,9 +27,15 @@ export default {
           value: "graduate",
           icon: "graduation"
         }
+      ],
+      navSubItems: [
+        {
+          title: "1st Year",
+          value: "1styear"
+        }
       ]
     };
   },
-  components: { Nav }
+  components: { SidebarNav }
 };
 </script>

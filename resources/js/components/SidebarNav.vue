@@ -3,7 +3,7 @@
     class="z-20 hidden w-64 h-full overflow-y-auto bg-white md:block flex-shrink-0 border-r border-gray-200"
   >
     <div class="py-4 text-gray-500">
-      <a class="ml-6 text-lg font-bold text-gray-800" href="#"> KORDs </a>
+      <a class="ml-6 text-4xl font-bold text-gray-800" href="#"> KORDs </a>
       <ul class="mt-6">
         <li
           v-for="(item, i) in items"
@@ -30,7 +30,10 @@
           ></span>
         </li>
         <li class="relative px-6 py-3 w-full hover:text-gray-800">
-          <div class="flex items-center cursor-pointer" @click="submenuOpen = !submenuOpen">
+          <div
+            class="flex items-center cursor-pointer justify-between"
+            @click="submenuOpen = !submenuOpen"
+          >
             <span
               class="pl-4 h-8 inline-flex items-center text-sm font-semibold transition-colors duration-150"
             >
@@ -51,11 +54,22 @@
               ></path>
             </svg>
           </div>
-          <ul class="p-2 mt-2 space-y-2 overflow-hidden text-sm font-medium text-gray-500 rounded-md shadow-inner bg-gray-50 dark:text-gray-400 dark:bg-gray-900" aria-label="submenu">
-            <li class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200">
-              <a class="w-full" href="#">1st Year</a>
-            </li>
-          </ul>
+          <transition-expand>
+            <ul
+              v-if="submenuOpen"
+              class="mt-2 space-y-4 overflow-hidden text-sm font-medium text-gray-500 rounded-md shadow-inner bg-gray-50"
+              aria-label="submenu"
+            >
+              <li
+                v-for="(item, i) in subItems"
+                :key="`sub-${i}`"
+                class="px-4 py-3 transition-colors duration-150 hover:text-gray-800"
+                :class="item.value == value ? 'text-purple-600' : ''"
+              >
+                <a class="w-full cursor-pointer" @click="$emit('input', item.value)">{{ item.title }}</a>
+              </li>
+            </ul>
+          </transition-expand>
         </li>
       </ul>
     </div>
@@ -63,7 +77,11 @@
 </template>
 
 <script>
+import TransitionExpand from "./TransitionExpand.vue";
+
 export default {
+  name: "SidebarNav",
+  components: { TransitionExpand },
   props: {
     items: Array,
     subItems: Array,
@@ -71,8 +89,8 @@ export default {
   },
   data() {
     return {
-      submenuOpen: true
-    }
-  }
+      submenuOpen: false,
+    };
+  },
 };
 </script>
