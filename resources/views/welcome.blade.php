@@ -5,6 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta charset="UTF-8" />
         <link href="https://cdn.lineicons.com/2.0/LineIcons.css" rel="stylesheet">
+        {{-- <link href="https://fonts.googleapis.com/css?family=Material+Icons+Round" rel="stylesheet"> --}}
         <link href="{{ mix('css/app.css') }}" rel="stylesheet">
 
         <title>{{ env('APP_NAME') }}</title>

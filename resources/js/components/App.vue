@@ -7,10 +7,16 @@
     ></sidebar-nav>
     <div class="flex items-center flex-col w-full m-10">
       <div class="flex flex-col items-stretch xl:w-8/12 w-full">
-        <search-bar v-model="searchString" placeholder="Search for a room number, location, etc."></search-bar>
+        <search-bar
+          v-model="searchString"
+          placeholder="Search for a room number, location, etc."
+        ></search-bar>
         <div class="flex my-10 justify-between">
           <span class="text-3xl font-medium">Rooms</span>
           <toggle v-model="isGrid" first="List" second="Grid"></toggle>
+        </div>
+        <div class="flex flex-col w-full">
+          <room-list-item v-for="room in rooms" :key="room.number" :room="room"></room-list-item>
         </div>
       </div>
     </div>
@@ -21,6 +27,7 @@
 import SidebarNav from "./SidebarNav.vue";
 import SearchBar from "./SearchBar.vue";
 import Toggle from "./Toggle.vue";
+import RoomListItem from "./RoomListItem.vue";
 
 export default {
   data() {
@@ -28,6 +35,22 @@ export default {
       isGrid: false,
       selected: "all",
       searchString: "",
+      rooms: [
+        {
+          number: "V8",
+          location: "Bodley's Court",
+          image: "https://via.placeholder.com/200",
+          band: 6,
+          floor: 2,
+          rent: "£1687.12 / £1934.33",
+          long_contract: true,
+          piano: true,
+          set: true,
+          double_bed: true,
+          ensuite: false,
+          basin: true,
+        },
+      ],
       navItems: [
         {
           title: "All Rooms",
@@ -52,23 +75,23 @@ export default {
         },
         {
           title: "Organ Scholar",
-          value: "organ"
+          value: "organ",
         },
         {
           title: "1st Year Graduate",
-          value: "1styeargrad"
+          value: "1styeargrad",
         },
         {
           title: "Letrice",
-          value: "letrice"
+          value: "letrice",
         },
         {
           title: "Graduate Warden",
-          value: "gradwarden"
-        }
+          value: "gradwarden",
+        },
       ],
     };
   },
-  components: { SidebarNav, SearchBar, Toggle },
+  components: { SidebarNav, SearchBar, Toggle, RoomListItem },
 };
 </script>
