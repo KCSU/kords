@@ -6,5 +6,6 @@ import App from './components/App.vue'
 
 const app = new Vue({
     el: '#app',
-    components: { App }
+    components: { App },
+    template: "<app/>"
 });

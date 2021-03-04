@@ -1,6 +1,6 @@
 <template>
   <aside
-    class="z-20 hidden w-64 h-full overflow-y-auto bg-white md:block flex-shrink-0 border-r border-gray-200"
+    class="z-20 w-64 h-full overflow-y-auto bg-white md:block flex-shrink-0 border-r border-gray-200"
   >
     <div class="py-4 text-gray-500">
       <a class="ml-6 text-4xl font-bold text-gray-800" href="#"> KORDs </a>
@@ -57,14 +57,14 @@
           <transition-expand>
             <ul
               v-if="submenuOpen"
-              class="mt-2 space-y-4 overflow-hidden text-sm font-medium text-gray-500 rounded-md shadow-inner bg-gray-50"
+              class="mt-2 overflow-hidden -space-y-4 text-sm font-medium text-gray-500 rounded-md shadow-inner bg-gray-50"
               aria-label="submenu"
             >
               <li
                 v-for="(item, i) in subItems"
                 :key="`sub-${i}`"
-                class="px-4 py-3 transition-colors duration-150 hover:text-gray-800"
-                :class="item.value == value ? 'text-purple-600' : ''"
+                class="px-4 py-4 transition-colors duration-150"
+                :class="item.value == value ? 'text-purple-600' : 'hover:text-gray-800'"
               >
                 <a class="w-full cursor-pointer" @click="$emit('input', item.value)">{{ item.title }}</a>
               </li>

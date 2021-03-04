@@ -13,7 +13,7 @@
         <!-- <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet"> -->
     </head>
     <body>
-        <div id="app"><App/></div>
+        <div id="app"></div>
     </body>
     <script src="{{ mix('js/app.js') }}"></script>
 </html>
