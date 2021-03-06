@@ -1,5 +1,6 @@
 <template>
-  <div class="bg-white shadow-sm rounded-xl p-6 flex cursor-pointer hover:shadow-md transition-shadow duration-150">
+  <div class="bg-white shadow-sm rounded-xl p-6 flex cursor-pointer hover:shadow-md transition-shadow duration-150"
+  @click="$emit('click')">
     <img
       :src="room.image"
       class="object-cover h-32 w-44 rounded-md object-center"

@@ -16,10 +16,11 @@
           <toggle v-model="isGrid" first="List" second="Grid"></toggle>
         </div>
         <div class="flex flex-col w-full">
-          <room-list-item v-for="room in rooms" :key="room.number" :room="room"></room-list-item>
+          <room-list-item v-for="room in rooms" :key="room.number" :room="room" @click="focusDetail(room)"></room-list-item>
         </div>
       </div>
     </div>
+    <detail-panel v-model="detailFocused" :title="selectedRoom.number" ref="detail"></detail-panel>
   </div>
 </template>
 
@@ -28,12 +29,25 @@ import SidebarNav from "./SidebarNav.vue";
 import SearchBar from "./SearchBar.vue";
 import Toggle from "./Toggle.vue";
 import RoomListItem from "./RoomListItem.vue";
+import DetailPanel from './DetailPanel.vue'
 
 export default {
+  methods: {
+    focusDetail(room) {
+      console.log("Something")
+      this.detailFocused = true;
+      this.selectedRoom = room;
+      this.$refs.detail.$el.focus();
+    }
+  },
   data() {
     return {
       isGrid: false,
+      detailFocused: false,
       selected: "all",
+      selectedRoom: {
+        number: ''
+      },
       searchString: "",
       rooms: [
         {
@@ -92,6 +106,6 @@ export default {
       ],
     };
   },
-  components: { SidebarNav, SearchBar, Toggle, RoomListItem },
+  components: { SidebarNav, SearchBar, Toggle, RoomListItem, DetailPanel },
 };
 </script>
