@@ -12,15 +12,23 @@
           placeholder="Search for a room number, location, etc."
         ></search-bar>
         <div class="flex my-10 justify-between">
-          <span class="text-3xl font-medium">Rooms</span>
+          <span class="text-3xl font-semibold">Rooms</span>
           <toggle v-model="isGrid" first="List" second="Grid"></toggle>
         </div>
         <div class="flex flex-col w-full">
-          <room-list-item v-for="room in rooms" :key="room.number" :room="room" @click="focusDetail(room)"></room-list-item>
+          <room-list-item
+            class="mb-6"
+            v-for="room in rooms"
+            :key="room.number"
+            :room="room"
+            @click="focusDetail(room)"
+          ></room-list-item>
         </div>
       </div>
     </div>
-    <detail-panel v-model="detailFocused" :title="selectedRoom.number" ref="detail"></detail-panel>
+    <detail-panel v-model="detailFocused" ref="detail">
+      <room-details :room="selectedRoom"></room-details>
+    </detail-panel>
   </div>
 </template>
 
@@ -29,42 +37,46 @@ import SidebarNav from "./SidebarNav.vue";
 import SearchBar from "./SearchBar.vue";
 import Toggle from "./Toggle.vue";
 import RoomListItem from "./RoomListItem.vue";
-import DetailPanel from './DetailPanel.vue'
+import DetailPanel from "./DetailPanel.vue";
+import RoomDetails from './RoomDetails.vue';
 
 export default {
   methods: {
     focusDetail(room) {
-      console.log("Something")
+      console.log("Something");
       this.detailFocused = true;
       this.selectedRoom = room;
       this.$refs.detail.$el.focus();
-    }
+    },
   },
   data() {
+    let room = {
+      number: "V8",
+      location: "Bodley's Court",
+      image: "https://picsum.photos/200",
+      images: [
+        "https://picsum.photos/200",
+        "https://picsum.photos/200?1",
+        "https://picsum.photos/200?2",
+      ],
+      band: 6,
+      floor: 2,
+      rent: "£1687.12 / £1934.33",
+      long_contract: true,
+      piano: true,
+      set: true,
+      double_bed: true,
+      ensuite: false,
+      basin: true,
+      available: true,
+    };
     return {
       isGrid: false,
-      detailFocused: false,
+      detailFocused: true,
       selected: "all",
-      selectedRoom: {
-        number: ''
-      },
+      selectedRoom: room,
       searchString: "",
-      rooms: [
-        {
-          number: "V8",
-          location: "Bodley's Court",
-          image: "https://via.placeholder.com/200",
-          band: 6,
-          floor: 2,
-          rent: "£1687.12 / £1934.33",
-          long_contract: true,
-          piano: true,
-          set: true,
-          double_bed: true,
-          ensuite: false,
-          basin: true,
-        },
-      ],
+      rooms: [room, room, room],
       navItems: [
         {
           title: "All Rooms",
@@ -106,6 +118,13 @@ export default {
       ],
     };
   },
-  components: { SidebarNav, SearchBar, Toggle, RoomListItem, DetailPanel },
+  components: {
+    SidebarNav,
+    SearchBar,
+    Toggle,
+    RoomListItem,
+    DetailPanel,
+    RoomDetails,
+  },
 };
 </script>

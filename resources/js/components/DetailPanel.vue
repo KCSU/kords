@@ -21,18 +21,22 @@
         aria-labelledby="slide-over-heading"
       >
         <div
-          class="relative w-screen max-w-md transform transition ease-in-out duration-300 sm:duration-500"
+          class="relative w-screen max-w-lg transform transition ease-in-out duration-300 sm:duration-500"
           :class="{ 'translate-x-full': !value }"
         >
           <div
             class="h-full flex flex-col py-6 px-2 bg-white shadow-2xl overflow-y-auto border-l border-gray-200 rounded-l-lg"
           >
             <div class="px-4 sm:px-6 flex justify-between">
-              <span
-                class="text-sm font-medium text-gray-400 flex items-center"
-              >
-                <key-indicator class="mr-1" :pressed="leftPressed" @mousedown.native="left(true)" @mouseup.native="left(false)">
-                  <svg class="h-5"
+              <span class="text-sm font-medium text-gray-400 flex items-center">
+                <key-indicator
+                  class="mr-1"
+                  :pressed="leftPressed"
+                  @mousedown.native="left(true)"
+                  @mouseup.native="left(false)"
+                >
+                  <svg
+                    class="h-5"
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 20 20"
                     fill="currentColor"
@@ -44,8 +48,14 @@
                     />
                   </svg>
                 </key-indicator>
-                <key-indicator class="mr-2" :pressed="rightPressed" @mousedown.native="right(true)" @mouseup.native="right(false)">
-                  <svg class="h-5"
+                <key-indicator
+                  class="mr-2"
+                  :pressed="rightPressed"
+                  @mousedown.native="right(true)"
+                  @mouseup.native="right(false)"
+                >
+                  <svg
+                    class="h-5"
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 20 20"
                     fill="currentColor"
@@ -61,13 +71,14 @@
               </span>
               <div class="flex items-center">
                 <key-indicator class="mr-2" @mousedown.native="close()">
-                  <div class="text-xs text-gray-400 font-bold h-5 lh-sm">Esc</div>
+                  <div class="text-xs text-gray-400 font-bold h-5 lh-sm">
+                    Esc
+                  </div>
                 </key-indicator>
                 <span class="text-sm text-gray-500 font-medium">to close</span>
               </div>
             </div>
             <div class="mt-8 relative flex-1 px-4 sm:px-6">
-              <h1 class="text-3xl font-medium">{{ title }}</h1>
               <!-- Replace with your content -->
               <!-- <div class="absolute inset-0 px-4 sm:px-6">
                 <div
@@ -91,7 +102,7 @@ import KeyIndicator from "./KeyIndicator.vue";
 export default {
   props: {
     value: Boolean,
-    title: String
+    title: String,
   },
   methods: {
     close() {
@@ -112,7 +123,7 @@ export default {
   data() {
     return {
       leftPressed: false,
-      rightPressed: false
+      rightPressed: false,
     };
   },
   components: { KeyIndicator },
