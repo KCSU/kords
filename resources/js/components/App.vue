@@ -1,11 +1,11 @@
 <template>
-  <div class="h-screen bg-gray-100 flex">
+  <div class="h-screen bg-gray-100 flex overflow-hidden">
     <sidebar-nav
       :items="navItems"
       :subItems="navSubItems"
       v-model="selected"
     ></sidebar-nav>
-    <div class="flex items-center flex-col w-full m-10">
+    <div class="flex items-center flex-col w-full p-10 overflow-y-auto h-full">
       <div class="flex flex-col items-stretch xl:w-8/12 w-full">
         <search-bar
           v-model="searchString"

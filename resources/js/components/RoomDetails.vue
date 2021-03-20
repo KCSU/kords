@@ -31,10 +31,9 @@
     <h3 class="text-xl font-medium mt-4">Key Features</h3>
     <div class="flex flex-wrap rounded-md shadow-inner bg-gray-100 mt-3 justify-evenly pb-3 mb-6">
       <div v-for="(perk, i) in perks" :key="`perk-${i}`"
-      class="rounded-xl shadow-md mt-3 flex-initial inline-flex flex-col align-middle justify-around w-24 h-24 bg-white text-center p-2 font-medium text-sm">
+      class="rounded-xl shadow mt-3 flex-initial inline-flex flex-col align-middle justify-around w-24 h-24 bg-white text-center p-2 font-medium text-sm">
         <i class="material-icons-round text-3xl text-purple-900">{{ perk.icon }}</i>
-        <br/>
-        {{ perk.name }}
+        <span>{{ perk.name }}</span>
       </div>
     </div>
     <!-- TODO: Comments section -->

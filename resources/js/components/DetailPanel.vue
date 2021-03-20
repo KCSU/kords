@@ -1,7 +1,7 @@
 <template>
   <div
     tabindex="0"
-    class="fixed inset-0 overflow-hidden z-20"
+    class="fixed inset-0 overflow-hidden z-20 outline-none"
     :class="{ 'pointer-events-none': !value }"
     @keydown.esc="close()"
     @keydown.left="left(true)"
