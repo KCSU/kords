@@ -111,12 +111,13 @@ export default {
     left(pr) {
       this.leftPressed = pr;
       if (pr) {
-        //
+        this.$emit('back');
       }
     },
     right(pr) {
       this.rightPressed = pr;
       if (pr) {
+        this.$emit('next');
       }
     },
   },

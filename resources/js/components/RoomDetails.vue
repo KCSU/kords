@@ -4,7 +4,7 @@
       <h1 class="text-3xl font-semibold">{{ room.number }}</h1>
       <toggled-chip
         class="ml-4"
-        :toggled="room.available"
+        :toggled="room.available === 1"
         active="Available"
         inactive="Unavailable"
       ></toggled-chip>

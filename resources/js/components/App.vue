@@ -19,14 +19,15 @@
           <room-list-item
             class="mb-6"
             v-for="room in rooms"
-            :key="room.number"
+            :key="room.id"
             :room="room"
             @click="focusDetail(room)"
           ></room-list-item>
         </div>
       </div>
     </div>
-    <detail-panel v-model="detailFocused" ref="detail">
+    <detail-panel v-model="detailFocused" ref="detail"
+    @next="nextRoom" @back="prevRoom">
       <room-details :room="selectedRoom"></room-details>
     </detail-panel>
   </div>
@@ -43,40 +44,48 @@ import RoomDetails from './RoomDetails.vue';
 export default {
   methods: {
     focusDetail(room) {
-      console.log("Something");
       this.detailFocused = true;
       this.selectedRoom = room;
       this.$refs.detail.$el.focus();
     },
+    nextRoom() {
+      let roomIdx = this.rooms.findIndex(x => x.id === this.selectedRoom.id);
+      this.selectedRoom = this.rooms[Math.min(roomIdx + 1, this.rooms.length - 1)];
+    },
+    prevRoom() {
+      let roomIdx = this.rooms.findIndex(x => x.id === this.selectedRoom.id);
+      this.selectedRoom = this.rooms[Math.max(roomIdx - 1, 0)];
+    }
+  },
+  created() {
+    window.api.get('/rooms').then(({data})=> {
+      this.rooms = data.map(room => ({
+        ...room,
+        image: "https://picsum.photos/200",
+        images: [
+          "https://picsum.photos/200",
+          "https://picsum.photos/200?1",
+          "https://picsum.photos/200?2",
+        ],
+        location: "Bodley's Court",
+        band: 6,
+        piano: true,
+        set: true,
+        double_bed: true,
+        ensuite: false,
+        basin: true,
+        rent: "£1687.12 / £1934.33",
+      }));
+    });
   },
   data() {
-    let room = {
-      number: "V8",
-      location: "Bodley's Court",
-      image: "https://picsum.photos/200",
-      images: [
-        "https://picsum.photos/200",
-        "https://picsum.photos/200?1",
-        "https://picsum.photos/200?2",
-      ],
-      band: 6,
-      floor: 2,
-      rent: "£1687.12 / £1934.33",
-      long_contract: true,
-      piano: true,
-      set: true,
-      double_bed: true,
-      ensuite: false,
-      basin: true,
-      available: true,
-    };
     return {
       isGrid: false,
-      detailFocused: true,
+      detailFocused: false,
       selected: "all",
-      selectedRoom: room,
+      selectedRoom: {},
       searchString: "",
-      rooms: [room, room, room],
+      rooms: [],
       navItems: [
         {
           title: "All Rooms",
