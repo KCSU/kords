@@ -11,7 +11,7 @@
           v-model="searchString"
           placeholder="Search for a room number, location, etc."
         ></search-bar>
-        <search-options v-model="searchFilters" v-if="showFilters"></search-options>
+        <search-options v-model="searchFilters" v-show="showFilters"></search-options>
         <div class="flex my-10 justify-between">
           <span class="text-3xl font-semibold">Rooms</span>
           <toggle v-model="isGrid" first="List" second="Grid"></toggle>
@@ -78,11 +78,6 @@ export default {
         ],
         location: "Bodley's Court",
         band: 6,
-        piano: true,
-        set: true,
-        double_bed: true,
-        ensuite: false,
-        basin: true,
         rent: "£1687.12 / £1934.33",
       }));
     });
@@ -98,7 +93,7 @@ export default {
       showFilters: false,
       searchFilters: {
         bands: [1, 6],
-        home: false
+        perks: {}
       },
       navItems: [
         {

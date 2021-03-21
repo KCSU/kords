@@ -35,7 +35,7 @@
 import RoomFeature from './RoomFeature.vue'
 
 function prettify(perk) {
-  return perk.split('_').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(" ");
+  return perk.name.split('_').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(" ");
 }
 
 export default {
@@ -44,8 +44,7 @@ export default {
   },
   computed: {
     perks() {
-      const possiblePerks = ["set", "ensuite", "piano", "double_bed", "basin", "smoking"];
-      return possiblePerks.filter(perk => this.room[perk]).map(prettify).join(", ");
+      return this.room.perks.map(prettify).join(", ");
     }
   },
   components: {RoomFeature}
