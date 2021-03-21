@@ -8,7 +8,7 @@
     <div class="flex flex-col ml-5 w-full">
       <div class="font-bold text-xl flex items-center justify-between">
         <div>
-          <span class="mr-2">{{ room.number }}</span>
+          <span class="mr-2" :class="{'text-red-900 line-through italic': !room.available }">{{ room.number }}</span>
           <span
             v-for="i in room.band"
             :key="i"
@@ -51,3 +51,11 @@ export default {
   components: {RoomFeature}
 };
 </script>
+
+<style scoped>
+
+.line-through {
+  text-decoration-thickness: 2px;
+}
+
+</style>

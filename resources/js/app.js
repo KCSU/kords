@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import VTooltip from 'v-tooltip'
+
 require('./bootstrap');
 
 Vue.use(VTooltip);

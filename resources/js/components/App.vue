@@ -6,11 +6,12 @@
       v-model="selected"
     ></sidebar-nav>
     <div class="flex items-center flex-col w-full p-10 overflow-y-auto h-full">
-      <div class="flex flex-col items-stretch xl:w-8/12 w-full">
-        <search-bar
+      <div class="flex flex-col items-stretch xl:w-8/12 w-full relative">
+        <search-bar @toggle="showFilters = !showFilters"
           v-model="searchString"
           placeholder="Search for a room number, location, etc."
         ></search-bar>
+        <search-options v-model="searchFilters" v-if="showFilters"></search-options>
         <div class="flex my-10 justify-between">
           <span class="text-3xl font-semibold">Rooms</span>
           <toggle v-model="isGrid" first="List" second="Grid"></toggle>
@@ -26,8 +27,12 @@
         </div>
       </div>
     </div>
-    <detail-panel v-model="detailFocused" ref="detail"
-    @next="nextRoom" @back="prevRoom">
+    <detail-panel
+      v-model="detailFocused"
+      ref="detail"
+      @next="nextRoom"
+      @back="prevRoom"
+    >
       <room-details :room="selectedRoom"></room-details>
     </detail-panel>
   </div>
@@ -39,7 +44,8 @@ import SearchBar from "./SearchBar.vue";
 import Toggle from "./Toggle.vue";
 import RoomListItem from "./RoomListItem.vue";
 import DetailPanel from "./DetailPanel.vue";
-import RoomDetails from './RoomDetails.vue';
+import RoomDetails from "./RoomDetails.vue";
+import SearchOptions from './SearchOptions.vue';
 
 export default {
   methods: {
@@ -49,17 +55,20 @@ export default {
       this.$refs.detail.$el.focus();
     },
     nextRoom() {
-      let roomIdx = this.rooms.findIndex(x => x.id === this.selectedRoom.id);
-      this.selectedRoom = this.rooms[Math.min(roomIdx + 1, this.rooms.length - 1)];
+      let roomIdx = this.rooms.findIndex((x) => x.id === this.selectedRoom.id);
+      this.selectedRoom = this.rooms[
+        Math.min(roomIdx + 1, this.rooms.length - 1)
+      ];
     },
     prevRoom() {
-      let roomIdx = this.rooms.findIndex(x => x.id === this.selectedRoom.id);
+      let roomIdx = this.rooms.findIndex((x) => x.id === this.selectedRoom.id);
       this.selectedRoom = this.rooms[Math.max(roomIdx - 1, 0)];
-    }
+    },
   },
+  computed: {},
   created() {
-    window.api.get('/rooms').then(({data})=> {
-      this.rooms = data.map(room => ({
+    window.api.get("/rooms").then(({ data }) => {
+      this.rooms = data.map((room) => ({
         ...room,
         image: "https://picsum.photos/200",
         images: [
@@ -86,6 +95,11 @@ export default {
       selectedRoom: {},
       searchString: "",
       rooms: [],
+      showFilters: false,
+      searchFilters: {
+        bands: [1, 6],
+        home: false
+      },
       navItems: [
         {
           title: "All Rooms",
@@ -134,6 +148,7 @@ export default {
     RoomListItem,
     DetailPanel,
     RoomDetails,
+    SearchOptions
   },
 };
 </script>
