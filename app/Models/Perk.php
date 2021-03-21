@@ -5,11 +5,11 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Room extends Model
+class Perk extends Model
 {
     use HasFactory;
 
-    public function perks() {
-        return $this->belongsToMany(Perk::class);
+    public function rooms() {
+        return $this->belongsToMany(Room::class);
     }
 }

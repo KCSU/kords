@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\PerkController;
 use App\Http\Controllers\RoomController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -20,3 +21,4 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::apiResource('/rooms', RoomController::class);
+Route::apiResource('/perks', PerkController::class);

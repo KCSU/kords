@@ -1,0 +1,30 @@
+[
+    {
+        "name": "set",
+        "icon": "meeting_room"
+    },
+    {
+        "name": "ensuite",
+        "icon": "shower"
+    },
+    {
+        "name": "piano",
+        "icon": "piano"
+    },
+    {
+        "name": "double_bed",
+        "icon": "king_bed"
+    },
+    {
+        "name": "basin",
+        "icon": "countertops"
+    },
+    {
+        "name": "fridge",
+        "icon": "kitchen"
+    },
+    {
+        "name": "smoking",
+        "icon": "smoking_rooms"
+    }
+]

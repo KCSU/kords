@@ -20,6 +20,9 @@ class RoomResource extends JsonResource
             'floor' => $this->floor,
             'available' => $this->available,
             'long_contract' => $this->long_contract,
+            'perks' => $this->whenLoaded('perks', function () {
+                return PerkResource::collection($this->perks);
+            })
             // TODO: fill with real data
             /*
             'location' => "Bodley's Court",
