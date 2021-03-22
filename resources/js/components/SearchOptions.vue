@@ -44,7 +44,7 @@
         class="bg-gray-200"
       ></toggle>
     </div>
-    <div class="mb-3">
+    <div class="mb-3 mr-10">
       <div class="text-xl font-medium">Locations</div>
       <div class="flex flex-wrap">
         <checkbox-chip
@@ -65,6 +65,16 @@
           {{ location.name }}
         </checkbox-chip>
       </div>
+    </div>
+    <div class="mb-3 mr-10">
+      <div class="text-xl font-medium">Availability</div>
+      <toggle
+        :value="value.available"
+        @input="update('available', $event)"
+        first="Any"
+        second="Available"
+        class="bg-gray-200"
+      ></toggle>
     </div>
   </div>
 </template>

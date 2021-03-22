@@ -8,14 +8,17 @@
     <div class="flex items-center flex-col w-full p-10 overflow-y-auto h-full">
       <div class="flex flex-col items-stretch xl:w-8/12 w-full relative">
         <search-bar
+          :toggled="showFilters"
           @toggle="showFilters = !showFilters"
           v-model="searchString"
           placeholder="Search for a room number, location, etc."
         ></search-bar>
-        <search-options
-          v-model="searchFilters"
-          v-show="showFilters"
-        ></search-options>
+        <transition name="fade">
+          <search-options
+            v-model="searchFilters"
+            v-show="showFilters"
+          ></search-options>
+        </transition>
         <div class="flex my-10 justify-between">
           <span class="text-3xl font-semibold">Rooms</span>
           <toggle v-model="isGrid" first="List" second="Grid"></toggle>
@@ -66,16 +69,21 @@ export default {
       this.selectedRoom = room;
       this.$refs.detail.$el.focus();
     },
-    // TODO: work with search filters
     nextRoom() {
-      let roomIdx = this.rooms.findIndex((x) => x.id === this.selectedRoom.id);
-      this.selectedRoom = this.rooms[
-        Math.min(roomIdx + 1, this.rooms.length - 1)
+      let roomIdx = this.roomResults.findIndex((x) => x.id === this.selectedRoom.id);
+      if (roomIdx === -1) {
+        return;
+      }
+      this.selectedRoom = this.roomResults[
+        Math.min(roomIdx + 1, this.roomResults.length - 1)
       ];
     },
     prevRoom() {
-      let roomIdx = this.rooms.findIndex((x) => x.id === this.selectedRoom.id);
-      this.selectedRoom = this.rooms[Math.max(roomIdx - 1, 0)];
+      let roomIdx = this.roomResults.findIndex((x) => x.id === this.selectedRoom.id);
+      if (roomIdx === -1) {
+        return;
+      }
+      this.selectedRoom = this.roomResults[Math.max(roomIdx - 1, 0)];
     }
   },
   computed: {
@@ -93,7 +101,8 @@ export default {
         this.searchFilters.locations.includes(room.location) &&
         this.searchFilters.bands.includes(room.band) &&
         this.searchFilters.perks.every(p => room.perks.some(pk => pk.name === p)) &&
-        (room.long_contract || !this.searchFilters.long_contract)
+        (room.long_contract || !this.searchFilters.long_contract) &&
+        (room.available || !this.searchFilters.available)
       );
       return results;
     }
@@ -124,6 +133,8 @@ export default {
       rooms: [],
       showFilters: false,
       searchFilters: {
+        long_contract: false,
+        available: false,
         bands: [1, 2, 3, 4, 5, 6],
         perks: [],
         locations: []
@@ -180,3 +191,13 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .15s, transform .15s;
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+  opacity: 0;
+  transform: translateY(-20px);
+}
+</style>
