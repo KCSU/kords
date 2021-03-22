@@ -22,9 +22,5 @@
     {
         "name": "fridge",
         "icon": "kitchen"
-    },
-    {
-        "name": "smoking",
-        "icon": "smoking_rooms"
     }
 ]

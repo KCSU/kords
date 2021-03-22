@@ -57,7 +57,7 @@
           <transition-expand>
             <ul
               v-if="submenuOpen"
-              class="mt-2 overflow-hidden -space-y-4 text-sm font-medium text-gray-500 rounded-md shadow-inner bg-gray-50"
+              class="mt-2 overflow-hidden -space-y-4 text-sm font-medium text-gray-500 rounded-md shadow-inner bg-gray-100"
               aria-label="submenu"
             >
               <li

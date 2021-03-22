@@ -24,7 +24,7 @@
           <toggle v-model="isGrid" first="List" second="Grid"></toggle>
         </div>
         <transition name="fade-down" mode="out-in">
-        <div key="grid" class="grid grid-cols-fill-56 gap-6" v-if="isGrid">
+        <div key="grid" class="grid grid-cols-fill-56 gap-6 mb-6" v-if="isGrid">
           <room-grid-item
             v-for="room in roomResults"
             :key="room.id"
