@@ -22,7 +22,10 @@ class RoomResource extends JsonResource
             'long_contract' => $this->long_contract,
             'perks' => $this->whenLoaded('perks', function () {
                 return PerkResource::collection($this->perks);
-            })
+            }),
+            'band' => $this->band->number,
+            'short_rent' => $this->band->short_rent,
+            'long_rent' => $this->band->long_rent
             // TODO: fill with real data
             /*
             'location' => "Bodley's Court",
@@ -32,12 +35,6 @@ class RoomResource extends JsonResource
                 "https://picsum.photos/200?1",
                 "https://picsum.photos/200?2",
             ],
-            'band' => 6,
-            'short_rent' => 1687.12,
-            'long_rent' => 1934.33,
-            'perks' => [
-                'piano', 'set', 'double_bed', 'basin'
-            ]
             */
         ];
     }

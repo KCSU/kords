@@ -17,7 +17,7 @@
     <h3 class="text-xl font-medium mb-2">Contract</h3>
     <div>
       Available on <b>{{ room.long_contract ? 'Long or Short' : 'Short' }}</b> contract. <br/>
-      Band {{ room.band }}: <b>{{ room.rent }}</b>
+      Band {{ room.band }}: <b>{{ `£${room.short_rent}${room.long_contract ? ' / £' + room.long_rent : ''}` }}</b>
     </div>
     <h3 class="text-xl font-medium mt-4">Photos</h3>
     <div class="flex flex-wrap -mx-3">

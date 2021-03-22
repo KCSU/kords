@@ -76,9 +76,7 @@ export default {
           "https://picsum.photos/200?1",
           "https://picsum.photos/200?2",
         ],
-        location: "Bodley's Court",
-        band: 6,
-        rent: "£1687.12 / £1934.33",
+        location: "Bodley's Court"
       }));
     });
   },

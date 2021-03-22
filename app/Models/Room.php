@@ -12,4 +12,8 @@ class Room extends Model
     public function perks() {
         return $this->belongsToMany(Perk::class);
     }
+
+    public function band() {
+        return $this->belongsTo(Band::class);
+    }
 }

@@ -15,7 +15,7 @@ class RoomController extends Controller
      */
     public function index()
     {
-        return RoomResource::collection(Room::with('perks')->get());
+        return RoomResource::collection(Room::with(['perks', 'band'])->get());
     }
 
     /**

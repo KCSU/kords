@@ -2,12 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Perk;
-use App\Http\Resources\PerkResource;
+use App\Models\Band;
 use Illuminate\Http\Request;
 
-// TODO: clean up controllers
-class PerkController extends Controller
+class BandController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,7 +14,7 @@ class PerkController extends Controller
      */
     public function index()
     {
-        return PerkResource::collection(Perk::all());
+        //
     }
 
     /**
@@ -33,10 +31,10 @@ class PerkController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Perk  $perk
+     * @param  \App\Models\Band  $band
      * @return \Illuminate\Http\Response
      */
-    public function show(Perk $perk)
+    public function show(Band $band)
     {
         //
     }
@@ -45,10 +43,10 @@ class PerkController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Perk  $perk
+     * @param  \App\Models\Band  $band
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Perk $perk)
+    public function update(Request $request, Band $band)
     {
         //
     }
@@ -56,10 +54,10 @@ class PerkController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Perk  $perk
+     * @param  \App\Models\Band  $band
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Perk $perk)
+    public function destroy(Band $band)
     {
         //
     }

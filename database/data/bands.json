@@ -1,0 +1,32 @@
+[
+    {
+        "number": 1,
+        "short_rent": 1279.48,
+        "long_rent": 1445.35
+    },
+    {
+        "number": 2,
+        "short_rent": 1406.86,
+        "long_rent": 1591.39
+    },
+    {
+        "number": 3,
+        "short_rent": 1534.24,
+        "long_rent": 1737.44
+    },
+    {
+        "number": 4,
+        "short_rent": 1661.62,
+        "long_rent": 1883.49
+    },
+    {
+        "number": 5,
+        "short_rent": 1789.00,
+        "long_rent": 2029.53
+    },
+    {
+        "number": 6,
+        "short_rent": 1916.38,
+        "long_rent": 2175.58
+    }
+]

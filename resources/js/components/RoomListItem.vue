@@ -23,7 +23,7 @@
       </span>
       <div class="flex-grow"></div>
       <div class="flex flex-wrap justify-between 2xl:flex-nowrap">
-        <room-feature name="Rent" icon="credit-cards" nowrap>{{ room.rent }}</room-feature>
+        <room-feature name="Rent" icon="credit-cards" nowrap>{{ `£${room.short_rent}${room.long_contract ? ' / £' + room.long_rent : ''}` }}</room-feature>
         <room-feature name="Contract" icon="calendar" nowrap>{{ room.long_contract ? 'Long / Short' : 'Short'}}</room-feature>
         <room-feature name="Perks" icon="diamond-alt">{{ perks }}</room-feature>
       </div>

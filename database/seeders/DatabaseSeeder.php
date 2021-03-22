@@ -15,6 +15,7 @@ class DatabaseSeeder extends Seeder
     {
         // \App\Models\User::factory(10)->create();
         $this->call(PerkSeeder::class);
+        $this->call(BandSeeder::class);
         $this->call(RoomSeeder::class);
     }
 }
