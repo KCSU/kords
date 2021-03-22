@@ -9,8 +9,8 @@
           v-for="(item, i) in items"
           :key="`item-${i}`"
           class="relative px-6 py-3 flex items-center cursor-pointer hover:text-gray-800"
-          :class="item.value == value ? 'text-gray-800' : 'text-gray-500'"
-          @click="$emit('input', item.value)"
+          :class="item.id == value ? 'text-gray-800' : 'text-gray-500'"
+          @click="$emit('input', item.id)"
         >
           <span
             class="pl-4 h-8 inline-flex items-center w-full text-sm font-semibold transition-colors duration-150"
@@ -18,14 +18,14 @@
             <i
               class="text-xl transition-colors duration-150 lni"
               :class="`lni-${item.icon} ${
-                item.value == value ? 'text-purple-600' : ''
+                item.id == value ? 'text-purple-600' : ''
               }`"
             ></i>
-            <span class="ml-4">{{ item.title }}</span>
+            <span class="ml-4">{{ item.name }}</span>
           </span>
           <span
             class="absolute inset-y-2 right-0 bg-purple-600 w-0 rounded-tl-lg rounded-bl-lg transition-width duration-150"
-            :class="item.value == value ? 'w-1' : ''"
+            :class="item.id == value ? 'w-1' : ''"
             aria-hidden="true"
           ></span>
         </li>
@@ -64,9 +64,9 @@
                 v-for="(item, i) in subItems"
                 :key="`sub-${i}`"
                 class="px-4 py-4 transition-colors duration-150"
-                :class="item.value == value ? 'text-purple-600' : 'hover:text-gray-800'"
+                :class="item.id == value ? 'text-purple-600' : 'hover:text-gray-800'"
               >
-                <a class="w-full cursor-pointer" @click="$emit('input', item.value)">{{ item.title }}</a>
+                <a class="w-full cursor-pointer" @click="$emit('input', item.id)">{{ item.name }}</a>
               </li>
             </ul>
           </transition-expand>

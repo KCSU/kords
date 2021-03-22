@@ -22,7 +22,7 @@ class RoomSeeder extends Seeder
         $bands = Band::all();
         $locations = Location::all();
         $ballots = Ballot::all();
-        Room::factory(10)->make()
+        Room::factory(50)->make()
         ->each(function (Room $room) use ($bands, $locations, $ballots) {
             $room->location_id = $locations->random()->id;
             $room->ballot_id = $ballots->random()->id;

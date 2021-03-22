@@ -113,7 +113,8 @@ export default {
         this.searchFilters.bands.includes(room.band) &&
         this.searchFilters.perks.every(p => room.perks.some(pk => pk.name === p)) &&
         (room.long_contract || !this.searchFilters.long_contract) &&
-        (room.available || !this.searchFilters.available)
+        (room.available || !this.searchFilters.available) &&
+        (room.ballot_id === this.selected || this.selected === 0)
       );
       return results;
     }
@@ -133,12 +134,23 @@ export default {
     window.api.get("/locations").then(({data}) => {
       this.searchFilters.locations = data.map(l => l.name);
     });
+    window.api.get("/ballots").then(({data}) => {
+      this.navItems = [
+        {
+          name: "All Rooms",
+          icon: "home",
+          id: 0
+        },
+        ...data.primary
+      ];
+      this.navSubItems = data.sub;
+    });
   },
   data() {
     return {
       isGrid: true,
       detailFocused: false,
-      selected: "all",
+      selected: 0,
       selectedRoom: {},
       searchString: "",
       rooms: [],
@@ -150,45 +162,8 @@ export default {
         perks: [],
         locations: []
       },
-      navItems: [
-        {
-          title: "All Rooms",
-          value: "all",
-          icon: "home",
-        },
-        {
-          title: "Undergraduate",
-          value: "undergrad",
-          icon: "library",
-        },
-        {
-          title: "Graduate",
-          value: "graduate",
-          icon: "graduation",
-        },
-      ],
-      navSubItems: [
-        {
-          title: "1st Year Undergrad",
-          value: "1styear",
-        },
-        {
-          title: "Organ Scholar",
-          value: "organ",
-        },
-        {
-          title: "1st Year Graduate",
-          value: "1styeargrad",
-        },
-        {
-          title: "Letrice",
-          value: "letrice",
-        },
-        {
-          title: "Graduate Warden",
-          value: "gradwarden",
-        },
-      ],
+      navItems: [],
+      navSubItems: []
     };
   },
   components: {
