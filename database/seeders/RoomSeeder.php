@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\Band;
+use App\Models\Location;
 use App\Models\Perk;
 use Illuminate\Database\Seeder;
 use App\Models\Room;
@@ -18,8 +19,10 @@ class RoomSeeder extends Seeder
     {
         $perks = Perk::all();
         $bands = Band::all();
+        $locations = Location::all();
         Room::factory(10)->make()
-        ->each(function (Room $room) use ($bands) {
+        ->each(function (Room $room) use ($bands, $locations) {
+            $room->location_id = $locations->random()->id;
             $bands->random()->rooms()->save($room);
         })
         ->each(function (Room $room) use ($perks) {

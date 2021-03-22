@@ -25,7 +25,8 @@ class RoomResource extends JsonResource
             }),
             'band' => $this->band->number,
             'short_rent' => $this->band->short_rent,
-            'long_rent' => $this->band->long_rent
+            'long_rent' => $this->band->long_rent,
+            'location' => $this->location->name
             // TODO: fill with real data
             /*
             'location' => "Bodley's Court",

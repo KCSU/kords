@@ -16,4 +16,8 @@ class Room extends Model
     public function band() {
         return $this->belongsTo(Band::class);
     }
+
+    public function location() {
+        return $this->belongsTo(Location::class);
+    }
 }
