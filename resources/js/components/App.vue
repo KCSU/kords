@@ -5,7 +5,7 @@
       :subItems="navSubItems"
       v-model="selected"
     ></sidebar-nav>
-    <div class="flex items-center flex-col w-full p-10 overflow-y-auto h-full">
+    <div class="flex items-center flex-col w-full p-10 overflow-y-scroll h-full">
       <div class="flex flex-col items-stretch xl:w-8/12 w-full relative">
         <search-bar
           :toggled="showFilters"
@@ -23,7 +23,16 @@
           <span class="text-3xl font-semibold">Rooms</span>
           <toggle v-model="isGrid" first="List" second="Grid"></toggle>
         </div>
-        <div class="flex flex-col w-full">
+        <transition name="fade-down" mode="out-in">
+        <div key="grid" class="grid grid-cols-fill-56 gap-6" v-if="isGrid">
+          <room-grid-item
+            v-for="room in roomResults"
+            :key="room.id"
+            :room="room"
+            @click="focusDetail(room)">
+          </room-grid-item>
+        </div>
+        <div key="list" class="flex flex-col w-full" v-if="!isGrid">
           <room-list-item
             class="mb-6"
             v-for="room in roomResults"
@@ -32,6 +41,7 @@
             @click="focusDetail(room)"
           ></room-list-item>
         </div>
+        </transition>
       </div>
     </div>
     <detail-panel
@@ -55,6 +65,7 @@ import RoomListItem from "./RoomListItem.vue";
 import DetailPanel from "./DetailPanel.vue";
 import RoomDetails from "./RoomDetails.vue";
 import SearchOptions from "./SearchOptions.vue";
+import RoomGridItem from "./RoomGridItem.vue"
 
 const options = {
   keys: [
@@ -125,7 +136,7 @@ export default {
   },
   data() {
     return {
-      isGrid: false,
+      isGrid: true,
       detailFocused: false,
       selected: "all",
       selectedRoom: {},
@@ -188,6 +199,7 @@ export default {
     DetailPanel,
     RoomDetails,
     SearchOptions,
+    RoomGridItem
   },
 };
 </script>
@@ -199,5 +211,13 @@ export default {
 .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
   opacity: 0;
   transform: translateY(-20px);
+}
+
+.fade-down-enter-active, .fade-down-leave-active {
+  transition: opacity .15s, transform .15s;
+}
+.fade-down-enter, .fade-down-leave-to /* .fade-leave-active below version 2.1.8 */ {
+  opacity: 0;
+  transform: translateY(20px);
 }
 </style>
