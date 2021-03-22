@@ -23,7 +23,7 @@
         <div class="flex flex-col w-full">
           <room-list-item
             class="mb-6"
-            v-for="room in rooms"
+            v-for="room in roomResults"
             :key="room.id"
             :room="room"
             @click="focusDetail(room)"
@@ -43,6 +43,8 @@
 </template>
 
 <script>
+import Fuse from 'fuse.js'
+
 import SidebarNav from "./SidebarNav.vue";
 import SearchBar from "./SearchBar.vue";
 import Toggle from "./Toggle.vue";
@@ -51,6 +53,12 @@ import DetailPanel from "./DetailPanel.vue";
 import RoomDetails from "./RoomDetails.vue";
 import SearchOptions from "./SearchOptions.vue";
 
+const options = {
+  keys: [
+    'number', 'location'
+  ]
+}
+
 export default {
   methods: {
     focusDetail(room) {
@@ -58,6 +66,7 @@ export default {
       this.selectedRoom = room;
       this.$refs.detail.$el.focus();
     },
+    // TODO: work with search filters
     nextRoom() {
       let roomIdx = this.rooms.findIndex((x) => x.id === this.selectedRoom.id);
       this.selectedRoom = this.rooms[
@@ -67,9 +76,28 @@ export default {
     prevRoom() {
       let roomIdx = this.rooms.findIndex((x) => x.id === this.selectedRoom.id);
       this.selectedRoom = this.rooms[Math.max(roomIdx - 1, 0)];
-    },
+    }
   },
-  computed: {},
+  computed: {
+    fuse() {
+      return new Fuse(this.rooms, options);
+    },
+    roomResults() {
+      let results;
+      if (this.searchString === '') {
+        results = this.rooms;
+      } else {
+        results = this.fuse.search(this.searchString).map(r => r.item);
+      }
+      results = results.filter(room => 
+        this.searchFilters.locations.includes(room.location) &&
+        this.searchFilters.bands.includes(room.band) &&
+        this.searchFilters.perks.every(p => room.perks.some(pk => pk.name === p)) &&
+        (room.long_contract || !this.searchFilters.long_contract)
+      );
+      return results;
+    }
+  },
   created() {
     window.api.get("/rooms").then(({ data }) => {
       this.rooms = data.map((room) => ({
@@ -83,9 +111,7 @@ export default {
       }));
     });
     window.api.get("/locations").then(({data}) => {
-      let locs = {};
-      data.forEach(l => { locs[l.name] = true; });
-      this.searchFilters.locations = locs;
+      this.searchFilters.locations = data.map(l => l.name);
     });
   },
   data() {
@@ -99,8 +125,8 @@ export default {
       showFilters: false,
       searchFilters: {
         bands: [1, 2, 3, 4, 5, 6],
-        perks: {},
-        locations: {}
+        perks: [],
+        locations: []
       },
       navItems: [
         {

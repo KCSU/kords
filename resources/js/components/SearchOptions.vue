@@ -27,7 +27,7 @@
           v-for="perk in perks"
           :key="perk.id"
           :icon="perk.icon"
-          :value="value.perks[perk.name]"
+          :value="value.perks.includes(perk.name)"
           @input="updatePerk(perk.name, $event)"
         >
           {{ perk.name | prettify }}
@@ -59,7 +59,7 @@
           class="m-1"
           v-for="location in locations"
           :key="location.id"
-          :value="value.locations[location.name]"
+          :value="value.locations.includes(location.name)"
           @input="updateLoc(location.name, $event)"
         >
           {{ location.name }}
@@ -109,10 +109,10 @@ export default {
   },
   computed: {
     anyPerks() {
-      return !this.perks.some((p) => this.value.perks[p.name]);
+      return this.value.perks.length === 0;
     },
     anyLocations() {
-      return this.locations.every((l) => this.value.locations[l.name]);
+      return this.locations.every((l) => this.value.locations.includes(l.name));
     },
   },
   methods: {
@@ -120,43 +120,51 @@ export default {
       this.$emit("input", { ...this.value, [key]: value });
     },
     updatePerk(key, value) {
+      let perks = [...this.value.perks];
+      if (value) {
+        perks.push(key);
+      } else {
+        let index = perks.indexOf(key);
+        if (index !== -1) {
+          perks.splice(index, 1);
+        }
+      }
       this.$emit("input", {
         ...this.value,
-        perks: {
-          ...this.value.perks,
-          [key]: value,
-        },
+        perks
       });
     },
     updateLoc(key, value) {
+      let locations = [...this.value.locations];
+      if (value) {
+        locations.push(key);
+      } else {
+        let index = locations.indexOf(key);
+        if (index !== -1) {
+          locations.splice(index, 1);
+        }
+      }
       this.$emit("input", {
         ...this.value,
-        locations: {
-          ...this.value.locations,
-          [key]: value,
-        },
+        locations
       });
     },
     toggleAny() {
       this.$emit("input", {
         ...this.value,
-        perks: {},
+        perks: [],
       });
     },
     toggleAnyLoc() {
       if (this.anyLocations) {
         this.$emit("input", {
           ...this.value,
-          locations: {},
+          locations: [],
         });
       } else {
-        let locs = {};
-        this.locations.forEach((l) => {
-          locs[l.name] = true;
-        });
         this.$emit("input", {
           ...this.value,
-          locations: locs,
+          locations: this.locations.map(l => l.name)
         });
       }
     },
