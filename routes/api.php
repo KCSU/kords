@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\BallotController;
 use App\Http\Controllers\BandController;
 use App\Http\Controllers\LocationController;
 use App\Http\Controllers\PerkController;
@@ -26,3 +27,4 @@ Route::apiResource('/rooms', RoomController::class);
 Route::apiResource('/perks', PerkController::class);
 Route::apiResource('/bands', BandController::class);
 Route::apiResource('/locations', LocationController::class);
+Route::apiResource('/ballots', BallotController::class);

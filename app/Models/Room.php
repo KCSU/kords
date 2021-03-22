@@ -20,4 +20,8 @@ class Room extends Model
     public function location() {
         return $this->belongsTo(Location::class);
     }
+
+    public function ballot() {
+        return $this->belongsTo(Ballot::class);
+    }
 }

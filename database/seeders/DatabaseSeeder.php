@@ -17,6 +17,7 @@ class DatabaseSeeder extends Seeder
         $this->call(PerkSeeder::class);
         $this->call(BandSeeder::class);
         $this->call(LocationSeeder::class);
+        $this->call(BallotSeeder::class);
         $this->call(RoomSeeder::class);
     }
 }

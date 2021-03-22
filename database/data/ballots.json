@@ -1,0 +1,32 @@
+[
+    {
+        "title": "Undergraduate",
+        "icon": "library",
+        "primary": true
+    },
+    {
+        "title": "Graduate",
+        "icon": "graduation",
+        "primary": true
+    },
+    {
+        "title": "1st Year Undergrad",
+        "primary": false
+    },
+    {
+        "title": "Organ Scholar",
+        "primary": false
+    },
+    {
+        "title": "1st Year Graduate",
+        "primary": false
+    },
+    {
+        "title": "Letrice",
+        "primary": false
+    },
+    {
+        "title": "Graduate Warden",
+        "primary": false
+    }
+]
