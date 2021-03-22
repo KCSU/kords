@@ -4,10 +4,11 @@
   >
     <div class="mr-10 mb-3">
       <div class="text-xl font-medium">Rent Bands</div>
-      <multi-select class="m-1"
+      <multi-select
+        class="m-1"
         :value="value.bands"
         @input="update('bands', $event)"
-        :options="bandOpts"
+        :options="bands"
       ></multi-select>
     </div>
     <div class="mb-3">
@@ -33,9 +34,37 @@
         </checkbox-chip>
       </div>
     </div>
-    <div class="mb-3">
+    <div class="mb-3 mr-10">
       <div class="text-xl font-medium">Contract</div>
-      <toggle :value="value.long_contract" @input="update('long_contract', $event)" first="Any" second="Long" class="bg-gray-200"></toggle>
+      <toggle
+        :value="value.long_contract"
+        @input="update('long_contract', $event)"
+        first="Any"
+        second="Long"
+        class="bg-gray-200"
+      ></toggle>
+    </div>
+    <div class="mb-3">
+      <div class="text-xl font-medium">Locations</div>
+      <div class="flex flex-wrap">
+        <checkbox-chip
+          class="m-1"
+          :value="anyLocations"
+          icon="done_all"
+          @input="toggleAnyLoc()"
+        >
+          Any
+        </checkbox-chip>
+        <checkbox-chip
+          class="m-1"
+          v-for="location in locations"
+          :key="location.id"
+          :value="value.locations[location.name]"
+          @input="updateLoc(location.name, $event)"
+        >
+          {{ location.name }}
+        </checkbox-chip>
+      </div>
     </div>
   </div>
 </template>
@@ -43,7 +72,7 @@
 <script>
 import CheckboxChip from "./CheckboxChip.vue";
 import MultiSelect from "./MultiSelect.vue";
-import Toggle from './Toggle.vue';
+import Toggle from "./Toggle.vue";
 export default {
   components: { MultiSelect, CheckboxChip, Toggle },
   props: {
@@ -52,6 +81,15 @@ export default {
   created() {
     window.api.get("/perks").then(({ data }) => {
       this.perks = data;
+    });
+    window.api.get("/bands").then(({ data }) => {
+      this.bands = data.map((band) => ({
+        name: band.number.toString(),
+        value: band.number,
+      }));
+    });
+    window.api.get("/locations").then(({ data }) => {
+      this.locations = data;
     });
   },
   filters: {
@@ -65,22 +103,16 @@ export default {
   data() {
     return {
       perks: [],
+      bands: [],
+      locations: [],
     };
   },
   computed: {
-    bandOpts() {
-      let options = [];
-      // TODO: replace with API query
-      for (let i = 1; i <= 6; i++) {
-        options.push({
-          name: i.toString(),
-          value: i,
-        });
-      }
-      return options;
-    },
     anyPerks() {
       return !this.perks.some((p) => this.value.perks[p.name]);
+    },
+    anyLocations() {
+      return this.locations.every((l) => this.value.locations[l.name]);
     },
   },
   methods: {
@@ -96,12 +128,38 @@ export default {
         },
       });
     },
+    updateLoc(key, value) {
+      this.$emit("input", {
+        ...this.value,
+        locations: {
+          ...this.value.locations,
+          [key]: value,
+        },
+      });
+    },
     toggleAny() {
       this.$emit("input", {
         ...this.value,
-        perks: {}
-      })
-    }
+        perks: {},
+      });
+    },
+    toggleAnyLoc() {
+      if (this.anyLocations) {
+        this.$emit("input", {
+          ...this.value,
+          locations: {},
+        });
+      } else {
+        let locs = {};
+        this.locations.forEach((l) => {
+          locs[l.name] = true;
+        });
+        this.$emit("input", {
+          ...this.value,
+          locations: locs,
+        });
+      }
+    },
   },
 };
 </script>

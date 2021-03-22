@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\BandController;
+use App\Http\Controllers\LocationController;
 use App\Http\Controllers\PerkController;
 use App\Http\Controllers\RoomController;
 use Illuminate\Http\Request;
@@ -22,3 +24,5 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 Route::apiResource('/rooms', RoomController::class);
 Route::apiResource('/perks', PerkController::class);
+Route::apiResource('/bands', BandController::class);
+Route::apiResource('/locations', LocationController::class);

@@ -7,11 +7,15 @@
     ></sidebar-nav>
     <div class="flex items-center flex-col w-full p-10 overflow-y-auto h-full">
       <div class="flex flex-col items-stretch xl:w-8/12 w-full relative">
-        <search-bar @toggle="showFilters = !showFilters"
+        <search-bar
+          @toggle="showFilters = !showFilters"
           v-model="searchString"
           placeholder="Search for a room number, location, etc."
         ></search-bar>
-        <search-options v-model="searchFilters" v-show="showFilters"></search-options>
+        <search-options
+          v-model="searchFilters"
+          v-show="showFilters"
+        ></search-options>
         <div class="flex my-10 justify-between">
           <span class="text-3xl font-semibold">Rooms</span>
           <toggle v-model="isGrid" first="List" second="Grid"></toggle>
@@ -45,7 +49,7 @@ import Toggle from "./Toggle.vue";
 import RoomListItem from "./RoomListItem.vue";
 import DetailPanel from "./DetailPanel.vue";
 import RoomDetails from "./RoomDetails.vue";
-import SearchOptions from './SearchOptions.vue';
+import SearchOptions from "./SearchOptions.vue";
 
 export default {
   methods: {
@@ -75,8 +79,13 @@ export default {
           "https://picsum.photos/200",
           "https://picsum.photos/200?1",
           "https://picsum.photos/200?2",
-        ]
+        ],
       }));
+    });
+    window.api.get("/locations").then(({data}) => {
+      let locs = {};
+      data.forEach(l => { locs[l.name] = true; });
+      this.searchFilters.locations = locs;
     });
   },
   data() {
@@ -89,8 +98,9 @@ export default {
       rooms: [],
       showFilters: false,
       searchFilters: {
-        bands: [1, 6],
-        perks: {}
+        bands: [1, 2, 3, 4, 5, 6],
+        perks: {},
+        locations: {}
       },
       navItems: [
         {
@@ -140,7 +150,7 @@ export default {
     RoomListItem,
     DetailPanel,
     RoomDetails,
-    SearchOptions
+    SearchOptions,
   },
 };
 </script>

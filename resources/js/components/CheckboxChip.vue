@@ -1,8 +1,8 @@
 <template>
-    <div class="flex items-center transition-colors duration-150 rounded-md text-sm" @click="toggle()"
+    <div class="flex items-center transition-colors duration-150 rounded-md text-sm cursor-default" @click="toggle()"
     :class="{'bg-purple-600 text-white': value, 'bg-gray-200': !value, 'cursor-pointer': !disabled}">
-        <i class="px-2 material-icons-round text-msm">{{ icon }}</i>
-        <span class="pr-2 py-1">
+        <i v-if="!!icon" class="pl-2 material-icons-round text-msm">{{ icon }}</i>
+        <span class="px-2 py-1">
             <slot></slot>
         </span>
     </div>
