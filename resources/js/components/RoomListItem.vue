@@ -32,7 +32,7 @@
 </template>
 
 <script>
-import RoomFeature from './RoomFeature.vue'
+import RoomFeature from './RoomFeature'
 
 function prettify(perk) {
   return perk.name.split('_').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(" ");

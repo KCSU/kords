@@ -58,14 +58,14 @@
 <script>
 import Fuse from 'fuse.js'
 
-import SidebarNav from "./SidebarNav.vue";
-import SearchBar from "./SearchBar.vue";
-import Toggle from "./Toggle.vue";
-import RoomListItem from "./RoomListItem.vue";
-import DetailPanel from "./DetailPanel.vue";
-import RoomDetails from "./RoomDetails.vue";
-import SearchOptions from "./SearchOptions.vue";
-import RoomGridItem from "./RoomGridItem.vue"
+import SidebarNav from "~/components/SidebarNav";
+import SearchBar from "~/components/SearchBar";
+import Toggle from "~/components/Toggle";
+import RoomListItem from "~/components/RoomListItem";
+import DetailPanel from "~/components/DetailPanel";
+import RoomDetails from "~/components/RoomDetails";
+import SearchOptions from "~/components/SearchOptions";
+import RoomGridItem from "~/components/RoomGridItem"
 
 const options = {
   keys: [

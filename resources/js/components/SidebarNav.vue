@@ -77,7 +77,7 @@
 </template>
 
 <script>
-import TransitionExpand from "./TransitionExpand.vue";
+import TransitionExpand from "./TransitionExpand";
 
 export default {
   name: "SidebarNav",

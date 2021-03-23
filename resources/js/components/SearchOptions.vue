@@ -80,9 +80,9 @@
 </template>
 
 <script>
-import CheckboxChip from "./CheckboxChip.vue";
-import MultiSelect from "./MultiSelect.vue";
-import Toggle from "./Toggle.vue";
+import CheckboxChip from "./CheckboxChip";
+import MultiSelect from "./MultiSelect";
+import Toggle from "./Toggle";
 export default {
   components: { MultiSelect, CheckboxChip, Toggle },
   props: {

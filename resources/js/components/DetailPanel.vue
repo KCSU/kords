@@ -97,7 +97,7 @@
 </template>
 
 <script>
-import KeyIndicator from "./KeyIndicator.vue";
+import KeyIndicator from "./KeyIndicator";
 
 export default {
   props: {

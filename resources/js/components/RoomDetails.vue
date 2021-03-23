@@ -41,7 +41,7 @@
 </template>
 
 <script>
-import ToggledChip from "./ToggledChip.vue";
+import ToggledChip from "./ToggledChip";
 
 export default {
   props: {
