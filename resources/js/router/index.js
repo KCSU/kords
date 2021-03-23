@@ -11,13 +11,8 @@ let router = new Router({
     routes: [
         {
             path: '/',
-            component: Homepage,
-            name: 'Homepage'
-        },
-        {
-            path: '/rooms',
-            name: 'Rooms',
-            component: Rooms
+            component: Rooms,
+            name: 'Rooms'
         }
     ]
 });

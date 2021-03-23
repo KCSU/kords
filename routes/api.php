@@ -19,12 +19,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
+Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::apiResource('/rooms', RoomController::class);
-Route::apiResource('/perks', PerkController::class);
-Route::apiResource('/bands', BandController::class);
-Route::apiResource('/locations', LocationController::class);
-Route::apiResource('/ballots', BallotController::class);
+Route::middleware('auth:sanctum')->group(function () {
+    Route::apiResource('/rooms', RoomController::class);
+    Route::apiResource('/perks', PerkController::class);
+    Route::apiResource('/bands', BandController::class);
+    Route::apiResource('/locations', LocationController::class);
+    Route::apiResource('/ballots', BallotController::class);
+});

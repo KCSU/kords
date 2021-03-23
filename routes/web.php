@@ -18,6 +18,6 @@ Route::get('/oauth', [OAuthController::class, 'redirect']);
 Route::get('/oauth/callback', [OAuthController::class, 'callback'])
     ->name('oauth.callback');
 
-Route::get('/{any}', function () {
+Route::middleware('auth')->get('/{any}', function () {
     return view('welcome');
 })->where('any', '.*');
