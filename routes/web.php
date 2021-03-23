@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\OAuthController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -12,6 +13,10 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+Route::get('/oauth', [OAuthController::class, 'redirect']);
+Route::get('/oauth/callback', [OAuthController::class, 'callback'])
+    ->name('oauth.callback');
 
 Route::get('/{any}', function () {
     return view('welcome');
