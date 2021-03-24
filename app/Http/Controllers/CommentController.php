@@ -36,7 +36,9 @@ class CommentController extends Controller
             'user_id' => auth()->user()->id
         ]);
 
-        return response()->json($comment->with('user'));
+        $comment->load('user');
+
+        return response()->json($comment);
     }
 
     /**

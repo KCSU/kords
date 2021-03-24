@@ -75,17 +75,22 @@
     </div>
     <div class="mt-4 mb-6">
       <textarea
+        @keydown.left.stop
+        @keydown.right.stop
+        @keydown.esc.stop
         id="comment"
         name="comment"
+        v-model="comment"
         rows="1"
         class="shadow-sm focus:ring-2 ring-1 outline-none focus:ring-purple-500 focus:border-purple-500 mt-1 p-3 w-full sm:text-sm ring-gray-300 rounded-md"
         placeholder="Leave a comment..."
       ></textarea>
-      <div
-        class="bg-purple-600 text-white inline-block py-2 px-2 transition-colors duration-150 mt-2 rounded-md hover:bg-purple-800 cursor-pointer text-sm font-medium"
+      <button @click="postComment()" :disabled="loading"
+        class="text-white inline-block py-2 px-2 transition-colors duration-150 mt-2 rounded-md text-sm font-medium"
+        :class="loading ? 'bg-gray-400' : 'bg-purple-600 hover:bg-purple-800'"
       >
         Submit
-      </div>
+      </button>
     </div>
   </div>
 </template>
@@ -109,10 +114,31 @@ export default {
       return moment(date).fromNow();
     },
   },
+  data() {
+    return {
+      comment: '',
+      loading: false
+    };
+  },
   computed: {
     perks() {
       return this.room.perks.map(prettify);
     },
+  },
+  methods: {
+    postComment() {
+      this.loading = true;
+      window.api.post('/comments', {
+        text: this.comment,
+        room_id: this.room.id
+      }).then(({data}) => {
+        this.$emit('comment', data);
+        this.loading = false;
+        this.comment = '';
+      }).catch(err => {
+        // TODO: handle
+      });
+    }
   },
   components: { ToggledChip },
 };

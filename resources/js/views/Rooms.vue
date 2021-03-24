@@ -50,7 +50,7 @@
       @next="nextRoom"
       @back="prevRoom"
     >
-      <room-details :room="selectedRoom"></room-details>
+      <room-details :room="selectedRoom" @comment="addComment($event)"></room-details>
     </detail-panel>
   </div>
 </template>
@@ -95,6 +95,13 @@ export default {
         return;
       }
       this.selectedRoom = this.roomResults[Math.max(roomIdx - 1, 0)];
+    },
+    addComment(comment) {
+      let room = this.rooms.find(r => r.id === comment.room_id);
+      console.log(room);
+      if (room) {
+        room.comments.unshift(comment);
+      }
     }
   },
   computed: {
