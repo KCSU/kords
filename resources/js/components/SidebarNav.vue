@@ -64,9 +64,15 @@
                 v-for="(item, i) in subItems"
                 :key="`sub-${i}`"
                 class="px-4 py-4 transition-colors duration-150"
-                :class="item.id == value ? 'text-purple-600' : 'hover:text-gray-800'"
+                :class="
+                  item.id == value ? 'text-purple-600' : 'hover:text-gray-800'
+                "
               >
-                <a class="w-full cursor-pointer" @click="$emit('input', item.id)">{{ item.name }}</a>
+                <a
+                  class="w-full cursor-pointer"
+                  @click="$emit('input', item.id)"
+                  >{{ item.name }}</a
+                >
               </li>
             </ul>
           </transition-expand>
@@ -74,8 +80,14 @@
       </ul>
       <div class="flex-grow"></div>
       <!-- User info -->
-      <div class="flex justify-center cursor-pointer transition-colors duration-150 py-2 mx-6 rounded-md mb-8 items-center hover:bg-gray-200">
-        <div class="bg-purple-800 text-white text-lg font-bold px-2 py-0.5 rounded-md">{{ user.name && user.name[0] }}</div>
+      <div
+        class="flex justify-center cursor-pointer transition-colors duration-150 py-2 mx-6 rounded-md mb-8 items-center hover:bg-gray-200"
+      >
+        <div
+          class="bg-purple-800 text-white text-lg font-bold px-2 py-0.5 rounded-md"
+        >
+          {{ user.name && user.name[0] }}
+        </div>
         <div class="ml-2">
           <div class="font-medium text-black text-sm">{{ user.name }}</div>
           <div class="text-gray-700 text-xs">{{ user.email }}</div>
@@ -92,7 +104,7 @@ export default {
   name: "SidebarNav",
   components: { TransitionExpand },
   created() {
-    window.api.get('/user').then(({data}) => {
+    window.api.get("/user").then(({ data }) => {
       this.user = data;
     });
   },
@@ -105,8 +117,8 @@ export default {
     return {
       submenuOpen: false,
       user: {
-        name: "?"
-      }
+        name: "?",
+      },
     };
   },
 };

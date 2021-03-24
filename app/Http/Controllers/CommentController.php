@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Models\Comment;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Validator;
 
 class CommentController extends Controller
 {
@@ -26,7 +25,18 @@ class CommentController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'text' => 'required|string|between:5,1000',
+            'room_id' => 'required|exists:rooms,id'
+        ]);
+        
+        $comment = Comment::create([
+            'text' => $request->text,
+            'room_id' => $request->room_id,
+            'user_id' => auth()->user()->id
+        ]);
+
+        return response()->json($comment->with('user'));
     }
 
     /**

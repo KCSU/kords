@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\BallotController;
 use App\Http\Controllers\BandController;
+use App\Http\Controllers\CommentController;
 use App\Http\Controllers\LocationController;
 use App\Http\Controllers\PerkController;
 use App\Http\Controllers\RoomController;
@@ -29,4 +30,5 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::apiResource('/bands', BandController::class);
     Route::apiResource('/locations', LocationController::class);
     Route::apiResource('/ballots', BallotController::class);
+    Route::apiResource('/comments', CommentController::class);
 });
