@@ -22,6 +22,7 @@
         "fuse.js": "^6.4.6",
         "moment": "^2.29.1",
         "vue": "^2.6.12",
-        "vue-router": "^3.5.1"
+        "vue-router": "^3.5.1",
+        "vue-textarea-autosize": "^1.1.1"
     }
 }

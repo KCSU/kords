@@ -74,20 +74,20 @@
       </div>
     </div>
     <div class="mt-4 mb-6">
-      <textarea
-        @keydown.left.stop
-        @keydown.right.stop
-        @keydown.esc.stop
+      <textarea-autosize maxlength="1000"
+        @keydown.left.native.stop
+        @keydown.right.native.stop
+        @keydown.esc.native.stop
         id="comment"
         name="comment"
         v-model="comment"
         rows="1"
         class="shadow-sm focus:ring-2 ring-1 outline-none focus:ring-purple-500 focus:border-purple-500 mt-1 p-3 w-full sm:text-sm ring-gray-300 rounded-md"
         placeholder="Leave a comment..."
-      ></textarea>
-      <button @click="postComment()" :disabled="loading"
+      ></textarea-autosize>
+      <button @click="postComment()" :disabled="loading || comment.length < 5"
         class="text-white inline-block py-2 px-2 transition-colors duration-150 mt-2 rounded-md text-sm font-medium"
-        :class="loading ? 'bg-gray-400' : 'bg-purple-600 hover:bg-purple-800'"
+        :class="loading || comment.length < 5 ? 'bg-gray-400' : 'bg-purple-600 hover:bg-purple-800'"
       >
         Submit
       </button>
