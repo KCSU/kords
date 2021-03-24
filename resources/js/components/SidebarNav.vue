@@ -2,7 +2,7 @@
   <aside
     class="z-20 w-64 h-full overflow-y-auto bg-white md:block flex-shrink-0 border-r border-gray-200"
   >
-    <div class="py-4 text-gray-500">
+    <div class="py-4 text-gray-500 flex flex-col h-full">
       <a class="ml-6 text-4xl font-bold text-gray-800" href="#"> KORDs </a>
       <ul class="mt-6">
         <li
@@ -72,6 +72,15 @@
           </transition-expand>
         </li>
       </ul>
+      <div class="flex-grow"></div>
+      <!-- User info -->
+      <div class="flex justify-center cursor-pointer transition-colors duration-150 py-2 mx-6 rounded-md mb-8 items-center hover:bg-gray-200">
+        <div class="bg-purple-800 text-white text-lg font-bold px-2 py-0.5 rounded-md">{{ user.name && user.name[0] }}</div>
+        <div class="ml-2">
+          <div class="font-medium text-black text-sm">{{ user.name }}</div>
+          <div class="text-gray-700 text-xs">{{ user.email }}</div>
+        </div>
+      </div>
     </div>
   </aside>
 </template>
@@ -82,14 +91,22 @@ import TransitionExpand from "./TransitionExpand";
 export default {
   name: "SidebarNav",
   components: { TransitionExpand },
+  created() {
+    window.api.get('/user').then(({data}) => {
+      this.user = data;
+    });
+  },
   props: {
     items: Array,
     subItems: Array,
-    value: String,
+    value: Number,
   },
   data() {
     return {
       submenuOpen: false,
+      user: {
+        name: "?"
+      }
     };
   },
 };

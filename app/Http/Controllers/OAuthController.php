@@ -33,7 +33,7 @@ class OAuthController extends Controller
         $request->session()->regenerate();
         $this->clearLoginAttempts($request);
 
-        return redirect('/rooms');
+        return redirect('/');
     }
 
     public function redirect() {

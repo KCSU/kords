@@ -14,7 +14,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/oauth', [OAuthController::class, 'redirect']);
+Route::get('/oauth', [OAuthController::class, 'redirect'])
+    ->name('login');
 Route::get('/oauth/callback', [OAuthController::class, 'callback'])
     ->name('oauth.callback');
 
