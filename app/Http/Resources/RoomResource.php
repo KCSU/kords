@@ -27,7 +27,8 @@ class RoomResource extends JsonResource
             'short_rent' => $this->band->short_rent,
             'long_rent' => $this->band->long_rent,
             'location' => $this->location->name,
-            'ballot_id' => $this->ballot_id
+            'ballot_id' => $this->ballot_id,
+            'comments' => $this->whenLoaded('comments')
             // TODO: fill with real data
             /*
             'image' => "https://picsum.photos/200",

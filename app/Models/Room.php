@@ -24,4 +24,8 @@ class Room extends Model
     public function ballot() {
         return $this->belongsTo(Ballot::class);
     }
+
+    public function comments() {
+        return $this->hasMany(Comment::class);
+    }
 }
