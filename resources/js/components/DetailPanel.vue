@@ -119,7 +119,7 @@ export default {
       if (pr) {
         this.$emit('next');
       }
-    },
+    }
   },
   data() {
     return {

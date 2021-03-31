@@ -66,7 +66,7 @@
           <!-- <div class="font-medium text-black text-sm">
             {{ comment.user.name }}
           </div> -->
-          <div class="text-black text-sm">{{ comment.text }}</div>
+          <div class="text-black text-sm whitespace-pre-line">{{ comment.text }}</div>
           <div class="text-xs text-gray-500">
             {{ comment.user.name }}, {{ comment.created_at | commentDate }}
           </div>

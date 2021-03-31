@@ -28,4 +28,8 @@ class Room extends Model
     public function comments() {
         return $this->hasMany(Comment::class)->orderBy('created_at', 'desc');
     }
+
+    public function images() {
+        return $this->hasMany(Image::class);
+    }
 }

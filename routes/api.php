@@ -1,11 +1,6 @@
 <?php
 
-use App\Http\Controllers\BallotController;
-use App\Http\Controllers\BandController;
-use App\Http\Controllers\CommentController;
-use App\Http\Controllers\LocationController;
-use App\Http\Controllers\PerkController;
-use App\Http\Controllers\RoomController;
+use App\Http\Controllers\ApiController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -25,10 +20,10 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::middleware('auth:sanctum')->group(function () {
-    Route::apiResource('/rooms', RoomController::class);
-    Route::apiResource('/perks', PerkController::class);
-    Route::apiResource('/bands', BandController::class);
-    Route::apiResource('/locations', LocationController::class);
-    Route::apiResource('/ballots', BallotController::class);
-    Route::apiResource('/comments', CommentController::class);
+    Route::get('/bands', [ApiController::class, 'bands']);
+    Route::get('/perks', [ApiController::class, 'perks']);
+    Route::get('/rooms', [ApiController::class, 'rooms']);
+    Route::get('/ballots', [ApiController::class, 'ballots']);
+    Route::get('/locations', [ApiController::class, 'locations']);
+    Route::post('/comments', [ApiController::class, 'storeComment']);
 });

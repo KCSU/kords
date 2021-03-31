@@ -130,12 +130,7 @@ export default {
     window.api.get("/rooms").then(({ data }) => {
       this.rooms = data.map((room) => ({
         ...room,
-        image: "https://picsum.photos/200",
-        images: [
-          "https://picsum.photos/200",
-          "https://picsum.photos/200?1",
-          "https://picsum.photos/200?2",
-        ],
+        image: room.images[0] || "//via.placeholder.com/300x200?text=%3F"
       }));
     });
     window.api.get("/locations").then(({data}) => {
