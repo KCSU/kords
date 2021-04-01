@@ -26,4 +26,5 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::get('/ballots', [ApiController::class, 'ballots']);
     Route::get('/locations', [ApiController::class, 'locations']);
     Route::post('/comments', [ApiController::class, 'storeComment']);
+    Route::post('/images', [ApiController::class, 'storeImage']);
 });

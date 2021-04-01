@@ -7,10 +7,13 @@ use App\Http\Resources\RoomResource;
 use App\Models\Ballot;
 use App\Models\Band;
 use App\Models\Comment;
+use App\Models\Image;
 use App\Models\Location;
 use App\Models\Perk;
 use App\Models\Room;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Storage;
 
 class ApiController extends Controller
 {
@@ -59,5 +62,21 @@ class ApiController extends Controller
         $comment->load('user');
 
         return response()->json($comment);
+    }
+
+    public function storeImage(Request $request) {
+        $request->validate([
+            'image' => 'required|image|max:1000',
+            'room_id' => 'required|exists:rooms,id'
+        ]);
+
+        $path = $request->file('image')->store('images', 'public');
+        
+        $image = new Image;
+        $image->filename = Storage::url($path);
+        $image->room_id = $request->room_id;
+        $image->save();
+
+        return $image;
     }
 }

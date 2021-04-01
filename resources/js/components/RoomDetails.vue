@@ -32,8 +32,9 @@
         v-for="(img, i) in room.images"
         :key="i"
         :src="img"
-        class="rounded-xl shadow-sm transition-shadow duration-150 hover:shadow-md m-3 flex-1 max-h-36 object-cover cursor-pointer"
+        class="rounded-xl shadow-sm transition-shadow duration-150 hover:shadow-md m-3 flex-auto h-36 w-36 object-cover cursor-pointer"
       />
+      <image-dropper class="w-36 flex-auto" :loading="imgUploading" @input="uploadImages($event)"></image-dropper>
     </div>
     <h3 class="text-xl font-medium mt-4">Key Features</h3>
     <div
@@ -74,7 +75,8 @@
       </div>
     </div>
     <div class="mt-4 mb-6">
-      <textarea-autosize maxlength="1000"
+      <textarea-autosize
+        maxlength="1000"
         @keydown.left.native.stop
         @keydown.right.native.stop
         @keydown.esc.native.stop
@@ -85,9 +87,15 @@
         class="shadow-sm focus:ring-2 ring-1 outline-none focus:ring-purple-500 focus:border-purple-500 mt-1 p-3 w-full sm:text-sm ring-gray-300 rounded-md"
         placeholder="Leave a comment..."
       ></textarea-autosize>
-      <button @click="postComment()" :disabled="loading || comment.length < 5"
+      <button
+        @click="postComment()"
+        :disabled="loading || comment.length < 5"
         class="text-white inline-block py-2 px-2 transition-colors duration-150 mt-2 rounded-md text-sm font-medium"
-        :class="loading || comment.length < 5 ? 'bg-gray-400' : 'bg-purple-600 hover:bg-purple-800'"
+        :class="
+          loading || comment.length < 5
+            ? 'bg-gray-400'
+            : 'bg-purple-600 hover:bg-purple-800'
+        "
       >
         Submit
       </button>
@@ -98,6 +106,7 @@
 <script>
 import ToggledChip from "./ToggledChip";
 import moment from "moment";
+import ImageDropper from './ImageDropper.vue';
 
 export default {
   props: {
@@ -116,8 +125,9 @@ export default {
   },
   data() {
     return {
-      comment: '',
-      loading: false
+      comment: "",
+      loading: false,
+      imgUploading: false
     };
   },
   computed: {
@@ -128,18 +138,40 @@ export default {
   methods: {
     postComment() {
       this.loading = true;
-      window.api.post('/comments', {
-        text: this.comment,
-        room_id: this.room.id
-      }).then(({data}) => {
-        this.$emit('comment', data);
-        this.loading = false;
-        this.comment = '';
+      window.api
+        .post("/comments", {
+          text: this.comment,
+          room_id: this.room.id,
+        })
+        .then(({ data }) => {
+          this.$emit("comment", data);
+          this.loading = false;
+          this.comment = "";
+        })
+        .catch((err) => {
+          // TODO: handle
+        });
+    },
+    uploadImages(files) {
+      // TODO: Implement
+      this.imgUploading = true;
+      Promise.all(files.map(file => {
+        let data = new FormData();
+        data.append('room_id', this.room.id);
+        data.append('image', file);
+        return window.api.post('/images', data, {
+          headers: { "Content-Type": "multipart/form-data" }
+        });
+      })).then(results => {
+        this.imgUploading = false;
+        results.forEach(({data}) => {
+          this.room.images.push(data.filename);
+        });
       }).catch(err => {
-        // TODO: handle
+        this.imgUploading = false;
       });
     }
   },
-  components: { ToggledChip },
+  components: { ToggledChip, ImageDropper },
 };
 </script>
