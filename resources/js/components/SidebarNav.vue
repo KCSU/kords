@@ -80,9 +80,8 @@
       </ul>
       <div class="flex-grow"></div>
       <!-- User info -->
-      <div
-        class="flex justify-center cursor-pointer transition-colors duration-150 py-2 mx-6 rounded-md mb-8 items-center hover:bg-gray-200"
-      >
+      <a class="slide cursor-pointer transition-colors duration-150 py-2 mx-6 rounded-md mb-8 items-center hover:bg-gray-200 flex justify-center"
+      href="/oauth/logout">
         <div
           class="bg-purple-800 text-white text-lg font-bold px-2 py-0.5 rounded-md"
         >
@@ -92,7 +91,8 @@
           <div class="font-medium text-black text-sm">{{ user.name }}</div>
           <div class="text-gray-700 text-xs">{{ user.email }}</div>
         </div>
-      </div>
+        <div class="absolute text-black font-medium showhover">Log Out</div>
+      </a>
     </div>
   </aside>
 </template>
@@ -116,6 +116,7 @@ export default {
   data() {
     return {
       submenuOpen: false,
+      logoutHover: false,
       user: {
         name: "?",
       },
@@ -123,3 +124,24 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+.slide > .showhover {
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+.slide:hover > .showhover {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.slide:hover > :not(.showhover) {
+  opacity: 0;
+  transform: translateY(-30px);
+}
+
+.slide > div {
+  transition: opacity 0.3s, transform 0.3s;
+}
+</style>

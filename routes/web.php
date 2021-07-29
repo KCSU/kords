@@ -14,11 +14,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/oauth', [OAuthController::class, 'redirect'])
-    ->name('login');
+Route::get('/oauth', [OAuthController::class, 'redirect']);
 Route::get('/oauth/callback', [OAuthController::class, 'callback'])
     ->name('oauth.callback');
-
+Route::get('/oauth/logout', [OAuthController::class, 'logout']);
+Route::middleware('guest')->get('/login', function () {
+    return view('login');
+})->name('login');
 Route::middleware('auth')->get('/{any}', function () {
     return view('welcome');
 })->where('any', '.*');
