@@ -1,0 +1,3676 @@
+[
+    {
+        "number": "S3",
+        "location": "S Staircase",
+        "band": 5,
+        "floor": 1,
+        "notes": "",
+        "long_contract": true,
+        "perks": [
+            "set",
+            "fridge"
+        ]
+    },
+    {
+        "number": "S4",
+        "location": "S Staircase",
+        "band": 5,
+        "floor": 1,
+        "notes": "",
+        "long_contract": true,
+        "perks": [
+            "set",
+            "fridge",
+            "basin"
+        ]
+    },
+    {
+        "number": "S5",
+        "location": "S Staircase",
+        "band": 5,
+        "floor": 1,
+        "notes": "",
+        "long_contract": true,
+        "perks": [
+            "set",
+            "fridge",
+            "basin"
+        ]
+    },
+    {
+        "number": "S6",
+        "location": "S Staircase",
+        "band": 3,
+        "floor": 1,
+        "notes": "",
+        "long_contract": true,
+        "perks": [
+            "fridge"
+        ]
+    },
+    {
+        "number": "S7",
+        "location": "S Staircase",
+        "band": 3,
+        "floor": 1,
+        "notes": "",
+        "long_contract": true,
+        "perks": [
+            "fridge"
+        ]
+    },
+    {
+        "number": "S8",
+        "location": "S Staircase",
+        "band": 3,
+        "floor": 1,
+        "notes": "",
+        "long_contract": true,
+        "perks": [
+            "fridge"
+        ]
+    },
+    {
+        "number": "S9",
+        "location": "S Staircase",
+        "band": 3,
+        "floor": 1,
+        "notes": "",
+        "long_contract": true,
+        "perks": [
+            "fridge",
+            "basin"
+        ]
+    },
+    {
+        "number": "S10",
+        "location": "S Staircase",
+        "band": 5,
+        "floor": 2,
+        "notes": "",
+        "long_contract": true,
+        "perks": [
+            "set",
+            "fridge",
+            "basin"
+        ]
+    },
+    {
+        "number": "S11",
+        "location": "S Staircase",
+        "band": 5,
+        "floor": 2,
+        "notes": "",
+        "long_contract": true,
+        "perks": [
+            "set",
+            "fridge",
+            "basin"
+        ]
+    },
+    {
+        "number": "S12",
+        "location": "S Staircase",
+        "band": 5,
+        "floor": 2,
+        "notes": "",
+        "long_contract": true,
+        "perks": [
+            "set",
+            "fridge",
+            "basin"
+        ]
+    },
+    {
+        "number": "S13",
+        "location": "S Staircase",
+        "band": 3,
+        "floor": 2,
+        "notes": "",
+        "long_contract": true,
+        "perks": [
+            "fridge"
+        ]
+    },
+    {
+        "number": "S15",
+        "location": "S Staircase",
+        "band": 3,
+        "floor": 2,
+        "notes": "",
+        "long_contract": true,
+        "perks": [
+            "fridge"
+        ]
+    },
+    {
+        "number": "S16",
+        "location": "S Staircase",
+        "band": 3,
+        "floor": 2,
+        "notes": "",
+        "long_contract": true,
+        "perks": [
+            "fridge"
+        ]
+    },
+    {
+        "number": "S17",
+        "location": "S Staircase",
+        "band": 5,
+        "floor": 3,
+        "notes": "",
+        "long_contract": true,
+        "perks": [
+            "set",
+            "fridge",
+            "basin"
+        ]
+    },
+    {
+        "number": "S18",
+        "location": "S Staircase",
+        "band": 5,
+        "floor": 3,
+        "notes": "",
+        "long_contract": true,
+        "perks": [
+            "set",
+            "fridge",
+            "basin"
+        ]
+    },
+    {
+        "number": "S19",
+        "location": "S Staircase",
+        "band": 5,
+        "floor": 3,
+        "notes": "",
+        "long_contract": true,
+        "perks": [
+            "set",
+            "fridge",
+            "basin"
+        ]
+    },
+    {
+        "number": "T2",
+        "location": "Bodley's Court",
+        "band": 5,
+        "floor": 0,
+        "notes": "",
+        "long_contract": true,
+        "perks": [
+            "set",
+            "fridge",
+            "basin",
+            "double_bed"
+        ]
+    },
+    {
+        "number": "T3",
+        "location": "Bodley's Court",
+        "band": 5,
+        "floor": 1,
+        "notes": "",
+        "long_contract": true,
+        "perks": [
+            "set",
+            "fridge",
+            "basin"
+        ]
+    },
+    {
+        "number": "T4",
+        "location": "Bodley's Court",
+        "band": 5,
+        "floor": 1,
+        "notes": "",
+        "long_contract": true,
+        "perks": [
+            "set",
+            "fridge",
+            "basin",
+            "double_bed"
+        ]
+    },
+    {
+        "number": "T5",
+        "location": "Bodley's Court",
+        "band": 5,
+        "floor": 2,
+        "notes": "",
+        "long_contract": true,
+        "perks": [
+            "set",
+            "fridge",
+            "basin"
+        ]
+    },
+    {
+        "number": "T6",
+        "location": "Bodley's Court",
+        "band": 5,
+        "floor": 2,
+        "notes": "",
+        "long_contract": true,
+        "perks": [
+            "set",
+            "fridge",
+            "basin",
+            "double_bed"
+        ]
+    },
+    {
+        "number": "T7",
+        "location": "Bodley's Court",
+        "band": 5,
+        "floor": 3,
+        "notes": "",
+        "long_contract": true,
+        "perks": [
+            "set",
+            "fridge",
+            "basin"
+        ]
+    },
+    {
+        "number": "T8",
+        "location": "Bodley's Court",
+        "band": 5,
+        "floor": 3,
+        "notes": "",
+        "long_contract": true,
+        "perks": [
+            "set",
+            "fridge",
+            "basin",
+            "double_bed"
+        ]
+    },
+    {
+        "number": "U1",
+        "location": "Bodley's Court",
+        "band": 5,
+        "floor": 0,
+        "notes": "",
+        "long_contract": true,
+        "perks": [
+            "set",
+            "fridge",
+            "basin",
+            "double_bed"
+        ]
+    },
+    {
+        "number": "U2",
+        "location": "Bodley's Court",
+        "band": 5,
+        "floor": 0,
+        "notes": "",
+        "long_contract": true,
+        "perks": [
+            "set",
+            "fridge",
+            "basin"
+        ]
+    },
+    {
+        "number": "U3",
+        "location": "Bodley's Court",
+        "band": 5,
+        "floor": 1,
+        "notes": "",
+        "long_contract": true,
+        "perks": [
+            "set",
+            "fridge",
+            "piano",
+            "basin",
+            "double_bed"
+        ]
+    },
+    {
+        "number": "U4",
+        "location": "Bodley's Court",
+        "band": 5,
+        "floor": 1,
+        "notes": "",
+        "long_contract": true,
+        "perks": [
+            "set",
+            "fridge",
+            "piano",
+            "basin"
+        ]
+    },
+    {
+        "number": "U5",
+        "location": "Bodley's Court",
+        "band": 5,
+        "floor": 2,
+        "notes": "",
+        "long_contract": true,
+        "perks": [
+            "set",
+            "fridge",
+            "piano",
+            "basin",
+            "double_bed"
+        ]
+    },
+    {
+        "number": "U6",
+        "location": "Bodley's Court",
+        "band": 5,
+        "floor": 2,
+        "notes": "",
+        "long_contract": true,
+        "perks": [
+            "set",
+            "fridge",
+            "basin"
+        ]
+    },
+    {
+        "number": "U7",
+        "location": "Bodley's Court",
+        "band": 5,
+        "floor": 3,
+        "notes": "",
+        "long_contract": true,
+        "perks": [
+            "set",
+            "fridge",
+            "piano",
+            "basin",
+            "double_bed"
+        ]
+    },
+    {
+        "number": "U8",
+        "location": "Bodley's Court",
+        "band": 5,
+        "floor": 3,
+        "notes": "",
+        "long_contract": true,
+        "perks": [
+            "set",
+            "fridge",
+            "piano",
+            "basin"
+        ]
+    },
+    {
+        "number": "V1",
+        "location": "Bodley's Court",
+        "band": 4,
+        "floor": 0,
+        "notes": "",
+        "long_contract": true,
+        "perks": [
+            "set",
+            "fridge",
+            "basin"
+        ]
+    },
+    {
+        "number": "V1a",
+        "location": "Bodley's Court",
+        "band": 3,
+        "floor": 0,
+        "notes": "",
+        "long_contract": true,
+        "perks": [
+            "fridge",
+            "basin"
+        ]
+    },
+    {
+        "number": "V2",
+        "location": "Bodley's Court",
+        "band": 5,
+        "floor": 0,
+        "notes": "",
+        "long_contract": true,
+        "perks": [
+            "set",
+            "fridge",
+            "basin"
+        ]
+    },
+    {
+        "number": "V3a",
+        "location": "Bodley's Court",
+        "band": 3,
+        "floor": 1,
+        "notes": "",
+        "long_contract": true,
+        "perks": [
+            "fridge",
+            "basin"
+        ]
+    },
+    {
+        "number": "V4",
+        "location": "Bodley's Court",
+        "band": 5,
+        "floor": 1,
+        "notes": "",
+        "long_contract": true,
+        "perks": [
+            "set",
+            "fridge",
+            "basin"
+        ]
+    },
+    {
+        "number": "V6",
+        "location": "Bodley's Court",
+        "band": 5,
+        "floor": 2,
+        "notes": "",
+        "long_contract": true,
+        "perks": [
+            "set",
+            "fridge",
+            "basin"
+        ]
+    },
+    {
+        "number": "V7a",
+        "location": "Bodley's Court",
+        "band": 3,
+        "floor": 3,
+        "notes": "",
+        "long_contract": true,
+        "perks": [
+            "fridge",
+            "basin"
+        ]
+    },
+    {
+        "number": "V7b",
+        "location": "Bodley's Court",
+        "band": 4,
+        "floor": 3,
+        "notes": "",
+        "long_contract": true,
+        "perks": [
+            "fridge",
+            "basin"
+        ]
+    },
+    {
+        "number": "V8",
+        "location": "Bodley's Court",
+        "band": 5,
+        "floor": 3,
+        "notes": "",
+        "long_contract": true,
+        "perks": [
+            "set",
+            "fridge",
+            "basin"
+        ]
+    },
+    {
+        "number": "W1",
+        "location": "Bodley's Court",
+        "band": 5,
+        "floor": 0,
+        "notes": "",
+        "long_contract": true,
+        "perks": [
+            "set",
+            "fridge",
+            "basin"
+        ]
+    },
+    {
+        "number": "W2",
+        "location": "Bodley's Court",
+        "band": 4,
+        "floor": 0,
+        "notes": "",
+        "long_contract": true,
+        "perks": [
+            "set",
+            "fridge",
+            "basin"
+        ]
+    },
+    {
+        "number": "W3",
+        "location": "Bodley's Court",
+        "band": 4,
+        "floor": 1,
+        "notes": "",
+        "long_contract": true,
+        "perks": [
+            "set",
+            "fridge",
+            "basin"
+        ]
+    },
+    {
+        "number": "W4",
+        "location": "Bodley's Court",
+        "band": 3,
+        "floor": 1,
+        "notes": "",
+        "long_contract": true,
+        "perks": [
+            "fridge"
+        ]
+    },
+    {
+        "number": "W5",
+        "location": "Bodley's Court",
+        "band": 4,
+        "floor": 2,
+        "notes": "",
+        "long_contract": true,
+        "perks": [
+            "set",
+            "fridge",
+            "basin"
+        ]
+    },
+    {
+        "number": "W7",
+        "location": "Bodley's Court",
+        "band": 4,
+        "floor": 3,
+        "notes": "",
+        "long_contract": true,
+        "perks": [
+            "set",
+            "fridge",
+            "basin"
+        ]
+    },
+    {
+        "number": "W8",
+        "location": "Bodley's Court",
+        "band": 4,
+        "floor": 3,
+        "notes": "",
+        "long_contract": true,
+        "perks": [
+            "set",
+            "fridge",
+            "basin"
+        ]
+    },
+    {
+        "number": "X1",
+        "location": "Bodley's Court",
+        "band": 5,
+        "floor": 0,
+        "notes": "",
+        "long_contract": true,
+        "perks": [
+            "set",
+            "fridge",
+            "basin"
+        ]
+    },
+    {
+        "number": "X2",
+        "location": "Bodley's Court",
+        "band": 5,
+        "floor": 0,
+        "notes": "",
+        "long_contract": true,
+        "perks": [
+            "set",
+            "fridge",
+            "basin"
+        ]
+    },
+    {
+        "number": "X3",
+        "location": "Bodley's Court",
+        "band": 4,
+        "floor": 0,
+        "notes": "",
+        "long_contract": true,
+        "perks": [
+            "fridge",
+            "basin"
+        ]
+    },
+    {
+        "number": "X4",
+        "location": "Bodley's Court",
+        "band": 4,
+        "floor": 0,
+        "notes": "",
+        "long_contract": true,
+        "perks": [
+            "fridge",
+            "basin"
+        ]
+    },
+    {
+        "number": "X5",
+        "location": "Bodley's Court",
+        "band": 1,
+        "floor": 0,
+        "notes": "",
+        "long_contract": true,
+        "perks": [
+            "fridge"
+        ]
+    },
+    {
+        "number": "X8",
+        "location": "Bodley's Court",
+        "band": 4,
+        "floor": 1,
+        "notes": "",
+        "long_contract": true,
+        "perks": [
+            "fridge",
+            "basin"
+        ]
+    },
+    {
+        "number": "X9",
+        "location": "Bodley's Court",
+        "band": 4,
+        "floor": 1,
+        "notes": "",
+        "long_contract": true,
+        "perks": [
+            "fridge",
+            "basin"
+        ]
+    },
+    {
+        "number": "X10",
+        "location": "Bodley's Court",
+        "band": 4,
+        "floor": 1,
+        "notes": "",
+        "long_contract": true,
+        "perks": [
+            "fridge",
+            "basin"
+        ]
+    },
+    {
+        "number": "X13",
+        "location": "Bodley's Court",
+        "band": 4,
+        "floor": 2,
+        "notes": "",
+        "long_contract": true,
+        "perks": [
+            "fridge",
+            "basin"
+        ]
+    },
+    {
+        "number": "X14",
+        "location": "Bodley's Court",
+        "band": 4,
+        "floor": 2,
+        "notes": "",
+        "long_contract": true,
+        "perks": [
+            "fridge",
+            "basin"
+        ]
+    },
+    {
+        "number": "X15",
+        "location": "Bodley's Court",
+        "band": 4,
+        "floor": 2,
+        "notes": "",
+        "long_contract": true,
+        "perks": [
+            "fridge",
+            "basin"
+        ]
+    },
+    {
+        "number": "X18",
+        "location": "Bodley's Court",
+        "band": 4,
+        "floor": 3,
+        "notes": "",
+        "long_contract": true,
+        "perks": [
+            "fridge",
+            "basin"
+        ]
+    },
+    {
+        "number": "X19",
+        "location": "Bodley's Court",
+        "band": 4,
+        "floor": 3,
+        "notes": "",
+        "long_contract": true,
+        "perks": [
+            "fridge",
+            "basin"
+        ]
+    },
+    {
+        "number": "X20",
+        "location": "Bodley's Court",
+        "band": 4,
+        "floor": 3,
+        "notes": "",
+        "long_contract": true,
+        "perks": [
+            "fridge",
+            "basin"
+        ]
+    },
+    {
+        "number": "Y1",
+        "location": "Bodley's Court",
+        "band": 5,
+        "floor": 0,
+        "notes": "",
+        "long_contract": true,
+        "perks": [
+            "set",
+            "fridge",
+            "basin"
+        ]
+    },
+    {
+        "number": "Y2",
+        "location": "Bodley's Court",
+        "band": 5,
+        "floor": 0,
+        "notes": "",
+        "long_contract": true,
+        "perks": [
+            "set",
+            "fridge",
+            "basin"
+        ]
+    },
+    {
+        "number": "Y3",
+        "location": "Bodley's Court",
+        "band": 5,
+        "floor": 0,
+        "notes": "",
+        "long_contract": true,
+        "perks": [
+            "set",
+            "fridge",
+            "basin"
+        ]
+    },
+    {
+        "number": "Y4",
+        "location": "Bodley's Court",
+        "band": 5,
+        "floor": 0,
+        "notes": "",
+        "long_contract": true,
+        "perks": [
+            "set",
+            "fridge",
+            "basin"
+        ]
+    },
+    {
+        "number": "BS201",
+        "location": "Bene’t Street",
+        "band": 5,
+        "floor": 2,
+        "notes": "",
+        "long_contract": false,
+        "perks": [
+            "ensuite"
+        ]
+    },
+    {
+        "number": "BS202",
+        "location": "Bene’t Street",
+        "band": 5,
+        "floor": 2,
+        "notes": "",
+        "long_contract": false,
+        "perks": [
+            "ensuite"
+        ]
+    },
+    {
+        "number": "BS203",
+        "location": "Bene’t Street",
+        "band": 5,
+        "floor": 2,
+        "notes": "",
+        "long_contract": false,
+        "perks": [
+            "ensuite"
+        ]
+    },
+    {
+        "number": "BS204",
+        "location": "Bene’t Street",
+        "band": 5,
+        "floor": 2,
+        "notes": "",
+        "long_contract": false,
+        "perks": [
+            "ensuite"
+        ]
+    },
+    {
+        "number": "BS205",
+        "location": "Bene’t Street",
+        "band": 5,
+        "floor": 2,
+        "notes": "",
+        "long_contract": false,
+        "perks": [
+            "ensuite"
+        ]
+    },
+    {
+        "number": "BS206",
+        "location": "Bene’t Street",
+        "band": 6,
+        "floor": 2,
+        "notes": "",
+        "long_contract": false,
+        "perks": [
+            "ensuite",
+            "double_bed"
+        ]
+    },
+    {
+        "number": "BS207",
+        "location": "Bene’t Street",
+        "band": 5,
+        "floor": 2,
+        "notes": "",
+        "long_contract": false,
+        "perks": [
+            "ensuite",
+            "double_bed"
+        ]
+    },
+    {
+        "number": "BS208",
+        "location": "Bene’t Street",
+        "band": 6,
+        "floor": 2,
+        "notes": "",
+        "long_contract": false,
+        "perks": [
+            "ensuite",
+            "double_bed"
+        ]
+    },
+    {
+        "number": "BS210",
+        "location": "Bene’t Street",
+        "band": 4,
+        "floor": 2,
+        "notes": "",
+        "long_contract": false,
+        "perks": [
+            "ensuite"
+        ]
+    },
+    {
+        "number": "BS211",
+        "location": "Bene’t Street",
+        "band": 6,
+        "floor": 2,
+        "notes": "",
+        "long_contract": false,
+        "perks": [
+            "ensuite",
+            "double_bed"
+        ]
+    },
+    {
+        "number": "BS212",
+        "location": "Bene’t Street",
+        "band": 6,
+        "floor": 2,
+        "notes": "",
+        "long_contract": false,
+        "perks": [
+            "ensuite",
+            "double_bed"
+        ]
+    },
+    {
+        "number": "BS213",
+        "location": "Bene’t Street",
+        "band": 6,
+        "floor": 2,
+        "notes": "",
+        "long_contract": false,
+        "perks": [
+            "ensuite",
+            "double_bed"
+        ]
+    },
+    {
+        "number": "BS214",
+        "location": "Bene’t Street",
+        "band": 6,
+        "floor": 2,
+        "notes": "",
+        "long_contract": false,
+        "perks": [
+            "ensuite",
+            "double_bed"
+        ]
+    },
+    {
+        "number": "BS301",
+        "location": "Bene’t Street",
+        "band": 4,
+        "floor": 3,
+        "notes": "",
+        "long_contract": false,
+        "perks": [
+            "ensuite"
+        ]
+    },
+    {
+        "number": "BS302",
+        "location": "Bene’t Street",
+        "band": 4,
+        "floor": 3,
+        "notes": "",
+        "long_contract": false,
+        "perks": [
+            "ensuite"
+        ]
+    },
+    {
+        "number": "BS303",
+        "location": "Bene’t Street",
+        "band": 4,
+        "floor": 3,
+        "notes": "",
+        "long_contract": false,
+        "perks": [
+            "ensuite"
+        ]
+    },
+    {
+        "number": "BS304",
+        "location": "Bene’t Street",
+        "band": 4,
+        "floor": 3,
+        "notes": "",
+        "long_contract": false,
+        "perks": [
+            "ensuite"
+        ]
+    },
+    {
+        "number": "BS305",
+        "location": "Bene’t Street",
+        "band": 4,
+        "floor": 3,
+        "notes": "",
+        "long_contract": false,
+        "perks": [
+            "ensuite"
+        ]
+    },
+    {
+        "number": "BS306",
+        "location": "Bene’t Street",
+        "band": 5,
+        "floor": 3,
+        "notes": "",
+        "long_contract": false,
+        "perks": [
+            "ensuite"
+        ]
+    },
+    {
+        "number": "BS307",
+        "location": "Bene’t Street",
+        "band": 6,
+        "floor": 3,
+        "notes": "",
+        "long_contract": false,
+        "perks": [
+            "ensuite",
+            "double_bed"
+        ]
+    },
+    {
+        "number": "BS308",
+        "location": "Bene’t Street",
+        "band": 6,
+        "floor": 3,
+        "notes": "",
+        "long_contract": false,
+        "perks": [
+            "ensuite",
+            "double_bed"
+        ]
+    },
+    {
+        "number": "BS309",
+        "location": "Bene’t Street",
+        "band": 6,
+        "floor": 3,
+        "notes": "",
+        "long_contract": false,
+        "perks": [
+            "ensuite",
+            "double_bed"
+        ]
+    },
+    {
+        "number": "BS310",
+        "location": "Bene’t Street",
+        "band": 6,
+        "floor": 3,
+        "notes": "",
+        "long_contract": false,
+        "perks": [
+            "ensuite",
+            "double_bed"
+        ]
+    },
+    {
+        "number": "BS311",
+        "location": "Bene’t Street",
+        "band": 6,
+        "floor": 3,
+        "notes": "",
+        "long_contract": false,
+        "perks": [
+            "ensuite",
+            "double_bed"
+        ]
+    },
+    {
+        "number": "BS312",
+        "location": "Bene’t Street",
+        "band": 6,
+        "floor": 3,
+        "notes": "",
+        "long_contract": false,
+        "perks": [
+            "ensuite"
+        ]
+    },
+    {
+        "number": "BS313",
+        "location": "Bene’t Street",
+        "band": 6,
+        "floor": 3,
+        "notes": "",
+        "long_contract": false,
+        "perks": [
+            "ensuite",
+            "double_bed"
+        ]
+    },
+    {
+        "number": "BS314",
+        "location": "Bene’t Street",
+        "band": 5,
+        "floor": 3,
+        "notes": "",
+        "long_contract": false,
+        "perks": [
+            "ensuite",
+            "double_bed"
+        ]
+    },
+    {
+        "number": "BS315",
+        "location": "Bene’t Street",
+        "band": 6,
+        "floor": 3,
+        "notes": "",
+        "long_contract": false,
+        "perks": [
+            "ensuite",
+            "double_bed"
+        ]
+    },
+    {
+        "number": "BS316",
+        "location": "Bene’t Street",
+        "band": 5,
+        "floor": 3,
+        "notes": "",
+        "long_contract": false,
+        "perks": [
+            "ensuite"
+        ]
+    },
+    {
+        "number": "BS317",
+        "location": "Bene’t Street",
+        "band": 6,
+        "floor": 3,
+        "notes": "",
+        "long_contract": false,
+        "perks": [
+            "ensuite",
+            "double_bed"
+        ]
+    },
+    {
+        "number": "MH101",
+        "location": "Market Hostel",
+        "band": 4,
+        "floor": 1,
+        "notes": "",
+        "long_contract": true,
+        "perks": [
+            "basin"
+        ]
+    },
+    {
+        "number": "MH102",
+        "location": "Market Hostel",
+        "band": 5,
+        "floor": 1,
+        "notes": "",
+        "long_contract": true,
+        "perks": [
+            "piano",
+            "basin"
+        ]
+    },
+    {
+        "number": "MH103",
+        "location": "Market Hostel",
+        "band": 5,
+        "floor": 1,
+        "notes": "",
+        "long_contract": true,
+        "perks": [
+            "ensuite"
+        ]
+    },
+    {
+        "number": "MH104",
+        "location": "Market Hostel",
+        "band": 5,
+        "floor": 1,
+        "notes": "",
+        "long_contract": true,
+        "perks": [
+            "ensuite"
+        ]
+    },
+    {
+        "number": "MH106",
+        "location": "Market Hostel",
+        "band": 6,
+        "floor": 1,
+        "notes": "",
+        "long_contract": true,
+        "perks": [
+            "piano",
+            "ensuite"
+        ]
+    },
+    {
+        "number": "MH107",
+        "location": "Market Hostel",
+        "band": 6,
+        "floor": 1,
+        "notes": "",
+        "long_contract": true,
+        "perks": [
+            "ensuite",
+            "double_bed"
+        ]
+    },
+    {
+        "number": "MH108",
+        "location": "Market Hostel",
+        "band": 3,
+        "floor": 1,
+        "notes": "",
+        "long_contract": true,
+        "perks": [
+            "basin"
+        ]
+    },
+    {
+        "number": "MH109",
+        "location": "Market Hostel",
+        "band": 3,
+        "floor": 1,
+        "notes": "",
+        "long_contract": true,
+        "perks": [
+            "basin"
+        ]
+    },
+    {
+        "number": "MH110",
+        "location": "Market Hostel",
+        "band": 3,
+        "floor": 1,
+        "notes": "",
+        "long_contract": true,
+        "perks": [
+            "basin"
+        ]
+    },
+    {
+        "number": "MH111",
+        "location": "Market Hostel",
+        "band": 3,
+        "floor": 1,
+        "notes": "",
+        "long_contract": true,
+        "perks": [
+            "basin"
+        ]
+    },
+    {
+        "number": "MH112",
+        "location": "Market Hostel",
+        "band": 3,
+        "floor": 1,
+        "notes": "",
+        "long_contract": true,
+        "perks": [
+            "basin"
+        ]
+    },
+    {
+        "number": "MH113",
+        "location": "Market Hostel",
+        "band": 3,
+        "floor": 1,
+        "notes": "",
+        "long_contract": true,
+        "perks": [
+            "basin"
+        ]
+    },
+    {
+        "number": "MH114",
+        "location": "Market Hostel",
+        "band": 3,
+        "floor": 1,
+        "notes": "",
+        "long_contract": true,
+        "perks": [
+            "basin"
+        ]
+    },
+    {
+        "number": "MH203",
+        "location": "Market Hostel",
+        "band": 5,
+        "floor": 2,
+        "notes": "",
+        "long_contract": true,
+        "perks": [
+            "ensuite"
+        ]
+    },
+    {
+        "number": "MH204",
+        "location": "Market Hostel",
+        "band": 5,
+        "floor": 2,
+        "notes": "",
+        "long_contract": true,
+        "perks": [
+            "ensuite"
+        ]
+    },
+    {
+        "number": "MH205",
+        "location": "Market Hostel",
+        "band": 5,
+        "floor": 2,
+        "notes": "",
+        "long_contract": true,
+        "perks": [
+            "ensuite"
+        ]
+    },
+    {
+        "number": "MH206",
+        "location": "Market Hostel",
+        "band": 6,
+        "floor": 2,
+        "notes": "",
+        "long_contract": true,
+        "perks": [
+            "piano",
+            "ensuite"
+        ]
+    },
+    {
+        "number": "MH207",
+        "location": "Market Hostel",
+        "band": 6,
+        "floor": 2,
+        "notes": "",
+        "long_contract": true,
+        "perks": [
+            "piano",
+            "ensuite"
+        ]
+    },
+    {
+        "number": "MH208",
+        "location": "Market Hostel",
+        "band": 6,
+        "floor": 2,
+        "notes": "",
+        "long_contract": true,
+        "perks": [
+            "piano",
+            "ensuite"
+        ]
+    },
+    {
+        "number": "MH209",
+        "location": "Market Hostel",
+        "band": 3,
+        "floor": 2,
+        "notes": "",
+        "long_contract": true,
+        "perks": [
+            "basin"
+        ]
+    },
+    {
+        "number": "MH210",
+        "location": "Market Hostel",
+        "band": 3,
+        "floor": 2,
+        "notes": "",
+        "long_contract": true,
+        "perks": [
+            "basin"
+        ]
+    },
+    {
+        "number": "MH211",
+        "location": "Market Hostel",
+        "band": 3,
+        "floor": 2,
+        "notes": "",
+        "long_contract": true,
+        "perks": [
+            "basin"
+        ]
+    },
+    {
+        "number": "MH212",
+        "location": "Market Hostel",
+        "band": 3,
+        "floor": 2,
+        "notes": "",
+        "long_contract": true,
+        "perks": [
+            "basin"
+        ]
+    },
+    {
+        "number": "MH213",
+        "location": "Market Hostel",
+        "band": 3,
+        "floor": 2,
+        "notes": "",
+        "long_contract": true,
+        "perks": [
+            "basin"
+        ]
+    },
+    {
+        "number": "MH214",
+        "location": "Market Hostel",
+        "band": 3,
+        "floor": 2,
+        "notes": "",
+        "long_contract": true,
+        "perks": [
+            "basin"
+        ]
+    },
+    {
+        "number": "MH215",
+        "location": "Market Hostel",
+        "band": 3,
+        "floor": 2,
+        "notes": "",
+        "long_contract": true,
+        "perks": [
+            "basin"
+        ]
+    },
+    {
+        "number": "MH303",
+        "location": "Market Hostel",
+        "band": 5,
+        "floor": 3,
+        "notes": "",
+        "long_contract": true,
+        "perks": [
+            "ensuite"
+        ]
+    },
+    {
+        "number": "MH304",
+        "location": "Market Hostel",
+        "band": 5,
+        "floor": 3,
+        "notes": "",
+        "long_contract": true,
+        "perks": [
+            "ensuite"
+        ]
+    },
+    {
+        "number": "MH305",
+        "location": "Market Hostel",
+        "band": 5,
+        "floor": 3,
+        "notes": "",
+        "long_contract": true,
+        "perks": [
+            "ensuite"
+        ]
+    },
+    {
+        "number": "MH306",
+        "location": "Market Hostel",
+        "band": 6,
+        "floor": 3,
+        "notes": "",
+        "long_contract": true,
+        "perks": [
+            "piano",
+            "ensuite"
+        ]
+    },
+    {
+        "number": "MH307",
+        "location": "Market Hostel",
+        "band": 6,
+        "floor": 3,
+        "notes": "",
+        "long_contract": true,
+        "perks": [
+            "piano",
+            "ensuite"
+        ]
+    },
+    {
+        "number": "MH308",
+        "location": "Market Hostel",
+        "band": 6,
+        "floor": 3,
+        "notes": "",
+        "long_contract": true,
+        "perks": [
+            "piano",
+            "ensuite",
+            "double_bed"
+        ]
+    },
+    {
+        "number": "MH309",
+        "location": "Market Hostel",
+        "band": 3,
+        "floor": 3,
+        "notes": "",
+        "long_contract": true,
+        "perks": [
+            "basin"
+        ]
+    },
+    {
+        "number": "MH310",
+        "location": "Market Hostel",
+        "band": 3,
+        "floor": 3,
+        "notes": "",
+        "long_contract": true,
+        "perks": [
+            "basin"
+        ]
+    },
+    {
+        "number": "MH311",
+        "location": "Market Hostel",
+        "band": 3,
+        "floor": 3,
+        "notes": "",
+        "long_contract": true,
+        "perks": [
+            "basin"
+        ]
+    },
+    {
+        "number": "MH312",
+        "location": "Market Hostel",
+        "band": 3,
+        "floor": 3,
+        "notes": "",
+        "long_contract": true,
+        "perks": [
+            "basin"
+        ]
+    },
+    {
+        "number": "GN1",
+        "location": "New Garden Hostel",
+        "band": 4,
+        "floor": 0,
+        "notes": "Disabled Room",
+        "long_contract": true,
+        "perks": [
+            "fridge",
+            "ensuite"
+        ]
+    },
+    {
+        "number": "GN2",
+        "location": "New Garden Hostel",
+        "band": 4,
+        "floor": 0,
+        "notes": "",
+        "long_contract": true,
+        "perks": [
+            "fridge",
+            "ensuite"
+        ]
+    },
+    {
+        "number": "GN3",
+        "location": "New Garden Hostel",
+        "band": 4,
+        "floor": 0,
+        "notes": "",
+        "long_contract": true,
+        "perks": [
+            "fridge",
+            "ensuite"
+        ]
+    },
+    {
+        "number": "GN4",
+        "location": "New Garden Hostel",
+        "band": 4,
+        "floor": 0,
+        "notes": "",
+        "long_contract": true,
+        "perks": [
+            "fridge",
+            "ensuite"
+        ]
+    },
+    {
+        "number": "GN5",
+        "location": "New Garden Hostel",
+        "band": 4,
+        "floor": 0,
+        "notes": "",
+        "long_contract": true,
+        "perks": [
+            "fridge",
+            "ensuite"
+        ]
+    },
+    {
+        "number": "GN6",
+        "location": "New Garden Hostel",
+        "band": 4,
+        "floor": 0,
+        "notes": "",
+        "long_contract": true,
+        "perks": [
+            "fridge",
+            "ensuite"
+        ]
+    },
+    {
+        "number": "GN7",
+        "location": "New Garden Hostel",
+        "band": 4,
+        "floor": 0,
+        "notes": "",
+        "long_contract": true,
+        "perks": [
+            "fridge",
+            "ensuite"
+        ]
+    },
+    {
+        "number": "GN8",
+        "location": "New Garden Hostel",
+        "band": 4,
+        "floor": 0,
+        "notes": "",
+        "long_contract": true,
+        "perks": [
+            "fridge",
+            "ensuite"
+        ]
+    },
+    {
+        "number": "GN11",
+        "location": "New Garden Hostel",
+        "band": 4,
+        "floor": 1,
+        "notes": "",
+        "long_contract": true,
+        "perks": [
+            "fridge",
+            "ensuite"
+        ]
+    },
+    {
+        "number": "GN12",
+        "location": "New Garden Hostel",
+        "band": 4,
+        "floor": 1,
+        "notes": "",
+        "long_contract": true,
+        "perks": [
+            "fridge",
+            "ensuite"
+        ]
+    },
+    {
+        "number": "GN13",
+        "location": "New Garden Hostel",
+        "band": 4,
+        "floor": 1,
+        "notes": "",
+        "long_contract": true,
+        "perks": [
+            "fridge",
+            "ensuite"
+        ]
+    },
+    {
+        "number": "GN14",
+        "location": "New Garden Hostel",
+        "band": 4,
+        "floor": 1,
+        "notes": "",
+        "long_contract": true,
+        "perks": [
+            "fridge",
+            "ensuite"
+        ]
+    },
+    {
+        "number": "GN15",
+        "location": "New Garden Hostel",
+        "band": 4,
+        "floor": 1,
+        "notes": "",
+        "long_contract": true,
+        "perks": [
+            "fridge",
+            "ensuite"
+        ]
+    },
+    {
+        "number": "GN16",
+        "location": "New Garden Hostel",
+        "band": 4,
+        "floor": 1,
+        "notes": "",
+        "long_contract": true,
+        "perks": [
+            "fridge",
+            "ensuite"
+        ]
+    },
+    {
+        "number": "GN17",
+        "location": "New Garden Hostel",
+        "band": 4,
+        "floor": 1,
+        "notes": "",
+        "long_contract": true,
+        "perks": [
+            "fridge",
+            "ensuite"
+        ]
+    },
+    {
+        "number": "GN18",
+        "location": "New Garden Hostel",
+        "band": 4,
+        "floor": 1,
+        "notes": "",
+        "long_contract": true,
+        "perks": [
+            "fridge",
+            "ensuite"
+        ]
+    },
+    {
+        "number": "GN19",
+        "location": "New Garden Hostel",
+        "band": 4,
+        "floor": 1,
+        "notes": "",
+        "long_contract": true,
+        "perks": [
+            "fridge",
+            "ensuite"
+        ]
+    },
+    {
+        "number": "GN21",
+        "location": "New Garden Hostel",
+        "band": 4,
+        "floor": 2,
+        "notes": "",
+        "long_contract": true,
+        "perks": [
+            "fridge",
+            "ensuite"
+        ]
+    },
+    {
+        "number": "GN22",
+        "location": "New Garden Hostel",
+        "band": 4,
+        "floor": 2,
+        "notes": "",
+        "long_contract": true,
+        "perks": [
+            "fridge",
+            "ensuite"
+        ]
+    },
+    {
+        "number": "GN23",
+        "location": "New Garden Hostel",
+        "band": 4,
+        "floor": 2,
+        "notes": "",
+        "long_contract": true,
+        "perks": [
+            "fridge",
+            "ensuite"
+        ]
+    },
+    {
+        "number": "GN24",
+        "location": "New Garden Hostel",
+        "band": 4,
+        "floor": 2,
+        "notes": "",
+        "long_contract": true,
+        "perks": [
+            "fridge",
+            "ensuite"
+        ]
+    },
+    {
+        "number": "GN25",
+        "location": "New Garden Hostel",
+        "band": 4,
+        "floor": 2,
+        "notes": "",
+        "long_contract": true,
+        "perks": [
+            "fridge",
+            "ensuite"
+        ]
+    },
+    {
+        "number": "GN26",
+        "location": "New Garden Hostel",
+        "band": 4,
+        "floor": 2,
+        "notes": "",
+        "long_contract": true,
+        "perks": [
+            "fridge",
+            "ensuite"
+        ]
+    },
+    {
+        "number": "GN27",
+        "location": "New Garden Hostel",
+        "band": 4,
+        "floor": 2,
+        "notes": "",
+        "long_contract": true,
+        "perks": [
+            "fridge",
+            "ensuite"
+        ]
+    },
+    {
+        "number": "GN28",
+        "location": "New Garden Hostel",
+        "band": 4,
+        "floor": 2,
+        "notes": "",
+        "long_contract": true,
+        "perks": [
+            "fridge",
+            "ensuite"
+        ]
+    },
+    {
+        "number": "GN31*",
+        "location": "New Garden Hostel",
+        "band": 4,
+        "floor": 3,
+        "notes": "",
+        "long_contract": true,
+        "perks": [
+            "fridge",
+            "ensuite"
+        ]
+    },
+    {
+        "number": "GN32*",
+        "location": "New Garden Hostel",
+        "band": 4,
+        "floor": 3,
+        "notes": "",
+        "long_contract": true,
+        "perks": [
+            "fridge",
+            "ensuite"
+        ]
+    },
+    {
+        "number": "GN33*",
+        "location": "New Garden Hostel",
+        "band": 4,
+        "floor": 3,
+        "notes": "",
+        "long_contract": true,
+        "perks": [
+            "fridge",
+            "ensuite"
+        ]
+    },
+    {
+        "number": "GN34*",
+        "location": "New Garden Hostel",
+        "band": 4,
+        "floor": 3,
+        "notes": "",
+        "long_contract": true,
+        "perks": [
+            "fridge",
+            "ensuite"
+        ]
+    },
+    {
+        "number": "GN35*",
+        "location": "New Garden Hostel",
+        "band": 4,
+        "floor": 3,
+        "notes": "",
+        "long_contract": true,
+        "perks": [
+            "fridge",
+            "ensuite"
+        ]
+    },
+    {
+        "number": "GN36*",
+        "location": "New Garden Hostel",
+        "band": 4,
+        "floor": 3,
+        "notes": "",
+        "long_contract": true,
+        "perks": [
+            "fridge",
+            "ensuite"
+        ]
+    },
+    {
+        "number": "GN37*",
+        "location": "New Garden Hostel",
+        "band": 4,
+        "floor": 3,
+        "notes": "",
+        "long_contract": true,
+        "perks": [
+            "fridge",
+            "ensuite"
+        ]
+    },
+    {
+        "number": "A7",
+        "location": "A Staircase",
+        "band": 3,
+        "floor": 1,
+        "notes": "",
+        "long_contract": true,
+        "perks": []
+    },
+    {
+        "number": "A8",
+        "location": "A Staircase",
+        "band": 3,
+        "floor": 1,
+        "notes": "",
+        "long_contract": true,
+        "perks": []
+    },
+    {
+        "number": "A9",
+        "location": "A Staircase",
+        "band": 3,
+        "floor": 1,
+        "notes": "",
+        "long_contract": true,
+        "perks": []
+    },
+    {
+        "number": "A10",
+        "location": "A Staircase",
+        "band": 3,
+        "floor": 1,
+        "notes": "",
+        "long_contract": true,
+        "perks": []
+    },
+    {
+        "number": "A11",
+        "location": "A Staircase",
+        "band": 2,
+        "floor": 1,
+        "notes": "",
+        "long_contract": true,
+        "perks": []
+    },
+    {
+        "number": "A12",
+        "location": "A Staircase",
+        "band": 2,
+        "floor": 1,
+        "notes": "",
+        "long_contract": true,
+        "perks": []
+    },
+    {
+        "number": "A16",
+        "location": "A Staircase",
+        "band": 3,
+        "floor": 2,
+        "notes": "",
+        "long_contract": true,
+        "perks": []
+    },
+    {
+        "number": "A17",
+        "location": "A Staircase",
+        "band": 4,
+        "floor": 2,
+        "notes": "",
+        "long_contract": true,
+        "perks": [
+            "piano"
+        ]
+    },
+    {
+        "number": "A18",
+        "location": "A Staircase",
+        "band": 2,
+        "floor": 2,
+        "notes": "",
+        "long_contract": true,
+        "perks": []
+    },
+    {
+        "number": "A19",
+        "location": "A Staircase",
+        "band": 2,
+        "floor": 2,
+        "notes": "",
+        "long_contract": true,
+        "perks": []
+    },
+    {
+        "number": "A20",
+        "location": "A Staircase",
+        "band": 2,
+        "floor": 2,
+        "notes": "",
+        "long_contract": true,
+        "perks": []
+    },
+    {
+        "number": "A21",
+        "location": "A Staircase",
+        "band": 2,
+        "floor": 2,
+        "notes": "",
+        "long_contract": true,
+        "perks": []
+    },
+    {
+        "number": "A22",
+        "location": "A Staircase",
+        "band": 2,
+        "floor": 2,
+        "notes": "",
+        "long_contract": true,
+        "perks": []
+    },
+    {
+        "number": "A23",
+        "location": "A Staircase",
+        "band": 2,
+        "floor": 2,
+        "notes": "",
+        "long_contract": true,
+        "perks": []
+    },
+    {
+        "number": "Q4",
+        "location": "Webb's Court",
+        "band": 2,
+        "floor": 1,
+        "notes": "",
+        "long_contract": true,
+        "perks": [
+            "basin"
+        ]
+    },
+    {
+        "number": "Q5",
+        "location": "Webb's Court",
+        "band": 2,
+        "floor": 1,
+        "notes": "",
+        "long_contract": true,
+        "perks": [
+            "basin"
+        ]
+    },
+    {
+        "number": "Q7",
+        "location": "Webb's Court",
+        "band": 3,
+        "floor": 2,
+        "notes": "",
+        "long_contract": true,
+        "perks": [
+            "basin"
+        ]
+    },
+    {
+        "number": "Q8",
+        "location": "Webb's Court",
+        "band": 3,
+        "floor": 2,
+        "notes": "",
+        "long_contract": true,
+        "perks": [
+            "basin"
+        ]
+    },
+    {
+        "number": "Q9",
+        "location": "Webb's Court",
+        "band": 3,
+        "floor": 2,
+        "notes": "",
+        "long_contract": true,
+        "perks": [
+            "basin"
+        ]
+    },
+    {
+        "number": "Q10",
+        "location": "Webb's Court",
+        "band": 3,
+        "floor": 2,
+        "notes": "",
+        "long_contract": true,
+        "perks": [
+            "basin"
+        ]
+    },
+    {
+        "number": "Q11a",
+        "location": "Webb's Court",
+        "band": 2,
+        "floor": 3,
+        "notes": "",
+        "long_contract": true,
+        "perks": [
+            "fridge",
+            "basin"
+        ]
+    },
+    {
+        "number": "Q11b",
+        "location": "Webb's Court",
+        "band": 2,
+        "floor": 3,
+        "notes": "",
+        "long_contract": true,
+        "perks": [
+            "fridge",
+            "basin"
+        ]
+    },
+    {
+        "number": "Q12a",
+        "location": "Webb's Court",
+        "band": 3,
+        "floor": 3,
+        "notes": "",
+        "long_contract": true,
+        "perks": [
+            "fridge",
+            "basin"
+        ]
+    },
+    {
+        "number": "Q12b",
+        "location": "Webb's Court",
+        "band": 3,
+        "floor": 3,
+        "notes": "",
+        "long_contract": true,
+        "perks": [
+            "fridge",
+            "basin"
+        ]
+    },
+    {
+        "number": "Q13a",
+        "location": "Webb's Court",
+        "band": 3,
+        "floor": 3,
+        "notes": "",
+        "long_contract": true,
+        "perks": [
+            "fridge",
+            "basin"
+        ]
+    },
+    {
+        "number": "Q13b",
+        "location": "Webb's Court",
+        "band": 3,
+        "floor": 3,
+        "notes": "",
+        "long_contract": true,
+        "perks": [
+            "fridge",
+            "basin"
+        ]
+    },
+    {
+        "number": "R1b",
+        "location": "Webb's Court",
+        "band": 2,
+        "floor": 0,
+        "notes": "",
+        "long_contract": true,
+        "perks": [
+            "fridge"
+        ]
+    },
+    {
+        "number": "R2b",
+        "location": "Webb's Court",
+        "band": 2,
+        "floor": 0,
+        "notes": "",
+        "long_contract": true,
+        "perks": [
+            "fridge"
+        ]
+    },
+    {
+        "number": "R4",
+        "location": "Webb's Court",
+        "band": 3,
+        "floor": 1,
+        "notes": "",
+        "long_contract": true,
+        "perks": [
+            "fridge",
+            "basin"
+        ]
+    },
+    {
+        "number": "R5",
+        "location": "Webb's Court",
+        "band": 3,
+        "floor": 1,
+        "notes": "",
+        "long_contract": true,
+        "perks": [
+            "fridge",
+            "basin"
+        ]
+    },
+    {
+        "number": "R7",
+        "location": "Webb's Court",
+        "band": 3,
+        "floor": 2,
+        "notes": "",
+        "long_contract": true,
+        "perks": [
+            "fridge",
+            "basin"
+        ]
+    },
+    {
+        "number": "R8",
+        "location": "Webb's Court",
+        "band": 3,
+        "floor": 2,
+        "notes": "",
+        "long_contract": true,
+        "perks": [
+            "fridge",
+            "basin"
+        ]
+    },
+    {
+        "number": "R9",
+        "location": "Webb's Court",
+        "band": 3,
+        "floor": 2,
+        "notes": "",
+        "long_contract": true,
+        "perks": [
+            "fridge",
+            "basin"
+        ]
+    },
+    {
+        "number": "R10",
+        "location": "Webb's Court",
+        "band": 3,
+        "floor": 2,
+        "notes": "",
+        "long_contract": true,
+        "perks": [
+            "fridge",
+            "basin"
+        ]
+    },
+    {
+        "number": "R11a",
+        "location": "Webb's Court",
+        "band": 3,
+        "floor": 3,
+        "notes": "",
+        "long_contract": true,
+        "perks": [
+            "fridge",
+            "basin"
+        ]
+    },
+    {
+        "number": "R11b",
+        "location": "Webb's Court",
+        "band": 3,
+        "floor": 3,
+        "notes": "",
+        "long_contract": true,
+        "perks": [
+            "fridge",
+            "basin"
+        ]
+    },
+    {
+        "number": "R12a",
+        "location": "Webb's Court",
+        "band": 3,
+        "floor": 3,
+        "notes": "",
+        "long_contract": true,
+        "perks": [
+            "fridge",
+            "basin"
+        ]
+    },
+    {
+        "number": "R12b",
+        "location": "Webb's Court",
+        "band": 3,
+        "floor": 3,
+        "notes": "",
+        "long_contract": true,
+        "perks": [
+            "fridge",
+            "basin"
+        ]
+    },
+    {
+        "number": "CR1",
+        "location": "Cranmer Road",
+        "band": 3,
+        "floor": 0,
+        "notes": "",
+        "long_contract": true,
+        "perks": [
+            "fridge",
+            "basin"
+        ]
+    },
+    {
+        "number": "CR2",
+        "location": "Cranmer Road",
+        "band": 3,
+        "floor": 0,
+        "notes": "",
+        "long_contract": true,
+        "perks": [
+            "fridge",
+            "basin"
+        ]
+    },
+    {
+        "number": "CR3",
+        "location": "Cranmer Road",
+        "band": 2,
+        "floor": 0,
+        "notes": "",
+        "long_contract": true,
+        "perks": [
+            "fridge",
+            "basin"
+        ]
+    },
+    {
+        "number": "CR4",
+        "location": "Cranmer Road",
+        "band": 2,
+        "floor": 0,
+        "notes": "",
+        "long_contract": true,
+        "perks": [
+            "fridge",
+            "basin"
+        ]
+    },
+    {
+        "number": "CR6",
+        "location": "Cranmer Road",
+        "band": 2,
+        "floor": 0,
+        "notes": "",
+        "long_contract": true,
+        "perks": [
+            "fridge",
+            "basin"
+        ]
+    },
+    {
+        "number": "CR7",
+        "location": "Cranmer Road",
+        "band": 4,
+        "floor": 1,
+        "notes": "",
+        "long_contract": true,
+        "perks": [
+            "fridge",
+            "basin"
+        ]
+    },
+    {
+        "number": "CR8",
+        "location": "Cranmer Road",
+        "band": 3,
+        "floor": 1,
+        "notes": "",
+        "long_contract": true,
+        "perks": [
+            "fridge",
+            "basin"
+        ]
+    },
+    {
+        "number": "CR9",
+        "location": "Cranmer Road",
+        "band": 3,
+        "floor": 1,
+        "notes": "",
+        "long_contract": true,
+        "perks": [
+            "fridge",
+            "basin"
+        ]
+    },
+    {
+        "number": "CR10",
+        "location": "Cranmer Road",
+        "band": 3,
+        "floor": 1,
+        "notes": "",
+        "long_contract": true,
+        "perks": [
+            "fridge",
+            "basin"
+        ]
+    },
+    {
+        "number": "CR11",
+        "location": "Cranmer Road",
+        "band": 3,
+        "floor": 1,
+        "notes": "",
+        "long_contract": true,
+        "perks": [
+            "fridge",
+            "basin"
+        ]
+    },
+    {
+        "number": "CR12",
+        "location": "Cranmer Road",
+        "band": 3,
+        "floor": 1,
+        "notes": "",
+        "long_contract": true,
+        "perks": [
+            "fridge",
+            "basin"
+        ]
+    },
+    {
+        "number": "CR13",
+        "location": "Cranmer Road",
+        "band": 3,
+        "floor": 1,
+        "notes": "",
+        "long_contract": true,
+        "perks": [
+            "fridge",
+            "basin"
+        ]
+    },
+    {
+        "number": "CR14",
+        "location": "Cranmer Road",
+        "band": 3,
+        "floor": 2,
+        "notes": "Low Ceiling",
+        "long_contract": true,
+        "perks": [
+            "fridge",
+            "basin"
+        ]
+    },
+    {
+        "number": "CR15",
+        "location": "Cranmer Road",
+        "band": 3,
+        "floor": 2,
+        "notes": "Low Ceiling",
+        "long_contract": true,
+        "perks": [
+            "fridge",
+            "basin"
+        ]
+    },
+    {
+        "number": "CR16",
+        "location": "Cranmer Road",
+        "band": 4,
+        "floor": 2,
+        "notes": "Low Ceiling",
+        "long_contract": true,
+        "perks": [
+            "fridge",
+            "basin"
+        ]
+    },
+    {
+        "number": "CR17",
+        "location": "Cranmer Road",
+        "band": 4,
+        "floor": 2,
+        "notes": "Low Ceiling",
+        "long_contract": true,
+        "perks": [
+            "fridge",
+            "basin"
+        ]
+    },
+    {
+        "number": "G01",
+        "location": "Cranmer Road",
+        "band": 5,
+        "floor": 0,
+        "notes": "",
+        "long_contract": false,
+        "perks": [
+            "ensuite"
+        ]
+    },
+    {
+        "number": "G02",
+        "location": "Cranmer Road",
+        "band": 5,
+        "floor": 0,
+        "notes": "",
+        "long_contract": false,
+        "perks": [
+            "ensuite"
+        ]
+    },
+    {
+        "number": "G03",
+        "location": "Cranmer Road",
+        "band": 5,
+        "floor": 0,
+        "notes": "",
+        "long_contract": false,
+        "perks": [
+            "ensuite"
+        ]
+    },
+    {
+        "number": "G04",
+        "location": "Cranmer Road",
+        "band": 5,
+        "floor": 0,
+        "notes": "",
+        "long_contract": false,
+        "perks": [
+            "ensuite"
+        ]
+    },
+    {
+        "number": "G05",
+        "location": "Cranmer Road",
+        "band": 5,
+        "floor": 0,
+        "notes": "",
+        "long_contract": false,
+        "perks": [
+            "ensuite"
+        ]
+    },
+    {
+        "number": "G06",
+        "location": "Cranmer Road",
+        "band": 5,
+        "floor": 0,
+        "notes": "",
+        "long_contract": false,
+        "perks": [
+            "ensuite"
+        ]
+    },
+    {
+        "number": "G07",
+        "location": "Cranmer Road",
+        "band": 5,
+        "floor": 0,
+        "notes": "",
+        "long_contract": false,
+        "perks": [
+            "ensuite"
+        ]
+    },
+    {
+        "number": "G08",
+        "location": "Cranmer Road",
+        "band": 5,
+        "floor": 0,
+        "notes": "",
+        "long_contract": false,
+        "perks": [
+            "ensuite"
+        ]
+    },
+    {
+        "number": "G09",
+        "location": "Cranmer Road",
+        "band": 5,
+        "floor": 0,
+        "notes": "",
+        "long_contract": false,
+        "perks": [
+            "ensuite"
+        ]
+    },
+    {
+        "number": "G10",
+        "location": "Cranmer Road",
+        "band": 5,
+        "floor": 0,
+        "notes": "",
+        "long_contract": false,
+        "perks": [
+            "ensuite"
+        ]
+    },
+    {
+        "number": "G11",
+        "location": "Cranmer Road",
+        "band": 5,
+        "floor": 0,
+        "notes": "",
+        "long_contract": false,
+        "perks": [
+            "ensuite"
+        ]
+    },
+    {
+        "number": "G12",
+        "location": "Cranmer Road",
+        "band": 5,
+        "floor": 0,
+        "notes": "",
+        "long_contract": false,
+        "perks": [
+            "ensuite"
+        ]
+    },
+    {
+        "number": "G13",
+        "location": "Cranmer Road",
+        "band": 5,
+        "floor": 0,
+        "notes": "",
+        "long_contract": false,
+        "perks": [
+            "ensuite"
+        ]
+    },
+    {
+        "number": "G14",
+        "location": "Cranmer Road",
+        "band": 5,
+        "floor": 0,
+        "notes": "",
+        "long_contract": false,
+        "perks": [
+            "ensuite"
+        ]
+    },
+    {
+        "number": "G16",
+        "location": "Cranmer Road",
+        "band": 5,
+        "floor": 0,
+        "notes": "",
+        "long_contract": false,
+        "perks": [
+            "ensuite"
+        ]
+    },
+    {
+        "number": "G17",
+        "location": "Cranmer Road",
+        "band": 5,
+        "floor": 0,
+        "notes": "Disabled Room",
+        "long_contract": false,
+        "perks": [
+            "ensuite"
+        ]
+    },
+    {
+        "number": "F01",
+        "location": "Cranmer Road",
+        "band": 5,
+        "floor": 1,
+        "notes": "",
+        "long_contract": false,
+        "perks": [
+            "ensuite"
+        ]
+    },
+    {
+        "number": "F02",
+        "location": "Cranmer Road",
+        "band": 5,
+        "floor": 1,
+        "notes": "",
+        "long_contract": false,
+        "perks": [
+            "ensuite"
+        ]
+    },
+    {
+        "number": "F03",
+        "location": "Cranmer Road",
+        "band": 5,
+        "floor": 1,
+        "notes": "",
+        "long_contract": false,
+        "perks": [
+            "ensuite"
+        ]
+    },
+    {
+        "number": "F04",
+        "location": "Cranmer Road",
+        "band": 5,
+        "floor": 1,
+        "notes": "",
+        "long_contract": false,
+        "perks": [
+            "ensuite"
+        ]
+    },
+    {
+        "number": "F05",
+        "location": "Cranmer Road",
+        "band": 5,
+        "floor": 1,
+        "notes": "",
+        "long_contract": false,
+        "perks": [
+            "ensuite"
+        ]
+    },
+    {
+        "number": "F06",
+        "location": "Cranmer Road",
+        "band": 5,
+        "floor": 1,
+        "notes": "",
+        "long_contract": false,
+        "perks": [
+            "ensuite"
+        ]
+    },
+    {
+        "number": "F07",
+        "location": "Cranmer Road",
+        "band": 5,
+        "floor": 1,
+        "notes": "",
+        "long_contract": false,
+        "perks": [
+            "ensuite"
+        ]
+    },
+    {
+        "number": "F08",
+        "location": "Cranmer Road",
+        "band": 5,
+        "floor": 1,
+        "notes": "",
+        "long_contract": false,
+        "perks": [
+            "ensuite"
+        ]
+    },
+    {
+        "number": "F09",
+        "location": "Cranmer Road",
+        "band": 5,
+        "floor": 1,
+        "notes": "",
+        "long_contract": false,
+        "perks": [
+            "ensuite"
+        ]
+    },
+    {
+        "number": "F10",
+        "location": "Cranmer Road",
+        "band": 5,
+        "floor": 1,
+        "notes": "",
+        "long_contract": false,
+        "perks": [
+            "ensuite"
+        ]
+    },
+    {
+        "number": "F11",
+        "location": "Cranmer Road",
+        "band": 5,
+        "floor": 1,
+        "notes": "",
+        "long_contract": false,
+        "perks": [
+            "ensuite"
+        ]
+    },
+    {
+        "number": "F12",
+        "location": "Cranmer Road",
+        "band": 5,
+        "floor": 1,
+        "notes": "",
+        "long_contract": false,
+        "perks": [
+            "ensuite"
+        ]
+    },
+    {
+        "number": "F13",
+        "location": "Cranmer Road",
+        "band": 5,
+        "floor": 1,
+        "notes": "",
+        "long_contract": false,
+        "perks": [
+            "ensuite"
+        ]
+    },
+    {
+        "number": "F14",
+        "location": "Cranmer Road",
+        "band": 5,
+        "floor": 1,
+        "notes": "",
+        "long_contract": false,
+        "perks": [
+            "ensuite"
+        ]
+    },
+    {
+        "number": "F15",
+        "location": "Cranmer Road",
+        "band": 5,
+        "floor": 1,
+        "notes": "",
+        "long_contract": false,
+        "perks": [
+            "ensuite"
+        ]
+    },
+    {
+        "number": "F16",
+        "location": "Cranmer Road",
+        "band": 5,
+        "floor": 1,
+        "notes": "",
+        "long_contract": false,
+        "perks": [
+            "ensuite"
+        ]
+    },
+    {
+        "number": "F17",
+        "location": "Cranmer Road",
+        "band": 5,
+        "floor": 1,
+        "notes": "",
+        "long_contract": false,
+        "perks": [
+            "ensuite"
+        ]
+    },
+    {
+        "number": "F18",
+        "location": "Cranmer Road",
+        "band": 5,
+        "floor": 1,
+        "notes": "",
+        "long_contract": false,
+        "perks": [
+            "ensuite"
+        ]
+    },
+    {
+        "number": "F19",
+        "location": "Cranmer Road",
+        "band": 5,
+        "floor": 1,
+        "notes": "",
+        "long_contract": false,
+        "perks": [
+            "ensuite"
+        ]
+    },
+    {
+        "number": "F20",
+        "location": "Cranmer Road",
+        "band": 5,
+        "floor": 1,
+        "notes": "",
+        "long_contract": false,
+        "perks": [
+            "ensuite"
+        ]
+    },
+    {
+        "number": "S01",
+        "location": "Cranmer Road",
+        "band": 5,
+        "floor": 2,
+        "notes": "",
+        "long_contract": true,
+        "perks": [
+            "ensuite"
+        ]
+    },
+    {
+        "number": "S02",
+        "location": "Cranmer Road",
+        "band": 5,
+        "floor": 2,
+        "notes": "",
+        "long_contract": true,
+        "perks": [
+            "ensuite"
+        ]
+    },
+    {
+        "number": "S03",
+        "location": "Cranmer Road",
+        "band": 5,
+        "floor": 2,
+        "notes": "",
+        "long_contract": true,
+        "perks": [
+            "ensuite"
+        ]
+    },
+    {
+        "number": "S04",
+        "location": "Cranmer Road",
+        "band": 5,
+        "floor": 2,
+        "notes": "",
+        "long_contract": true,
+        "perks": [
+            "ensuite"
+        ]
+    },
+    {
+        "number": "S05",
+        "location": "Cranmer Road",
+        "band": 5,
+        "floor": 2,
+        "notes": "",
+        "long_contract": true,
+        "perks": [
+            "ensuite"
+        ]
+    },
+    {
+        "number": "S06",
+        "location": "Cranmer Road",
+        "band": 5,
+        "floor": 2,
+        "notes": "",
+        "long_contract": true,
+        "perks": [
+            "ensuite"
+        ]
+    },
+    {
+        "number": "S07",
+        "location": "Cranmer Road",
+        "band": 5,
+        "floor": 2,
+        "notes": "",
+        "long_contract": true,
+        "perks": [
+            "ensuite"
+        ]
+    },
+    {
+        "number": "S08",
+        "location": "Cranmer Road",
+        "band": 5,
+        "floor": 2,
+        "notes": "",
+        "long_contract": true,
+        "perks": [
+            "ensuite"
+        ]
+    },
+    {
+        "number": "S09",
+        "location": "Cranmer Road",
+        "band": 5,
+        "floor": 2,
+        "notes": "",
+        "long_contract": true,
+        "perks": [
+            "ensuite"
+        ]
+    },
+    {
+        "number": "S10",
+        "location": "Cranmer Road",
+        "band": 5,
+        "floor": 2,
+        "notes": "",
+        "long_contract": true,
+        "perks": [
+            "ensuite"
+        ]
+    },
+    {
+        "number": "S11",
+        "location": "Cranmer Road",
+        "band": 5,
+        "floor": 2,
+        "notes": "",
+        "long_contract": true,
+        "perks": [
+            "ensuite"
+        ]
+    },
+    {
+        "number": "S12",
+        "location": "Cranmer Road",
+        "band": 5,
+        "floor": 2,
+        "notes": "",
+        "long_contract": true,
+        "perks": [
+            "ensuite"
+        ]
+    },
+    {
+        "number": "S13",
+        "location": "Cranmer Road",
+        "band": 5,
+        "floor": 2,
+        "notes": "",
+        "long_contract": true,
+        "perks": [
+            "ensuite"
+        ]
+    },
+    {
+        "number": "S14",
+        "location": "Cranmer Road",
+        "band": 5,
+        "floor": 2,
+        "notes": "",
+        "long_contract": true,
+        "perks": [
+            "ensuite"
+        ]
+    },
+    {
+        "number": "S15",
+        "location": "Cranmer Road",
+        "band": 5,
+        "floor": 2,
+        "notes": "",
+        "long_contract": true,
+        "perks": [
+            "ensuite"
+        ]
+    },
+    {
+        "number": "S16",
+        "location": "Cranmer Road",
+        "band": 5,
+        "floor": 2,
+        "notes": "",
+        "long_contract": true,
+        "perks": [
+            "ensuite"
+        ]
+    },
+    {
+        "number": "S17",
+        "location": "Cranmer Road",
+        "band": 5,
+        "floor": 2,
+        "notes": "",
+        "long_contract": true,
+        "perks": [
+            "ensuite"
+        ]
+    },
+    {
+        "number": "S18",
+        "location": "Cranmer Road",
+        "band": 5,
+        "floor": 2,
+        "notes": "",
+        "long_contract": true,
+        "perks": [
+            "ensuite"
+        ]
+    },
+    {
+        "number": "S19",
+        "location": "Cranmer Road",
+        "band": 5,
+        "floor": 2,
+        "notes": "",
+        "long_contract": true,
+        "perks": [
+            "ensuite"
+        ]
+    },
+    {
+        "number": "S20",
+        "location": "Cranmer Road",
+        "band": 5,
+        "floor": 2,
+        "notes": "",
+        "long_contract": true,
+        "perks": [
+            "ensuite"
+        ]
+    },
+    {
+        "number": "T01",
+        "location": "Cranmer Road",
+        "band": 5,
+        "floor": 3,
+        "notes": "",
+        "long_contract": true,
+        "perks": [
+            "ensuite"
+        ]
+    },
+    {
+        "number": "T02",
+        "location": "Cranmer Road",
+        "band": 5,
+        "floor": 3,
+        "notes": "",
+        "long_contract": true,
+        "perks": [
+            "ensuite"
+        ]
+    },
+    {
+        "number": "T03",
+        "location": "Cranmer Road",
+        "band": 5,
+        "floor": 3,
+        "notes": "",
+        "long_contract": true,
+        "perks": [
+            "ensuite"
+        ]
+    },
+    {
+        "number": "T04",
+        "location": "Cranmer Road",
+        "band": 5,
+        "floor": 3,
+        "notes": "",
+        "long_contract": true,
+        "perks": [
+            "ensuite"
+        ]
+    },
+    {
+        "number": "T05",
+        "location": "Cranmer Road",
+        "band": 5,
+        "floor": 3,
+        "notes": "",
+        "long_contract": true,
+        "perks": [
+            "ensuite"
+        ]
+    },
+    {
+        "number": "T06",
+        "location": "Cranmer Road",
+        "band": 5,
+        "floor": 3,
+        "notes": "",
+        "long_contract": true,
+        "perks": [
+            "ensuite"
+        ]
+    },
+    {
+        "number": "T07",
+        "location": "Cranmer Road",
+        "band": 5,
+        "floor": 3,
+        "notes": "",
+        "long_contract": true,
+        "perks": [
+            "ensuite"
+        ]
+    },
+    {
+        "number": "T08",
+        "location": "Cranmer Road",
+        "band": 5,
+        "floor": 3,
+        "notes": "",
+        "long_contract": true,
+        "perks": [
+            "ensuite"
+        ]
+    },
+    {
+        "number": "T09",
+        "location": "Cranmer Road",
+        "band": 5,
+        "floor": 3,
+        "notes": "",
+        "long_contract": true,
+        "perks": [
+            "ensuite"
+        ]
+    },
+    {
+        "number": "T10",
+        "location": "Cranmer Road",
+        "band": 5,
+        "floor": 3,
+        "notes": "",
+        "long_contract": true,
+        "perks": [
+            "ensuite"
+        ]
+    },
+    {
+        "number": "T11",
+        "location": "Cranmer Road",
+        "band": 5,
+        "floor": 3,
+        "notes": "",
+        "long_contract": true,
+        "perks": [
+            "ensuite"
+        ]
+    },
+    {
+        "number": "T12",
+        "location": "Cranmer Road",
+        "band": 5,
+        "floor": 3,
+        "notes": "",
+        "long_contract": true,
+        "perks": [
+            "ensuite"
+        ]
+    },
+    {
+        "number": "T13",
+        "location": "Cranmer Road",
+        "band": 5,
+        "floor": 3,
+        "notes": "",
+        "long_contract": true,
+        "perks": [
+            "ensuite"
+        ]
+    },
+    {
+        "number": "T14",
+        "location": "Cranmer Road",
+        "band": 5,
+        "floor": 3,
+        "notes": "",
+        "long_contract": true,
+        "perks": [
+            "ensuite"
+        ]
+    },
+    {
+        "number": "KP14-1",
+        "location": "King’s Parade",
+        "band": 3,
+        "floor": 1,
+        "notes": "",
+        "long_contract": true,
+        "perks": [
+            "fridge",
+            "basin"
+        ]
+    },
+    {
+        "number": "KP14-2",
+        "location": "King’s Parade",
+        "band": 4,
+        "floor": 1,
+        "notes": "",
+        "long_contract": true,
+        "perks": [
+            "fridge"
+        ]
+    },
+    {
+        "number": "KP14-3",
+        "location": "King’s Parade",
+        "band": 4,
+        "floor": 2,
+        "notes": "",
+        "long_contract": true,
+        "perks": [
+            "fridge"
+        ]
+    },
+    {
+        "number": "KP14-4",
+        "location": "King’s Parade",
+        "band": 4,
+        "floor": 3,
+        "notes": "",
+        "long_contract": true,
+        "perks": [
+            "fridge",
+            "basin"
+        ]
+    },
+    {
+        "number": "KP14-5",
+        "location": "King’s Parade",
+        "band": 4,
+        "floor": 3,
+        "notes": "",
+        "long_contract": true,
+        "perks": [
+            "fridge",
+            "basin"
+        ]
+    },
+    {
+        "number": "KP15-1",
+        "location": "King’s Parade",
+        "band": 4,
+        "floor": 1,
+        "notes": "",
+        "long_contract": true,
+        "perks": [
+            "fridge"
+        ]
+    },
+    {
+        "number": "KP15-2",
+        "location": "King’s Parade",
+        "band": 4,
+        "floor": 2,
+        "notes": "",
+        "long_contract": true,
+        "perks": [
+            "fridge",
+            "basin"
+        ]
+    },
+    {
+        "number": "KP15-3",
+        "location": "King’s Parade",
+        "band": 4,
+        "floor": 2,
+        "notes": "",
+        "long_contract": true,
+        "perks": [
+            "fridge",
+            "basin"
+        ]
+    },
+    {
+        "number": "KP15-4",
+        "location": "King’s Parade",
+        "band": 3,
+        "floor": 3,
+        "notes": "",
+        "long_contract": true,
+        "perks": [
+            "fridge"
+        ]
+    },
+    {
+        "number": "KP15-5",
+        "location": "King’s Parade",
+        "band": 4,
+        "floor": 3,
+        "notes": "",
+        "long_contract": true,
+        "perks": [
+            "fridge"
+        ]
+    },
+    {
+        "number": "VB1",
+        "location": "Villa Building",
+        "band": 4,
+        "floor": 0,
+        "notes": "",
+        "long_contract": true,
+        "perks": [
+            "basin",
+            "double_bed"
+        ]
+    },
+    {
+        "number": "VB2",
+        "location": "Villa Building",
+        "band": 4,
+        "floor": 0,
+        "notes": "",
+        "long_contract": true,
+        "perks": [
+            "basin",
+            "double_bed"
+        ]
+    },
+    {
+        "number": "VB3",
+        "location": "Villa Building",
+        "band": 4,
+        "floor": 0,
+        "notes": "",
+        "long_contract": true,
+        "perks": [
+            "basin",
+            "double_bed"
+        ]
+    },
+    {
+        "number": "VB4",
+        "location": "Villa Building",
+        "band": 4,
+        "floor": 0,
+        "notes": "",
+        "long_contract": true,
+        "perks": [
+            "basin",
+            "double_bed"
+        ]
+    },
+    {
+        "number": "VB5",
+        "location": "Villa Building",
+        "band": 4,
+        "floor": 0,
+        "notes": "",
+        "long_contract": true,
+        "perks": [
+            "basin",
+            "double_bed"
+        ]
+    },
+    {
+        "number": "VB6",
+        "location": "Villa Building",
+        "band": 4,
+        "floor": 0,
+        "notes": "",
+        "long_contract": true,
+        "perks": [
+            "basin",
+            "double_bed"
+        ]
+    },
+    {
+        "number": "VB7",
+        "location": "Villa Building",
+        "band": 4,
+        "floor": 0,
+        "notes": "",
+        "long_contract": true,
+        "perks": [
+            "basin",
+            "double_bed"
+        ]
+    },
+    {
+        "number": "VB8",
+        "location": "Villa Building",
+        "band": 4,
+        "floor": 1,
+        "notes": "",
+        "long_contract": true,
+        "perks": [
+            "basin",
+            "double_bed"
+        ]
+    },
+    {
+        "number": "VB9",
+        "location": "Villa Building",
+        "band": 4,
+        "floor": 1,
+        "notes": "",
+        "long_contract": true,
+        "perks": [
+            "basin",
+            "double_bed"
+        ]
+    },
+    {
+        "number": "VB10",
+        "location": "Villa Building",
+        "band": 4,
+        "floor": 1,
+        "notes": "",
+        "long_contract": true,
+        "perks": [
+            "basin",
+            "double_bed"
+        ]
+    },
+    {
+        "number": "VB11",
+        "location": "Villa Building",
+        "band": 4,
+        "floor": 1,
+        "notes": "",
+        "long_contract": true,
+        "perks": [
+            "basin",
+            "double_bed"
+        ]
+    },
+    {
+        "number": "VB12",
+        "location": "Villa Building",
+        "band": 4,
+        "floor": 1,
+        "notes": "",
+        "long_contract": true,
+        "perks": [
+            "basin",
+            "double_bed"
+        ]
+    },
+    {
+        "number": "VB13",
+        "location": "Villa Building",
+        "band": 4,
+        "floor": 1,
+        "notes": "",
+        "long_contract": true,
+        "perks": [
+            "basin",
+            "double_bed"
+        ]
+    },
+    {
+        "number": "VB14",
+        "location": "Villa Building",
+        "band": 4,
+        "floor": 2,
+        "notes": "",
+        "long_contract": true,
+        "perks": [
+            "basin",
+            "double_bed"
+        ]
+    },
+    {
+        "number": "VB15",
+        "location": "Villa Building",
+        "band": 4,
+        "floor": 2,
+        "notes": "",
+        "long_contract": true,
+        "perks": [
+            "basin",
+            "double_bed"
+        ]
+    },
+    {
+        "number": "VB16",
+        "location": "Villa Building",
+        "band": 4,
+        "floor": 2,
+        "notes": "",
+        "long_contract": true,
+        "perks": [
+            "basin",
+            "double_bed"
+        ]
+    },
+    {
+        "number": "VB17",
+        "location": "Villa Building",
+        "band": 4,
+        "floor": 2,
+        "notes": "",
+        "long_contract": true,
+        "perks": [
+            "basin",
+            "double_bed"
+        ]
+    },
+    {
+        "number": "VB18",
+        "location": "Villa Building",
+        "band": 4,
+        "floor": 2,
+        "notes": "",
+        "long_contract": true,
+        "perks": [
+            "basin",
+            "double_bed"
+        ]
+    },
+    {
+        "number": "VB19",
+        "location": "Villa Building",
+        "band": 4,
+        "floor": 2,
+        "notes": "",
+        "long_contract": true,
+        "perks": [
+            "basin",
+            "double_bed"
+        ]
+    }
+]
