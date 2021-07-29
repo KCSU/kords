@@ -45,7 +45,8 @@ class RoomSeeder extends Seeder
                 "ballot_id" => $ballots->firstWhere('name', 'Undergraduate')->id,
                 "long_contract" => $room->long_contract,
                 "floor" => $room->floor,
-                "available" => true
+                "available" => true,
+                "notes" => $room->notes
             ]);
             foreach($room->perks as $perk) {
                 $dbRoom->perks()->attach($perks->firstWhere('name', $perk)->id);

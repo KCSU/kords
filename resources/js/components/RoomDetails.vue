@@ -25,6 +25,10 @@
           room.long_contract ? " / £" + room.long_rent : ""
         }`
       }}</b>
+      <span v-if="!!room.notes">
+        <br/>
+        Note: <b>{{room.notes}}</b>
+      </span>
     </div>
     <h3 class="text-xl font-medium mt-4">Photos</h3>
     <div class="flex flex-wrap -mx-3">
