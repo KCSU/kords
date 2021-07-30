@@ -12,8 +12,9 @@ use App\Models\Location;
 use App\Models\Perk;
 use App\Models\Room;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\File;
+use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Storage;
+use Intervention\Image\Facades\Image as Img;
 
 class ApiController extends Controller
 {
@@ -66,11 +67,19 @@ class ApiController extends Controller
 
     public function storeImage(Request $request) {
         $request->validate([
-            'image' => 'required|image|max:1000',
+            'image' => 'required|image|max:10000',
             'room_id' => 'required|exists:rooms,id'
         ]);
 
-        $path = $request->file('image')->store('images', 'public');
+        $room = Room::find($request->room_id)->number;
+
+        // TODO: image deletion, select banner image, image detail view
+
+        $img = Img::make($request->file('image'))->widen(500, function ($constraint) {
+            $constraint->upsize();
+        })->encode('jpg', 75);
+        $path = 'images/' . $room . '/' . Str::random(40) . '.jpg';
+        Storage::disk('public')->put($path, $img);
         
         $image = new Image;
         $image->filename = Storage::url($path);
