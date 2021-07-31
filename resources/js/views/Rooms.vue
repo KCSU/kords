@@ -45,19 +45,35 @@
       </div>
     </div>
     <detail-panel
-      v-model="detailFocused"
+      :value="detailFocused"
+      @input="detailFocused = $event || modalOpen"
       ref="detail"
       @next="nextRoom"
       @back="prevRoom"
     >
       <room-details :room="selectedRoom" @comment="addComment($event)"></room-details>
     </detail-panel>
+    <modal :showing="modalOpen" @close="modalClose()" class="bg-black bg-opacity-50"
+    @keydown.right.native="nextImg()" @keydown.left.native="prevImg()"
+    tabindex="0"
+    ref="modal">
+      <div class="flex justify-center items-stretch">
+        <div @click="prevImg()" class="cursor-pointer pr-4 flex justify-end items-center flex-grow">
+          <i class="lni lni-chevron-left text-3xl text-gray-700"></i>
+        </div>
+        <img :src="modalImg"/>
+        <div @click="nextImg()" class="cursor-pointer pl-4 flex justify-start items-center flex-grow">
+          <i class="lni lni-chevron-right text-3xl text-gray-700"></i>
+        </div>
+      </div>
+    </modal>
   </div>
 </template>
 
 <script>
 import Fuse from 'fuse.js'
 
+import EventBus from '~/services/EventBus';
 import SidebarNav from "~/components/SidebarNav";
 import SearchBar from "~/components/SearchBar";
 import Toggle from "~/components/Toggle";
@@ -65,7 +81,8 @@ import RoomListItem from "~/components/RoomListItem";
 import DetailPanel from "~/components/DetailPanel";
 import RoomDetails from "~/components/RoomDetails";
 import SearchOptions from "~/components/SearchOptions";
-import RoomGridItem from "~/components/RoomGridItem"
+import RoomGridItem from "~/components/RoomGridItem";
+import Modal from '~/components/Modal';
 
 const options = {
   keys: [
@@ -78,7 +95,9 @@ export default {
     focusDetail(room) {
       this.detailFocused = true;
       this.selectedRoom = room;
-      this.$refs.detail.$el.focus();
+      this.$nextTick(() => {
+        this.$refs.detail.$el.focus();
+      });
     },
     nextRoom() {
       let roomIdx = this.roomResults.findIndex((x) => x.id === this.selectedRoom.id);
@@ -95,6 +114,18 @@ export default {
         return;
       }
       this.selectedRoom = this.roomResults[Math.max(roomIdx - 1, 0)];
+    },
+    nextImg() {
+      EventBus.$emit('nextImg', this.modalImg);
+    },
+    prevImg() {
+      EventBus.$emit('prevImg', this.modalImg);
+    },
+    modalClose() {
+      this.modalOpen = false;
+      this.$nextTick(() => {
+        this.$refs.detail.$el.focus();
+      });
     },
     addComment(comment) {
       let room = this.rooms.find(r => r.id === comment.room_id);
@@ -147,10 +178,19 @@ export default {
       ];
       this.navSubItems = data.sub;
     });
+    EventBus.$on('openModal', src => {
+      this.modalOpen = true;
+      this.modalImg = src;
+      this.$nextTick(() => {
+        this.$refs.modal.$el?.focus();
+      })
+    })
   },
   data() {
     return {
       isGrid: true,
+      modalOpen: false,
+      modalImg: "",
       detailFocused: false,
       selected: 0,
       selectedRoom: {},
@@ -176,7 +216,8 @@ export default {
     DetailPanel,
     RoomDetails,
     SearchOptions,
-    RoomGridItem
+    RoomGridItem,
+    Modal
   },
 };
 </script>

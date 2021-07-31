@@ -33,6 +33,7 @@
     <h3 class="text-xl font-medium mt-4">Photos</h3>
     <div class="flex flex-wrap -mx-3">
       <img
+        @click="openModal(img)"
         v-for="(img, i) in room.images"
         :key="i"
         :src="img"
@@ -108,6 +109,7 @@
 </template>
 
 <script>
+import EventBus from '~/services/EventBus';
 import ToggledChip from "./ToggledChip";
 import moment from "moment";
 import ImageDropper from './ImageDropper.vue';
@@ -127,11 +129,25 @@ export default {
       return moment(date).fromNow();
     },
   },
+  created() {
+    EventBus.$on('nextImg', src => {
+      let prev = this.room.images.indexOf(src);
+      if (prev > -1 && prev < this.room.images.length - 1) {
+        EventBus.$emit('openModal', this.room.images[prev + 1]);
+      }
+    });
+    EventBus.$on('prevImg', src => {
+      let prev = this.room.images.indexOf(src);
+      if (prev > 0) {
+        EventBus.$emit('openModal', this.room.images[prev - 1]);
+      }
+    });
+  },
   data() {
     return {
       comment: "",
       loading: false,
-      imgUploading: false
+      imgUploading: false,
     };
   },
   computed: {
@@ -156,8 +172,10 @@ export default {
           // TODO: handle
         });
     },
+    openModal(img) {
+      EventBus.$emit('openModal', img);
+    },
     uploadImages(files) {
-      // TODO: Implement
       this.imgUploading = true;
       Promise.all(files.map(file => {
         let data = new FormData();
