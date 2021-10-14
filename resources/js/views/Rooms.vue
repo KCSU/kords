@@ -188,7 +188,7 @@ export default {
   },
   data() {
     return {
-      isGrid: true,
+      isGrid: localStorage.getItem('rooms.isGrid') !== 'false',
       modalOpen: false,
       modalImg: "",
       detailFocused: false,
@@ -207,6 +207,11 @@ export default {
       navItems: [],
       navSubItems: []
     };
+  },
+  watch: {
+    isGrid(val) {
+      localStorage.setItem('rooms.isGrid', val.toString());
+    }
   },
   components: {
     SidebarNav,
