@@ -203,7 +203,7 @@ return [
 
     // Set this to false if you would like to skip adding the password recovery routes
     // (you then need to manually define the routes in your web.php)
-    'setup_password_recovery_routes' => true,
+    'setup_password_recovery_routes' => false,
 
     /*
     |--------------------------------------------------------------------------
@@ -258,7 +258,7 @@ return [
 
     // The guard that protects the Backpack admin panel.
     // If null, the config.auth.defaults.guard value will be used.
-    'guard' => 'backpack',
+    'guard' => null, //'backpack',
 
     // The password reset configuration for Backpack.
     // If null, the config.auth.defaults.passwords value will be used.
