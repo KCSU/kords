@@ -10,6 +10,13 @@ class Room extends Model
     use \Backpack\CRUD\app\Models\Traits\CrudTrait;
     use HasFactory;
 
+    // TODO: Fillables for all the other models
+    protected $fillable = [
+        'number', 'floor',
+        'available', 'long_contract',
+        // 'band_id', 
+    ];
+
     public function perks() {
         return $this->belongsToMany(Perk::class);
     }

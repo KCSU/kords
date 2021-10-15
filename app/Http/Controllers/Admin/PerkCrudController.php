@@ -40,10 +40,8 @@ class PerkCrudController extends CrudController
     protected function setupListOperation()
     {
         CRUD::column('id');
-        CRUD::column('name');
+        CRUD::column('display_name')->label('Name');
         CRUD::column('icon');
-        CRUD::column('created_at');
-        CRUD::column('updated_at');
 
         /**
          * Columns can be defined using the fluent syntax or array syntax:
@@ -62,11 +60,9 @@ class PerkCrudController extends CrudController
     {
         CRUD::setValidation(PerkRequest::class);
 
-        CRUD::field('id');
-        CRUD::field('name');
+        CRUD::field('id')->type('number');
+        CRUD::field('name')->label('Name (snake_case)');
         CRUD::field('icon');
-        CRUD::field('created_at');
-        CRUD::field('updated_at');
 
         /**
          * Fields can be defined using the fluent syntax or array syntax:

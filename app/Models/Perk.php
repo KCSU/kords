@@ -13,4 +13,8 @@ class Perk extends Model
     public function rooms() {
         return $this->belongsToMany(Room::class);
     }
+
+    public function getDisplayNameAttribute() {
+        return str_replace('_', ' ', ucwords($this->name, '_'));
+    }
 }

@@ -50,7 +50,8 @@ class RoomCrudController extends CrudController
         CRUD::column('location_id');
         CRUD::column('ballot_id');
         CRUD::column('notes');
-
+        CRUD::enableDetailsRow();
+        CRUD::setDetailsRowView('admin.room');
         /**
          * Columns can be defined using the fluent syntax or array syntax:
          * - CRUD::column('price')->type('number');
@@ -78,6 +79,7 @@ class RoomCrudController extends CrudController
         CRUD::field('band_id');
         CRUD::field('location_id');
         CRUD::field('ballot_id');
+        CRUD::field('perks')->attribute('display_name');
         CRUD::field('notes');
 
         /**
