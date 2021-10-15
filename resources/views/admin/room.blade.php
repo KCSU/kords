@@ -27,7 +27,8 @@
                 {{
                     $entry->perks->pluck('display_name')->implode(', ')
                 }}
-            </strong>
+            </strong> <br/>
+            <em>{{ $entry->notes }}</em>
         </div>
     </div>
 </div>
