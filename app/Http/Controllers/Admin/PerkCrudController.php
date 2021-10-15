@@ -39,7 +39,7 @@ class PerkCrudController extends CrudController
      */
     protected function setupListOperation()
     {
-        CRUD::column('id');
+        // CRUD::column('id');
         CRUD::column('display_name')->label('Name');
         CRUD::column('icon');
 
@@ -60,7 +60,7 @@ class PerkCrudController extends CrudController
     {
         CRUD::setValidation(PerkRequest::class);
 
-        CRUD::field('id')->type('number');
+        // CRUD::field('id')->type('number');
         CRUD::field('name')->label('Name (snake_case)');
         CRUD::field('icon');
 

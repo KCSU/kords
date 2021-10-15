@@ -3,6 +3,9 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Requests\RoomRequest;
+use App\Models\Band;
+use App\Models\Location;
+use App\Models\Perk;
 use Backpack\CRUD\app\Http\Controllers\CrudController;
 use Backpack\CRUD\app\Library\CrudPanel\CrudPanelFacade as CRUD;
 
@@ -57,6 +60,59 @@ class RoomCrudController extends CrudController
          * - CRUD::column('price')->type('number');
          * - CRUD::addColumn(['name' => 'price', 'type' => 'number']); 
          */
+        CRUD::addFilter([
+            'name'  => 'availability',
+            'type'  => 'dropdown',
+            'label' => 'Availability'
+        ], [
+            false => 'Unavailable',
+            true => 'Available'
+        ], function($value) { // if the filter is active
+            // $this->crud->addClause('where', 'status', $value);
+            CRUD::addClause('where', 'available', $value);
+        });
+        CRUD::addFilter([
+            'name'  => 'contract',
+            'type'  => 'dropdown',
+            'label' => 'Contract'
+        ], [
+            false => 'Short',
+            true => 'Long or Short'
+        ], function($value) { // if the filter is active
+            // $this->crud->addClause('where', 'status', $value);
+            CRUD::addClause('where', 'long_contract', $value);
+        });
+        CRUD::addFilter([
+            'name'  => 'band',
+            'type'  => 'dropdown',
+            'label' => 'Rent Band'
+        ], function() {
+            return Band::all()->pluck('number', 'id')->sort()->toArray();
+        }, function($value) { // if the filter is active
+            CRUD::addClause('where', 'band_id', $value);
+        });
+        CRUD::addFilter([
+            'name'  => 'location',
+            'type'  => 'dropdown',
+            'label' => 'Location'
+        ], function() {
+            return Location::all()->pluck('name', 'id')->sort()->toArray();
+        }, function($value) { // if the filter is active
+            CRUD::addClause('where', 'location_id', $value);
+        });
+        CRUD::addFilter([
+            'name'  => 'perks',
+            'type'  => 'select2_multiple',
+            'label' => 'Perks'
+        ], function() {
+            return Perk::all()->pluck('displayName', 'id')->toArray();
+        }, function($values) { // if the filter is active
+            foreach (json_decode($values) as $key => $value) {
+                CRUD::addClause('whereHas', 'perks', function ($q) use ($value) {
+                    $q->where('perk_id', $value);
+                });
+            }
+        });
     }
 
     /**

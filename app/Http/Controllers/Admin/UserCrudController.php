@@ -15,7 +15,7 @@ class UserCrudController extends CrudController
 {
     use \Backpack\CRUD\app\Http\Controllers\Operations\ListOperation;
     // use \Backpack\CRUD\app\Http\Controllers\Operations\CreateOperation;
-    // use \Backpack\CRUD\app\Http\Controllers\Operations\UpdateOperation;
+    use \Backpack\CRUD\app\Http\Controllers\Operations\UpdateOperation;
     use \Backpack\CRUD\app\Http\Controllers\Operations\DeleteOperation;
     use \Backpack\CRUD\app\Http\Controllers\Operations\ShowOperation;
 
@@ -41,6 +41,7 @@ class UserCrudController extends CrudController
     {
         CRUD::column('name');
         CRUD::column('email');
+        CRUD::column('admin')->type('check');
         // CRUD::column('password');
 
         /**
@@ -60,8 +61,9 @@ class UserCrudController extends CrudController
     {
         CRUD::setValidation(UserRequest::class);
 
-        CRUD::field('name');
-        CRUD::field('email');
+        CRUD::field('name')->attributes(['disabled' => 'disabled']);
+        CRUD::field('email')->attributes(['disabled' => 'disabled']);
+        CRUD::field('admin');
         // CRUD::field('password');
 
         /**

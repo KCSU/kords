@@ -39,7 +39,7 @@ class BallotCrudController extends CrudController
      */
     protected function setupListOperation()
     {
-        CRUD::column('id');
+        // CRUD::column('id');
         CRUD::column('name');
         CRUD::column('icon');
         CRUD::column('primary')->type('check');
@@ -61,7 +61,7 @@ class BallotCrudController extends CrudController
     {
         CRUD::setValidation(BallotRequest::class);
 
-        CRUD::field('id')->type('number');
+        // CRUD::field('id')->type('number');
         CRUD::field('name');
         CRUD::field('icon');
         CRUD::field('primary');

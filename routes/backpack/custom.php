@@ -15,6 +15,7 @@ Route::group([
     ),
     'namespace'  => 'App\Http\Controllers\Admin',
 ], function () { // custom admin routes
+    // Route::redirect('login', '/admin');
     Route::redirect('logout', '/oauth/logout');
     Route::crud('band', 'BandCrudController');
     Route::crud('ballot', 'BallotCrudController');
