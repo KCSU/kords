@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Requests\CommentRequest;
+use App\Models\Comment;
 use Backpack\CRUD\app\Http\Controllers\CrudController;
 use Backpack\CRUD\app\Library\CrudPanel\CrudPanelFacade as CRUD;
 
@@ -31,6 +32,14 @@ class CommentCrudController extends CrudController
         CRUD::setEntityNameStrings('comment', 'comments');
     }
 
+    // public function showDetailsRow($id)
+    // {
+    //     $comment = Comment::find($id);
+    //     return view('admin.comment')->with([
+    //         'comment' => $comment
+    //     ]);
+    // }
+
     /**
      * Define what happens when the List operation is loaded.
      * 
@@ -42,7 +51,8 @@ class CommentCrudController extends CrudController
         CRUD::column('text');
         CRUD::column('room_id');
         CRUD::column('user_id');
-
+        CRUD::enableDetailsRow();
+        CRUD::setDetailsRowView('admin.comment');
         /**
          * Columns can be defined using the fluent syntax or array syntax:
          * - CRUD::column('price')->type('number');

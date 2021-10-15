@@ -42,7 +42,7 @@ class BallotCrudController extends CrudController
         CRUD::column('id');
         CRUD::column('name');
         CRUD::column('icon');
-        CRUD::column('primary')->type('boolean');
+        CRUD::column('primary')->type('check');
 
         /**
          * Columns can be defined using the fluent syntax or array syntax:

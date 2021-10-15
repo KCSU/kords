@@ -39,7 +39,7 @@ class ImageCrudController extends CrudController
     {
         // CRUD::enableDetailsRow();
         CRUD::column('id');
-        CRUD::column('image')->label('Image')->type('image');
+        CRUD::column('filename')->key('image')->label('Image')->type('image');
         CRUD::column('filename');
         CRUD::column('room_id');
         CRUD::column('created_at');
@@ -55,7 +55,7 @@ class ImageCrudController extends CrudController
 
     protected function setupShowOperation()
     {
-        CRUD::column('image')->label('Image')->type('image')->height(200);
+        CRUD::column('filename')->key('image')->label('Image')->type('image')->height(200);
         CRUD::column('filename');
         CRUD::column('room_id');
 
