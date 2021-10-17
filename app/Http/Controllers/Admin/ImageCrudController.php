@@ -50,7 +50,7 @@ class ImageCrudController extends CrudController
             'type' => 'select2',
             'label' => 'Room'
         ], function() {
-            return Room::with('location')->orderBy('number')->get()->map(function (Room $room) {
+            return Room::has('images')->with('location')->orderBy('number')->get()->map(function (Room $room) {
                 $name = $room->number;
                 $loc = $room->location->name;
                 return [

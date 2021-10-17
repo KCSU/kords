@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Requests\CommentRequest;
-use App\Models\Comment;
+use App\Models\Room;
 use Backpack\CRUD\app\Http\Controllers\CrudController;
 use Backpack\CRUD\app\Library\CrudPanel\CrudPanelFacade as CRUD;
 
@@ -51,6 +51,22 @@ class CommentCrudController extends CrudController
         CRUD::column('user_id');
         CRUD::enableDetailsRow();
         CRUD::setDetailsRowView('admin.comment');
+        CRUD::addFilter([
+            'name' => 'room',
+            'type' => 'select2',
+            'label' => 'Room'
+        ], function() {
+            return Room::has('comments')->with('location')->orderBy('number')->get()->map(function (Room $room) {
+                $name = $room->number;
+                $loc = $room->location->name;
+                return [
+                    'name' => "$name ($loc)",
+                    'id' => $room->id
+                ];
+            })->pluck('name', 'id')->toArray();
+        }, function ($value) {
+            CRUD::addClause('where', 'room_id', $value);
+        });
         /**
          * Columns can be defined using the fluent syntax or array syntax:
          * - CRUD::column('price')->type('number');
