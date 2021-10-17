@@ -113,6 +113,13 @@ class RoomCrudController extends CrudController
                 });
             }
         });
+        CRUD::addFilter([
+            'name' => 'notes',
+            'type' => 'simple',
+            'label' => 'Notes'
+        ], false, function () {
+            CRUD::addClause('where', 'notes', '<>', '');
+        });
     }
 
     /**
