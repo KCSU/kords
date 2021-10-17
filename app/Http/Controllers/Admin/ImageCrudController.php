@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Requests\ImageRequest;
 use Backpack\CRUD\app\Http\Controllers\CrudController;
 use Backpack\CRUD\app\Library\CrudPanel\CrudPanelFacade as CRUD;
+use App\Models\Room;
 
 /**
  * Class ImageCrudController
@@ -42,8 +43,26 @@ class ImageCrudController extends CrudController
         CRUD::column('filename')->key('image')->label('Image')->type('image');
         CRUD::column('filename');
         CRUD::column('room_id');
-        CRUD::column('created_at');
-
+        CRUD::column('created_at')->label('Uploaded')->type('datetime');
+        
+        CRUD::addFilter([
+            'name' => 'room',
+            'type' => 'select2',
+            'label' => 'Room'
+        ], function() {
+            return Room::with('location')->orderBy('number')->get()->map(function (Room $room) {
+                $name = $room->number;
+                $loc = $room->location->name;
+                return [
+                    'name' => "$name ($loc)",
+                    'id' => $room->id
+                ];
+            })->pluck('name', 'id')->toArray();
+        }, function ($value) {
+            CRUD::addClause('where', 'room_id', $value);
+        });
+        CRUD::enableDetailsRow();
+        CRUD::setDetailsRowView('admin.image');
         /**
          * Columns can be defined using the fluent syntax or array syntax:
          * - CRUD::column('price')->type('number');
@@ -58,6 +77,7 @@ class ImageCrudController extends CrudController
         CRUD::column('filename')->key('image')->label('Image')->type('image')->height(200);
         CRUD::column('filename');
         CRUD::column('room_id');
+        CRUD::column('created_at')->label('Uploaded')->type('datetime');
 
         /**
          * Columns can be defined using the fluent syntax or array syntax:

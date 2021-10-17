@@ -75,7 +75,7 @@ class ApiController extends Controller
 
         // TODO: image deletion, select banner image, image detail view
 
-        $img = Img::make($request->file('image'))->widen(500, function ($constraint) {
+        $img = Img::make($request->file('image'))->heighten(350, function ($constraint) {
             $constraint->upsize();
         })->encode('jpg', 75);
         $path = 'images/' . $room . '/' . Str::random(40) . '.jpg';

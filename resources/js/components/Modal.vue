@@ -7,7 +7,7 @@
 			:class="customCSS.background"
 		>
 			<div
-				class="relative max-h-screen w-full max-w-2xl bg-white shadow-lg rounded-lg py-8 px-1.5 flex"
+				class="relative max-h-screen w-full max-w-3xl bg-white shadow-lg rounded-lg py-8 px-1.5 flex"
 				:class="customCSS.modal"
 			>
 				<button

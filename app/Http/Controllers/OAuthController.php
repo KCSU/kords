@@ -39,6 +39,7 @@ class OAuthController extends Controller
     public function redirect() {
         return Socialite::driver('google')
             ->with(['hd' => 'cam.ac.uk'])
+            ->scopes(['openid'])
             ->redirect();
     }
 

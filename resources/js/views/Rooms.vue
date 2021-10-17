@@ -61,7 +61,7 @@
         <div @click="prevImg()" class="cursor-pointer pr-4 flex justify-end items-center flex-grow">
           <i class="lni lni-chevron-left text-3xl text-gray-700"></i>
         </div>
-        <img :src="modalImg"/>
+        <img :src="modalImg" class="modal-img"/>
         <div @click="nextImg()" class="cursor-pointer pl-4 flex justify-start items-center flex-grow">
           <i class="lni lni-chevron-right text-3xl text-gray-700"></i>
         </div>
@@ -242,5 +242,9 @@ export default {
 .fade-down-enter, .fade-down-leave-to /* .fade-leave-active below version 2.1.8 */ {
   opacity: 0;
   transform: translateY(20px);
+}
+
+.modal-img {
+  max-width: 600px;
 }
 </style>
