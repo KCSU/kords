@@ -20,6 +20,9 @@ class OAuthController extends Controller
         ]);   
     }
 
+    /**
+     * OAuth2 callback route after login.
+     */
     public function callback(Request $request)
     {
         $user = Socialite::driver('google')->user();
@@ -28,6 +31,9 @@ class OAuthController extends Controller
         return $this->sendLoginResponse($request);
     }
 
+    /**
+     * Generate a new auth session and redirect the user home.
+     */
     protected function sendLoginResponse(Request $request)
     {
         $request->session()->regenerate();
@@ -36,6 +42,9 @@ class OAuthController extends Controller
         return redirect('/');
     }
 
+    /**
+     * OAuth2 redirect to Raven auth provider.
+     */
     public function redirect() {
         return Socialite::driver('google')
             ->with(['hd' => 'cam.ac.uk'])
@@ -43,6 +52,9 @@ class OAuthController extends Controller
             ->redirect();
     }
 
+    /**
+     * Login or Register a user based on OAuth info.
+     */
     public function findOrCreateUser($user) {
         $oauthProvider = OAuthProvider::where('provider', 'google')
             ->where('provider_user_id', $user->getId())
@@ -65,6 +77,8 @@ class OAuthController extends Controller
     }
 
     /**
+     * Create a new user from Socialite data.
+     * 
      * @param  \Laravel\Socialite\Contracts\User $sUser
      * @return \App\Models\User
      */

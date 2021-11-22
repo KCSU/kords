@@ -60,6 +60,7 @@ class RoomCrudController extends CrudController
          * - CRUD::column('price')->type('number');
          * - CRUD::addColumn(['name' => 'price', 'type' => 'number']); 
          */
+        // Filters
         CRUD::addFilter([
             'name'  => 'availability',
             'type'  => 'dropdown',

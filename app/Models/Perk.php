@@ -18,6 +18,9 @@ class Perk extends Model
         return $this->belongsToMany(Room::class);
     }
 
+    /**
+     * Get the display name (without underscores) of the perk.
+     */
     public function getDisplayNameAttribute() {
         return str_replace('_', ' ', ucwords($this->name, '_'));
     }
