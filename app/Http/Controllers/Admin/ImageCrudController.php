@@ -43,6 +43,7 @@ class ImageCrudController extends CrudController
         CRUD::column('filename')->key('image')->label('Image')->type('image');
         CRUD::column('filename');
         CRUD::column('room_id');
+        CRUD::column('user_id')->label('Uploaded By');
         CRUD::column('created_at')->label('Uploaded')->type('datetime');
         
         CRUD::addFilter([
@@ -77,6 +78,7 @@ class ImageCrudController extends CrudController
         CRUD::column('filename')->key('image')->label('Image')->type('image')->height(200);
         CRUD::column('filename');
         CRUD::column('room_id');
+        CRUD::column('user_id')->label('Uploaded By');
         CRUD::column('created_at')->label('Uploaded')->type('datetime');
 
         /**

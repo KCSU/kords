@@ -107,6 +107,7 @@ class ApiController extends Controller
         $image = new Image;
         $image->filename = Storage::url($path);
         $image->room_id = $request->room_id;
+        $image->user_id = auth()->user()->id;
         $image->save();
 
         return $image;
