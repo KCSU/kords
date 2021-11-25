@@ -13,6 +13,8 @@ set('rsync_src', function () {
 });
 set('http_group', 'kcsu');
 set('writable_mode', 'chgrp');
+set('keep_releases', 2); // TODO: should this be 1?
+set('writable_recursive', true);
 // Configuring the rsync exclusions.
 // You'll want to exclude anything that you don't want on the production server.
 add('rsync', [
