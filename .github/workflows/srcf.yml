@@ -1,7 +1,8 @@
 name: CI-CD
 
-# TODO: Change to push or tag
-on: workflow_dispatch
+on:
+  push:
+    branches: [master]
 
 jobs:
   build:

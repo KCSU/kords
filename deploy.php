@@ -32,7 +32,9 @@ add('rsync', [
 // Since our secrets are stored in GitHub, we can access them as env vars.
 task('deploy:secrets', function () {
     file_put_contents(__DIR__ . '/.env', getenv('DOT_ENV'));
-    upload('.env', get('deploy_path') . '/shared');
+    $dir = get('deploy_path') . '/shared';
+    upload('.env', $dir);
+    run("chmod o-rwx $dir/.env");
 });
 
 // Hosts
