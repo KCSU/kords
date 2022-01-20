@@ -14,7 +14,7 @@ class Room extends Model
     protected $fillable = [
         'number', 'floor',
         'available', 'long_contract',
-        // 'band_id', 
+        'band_id', 'location_id', 'ballot_id'
     ];
 
     public function perks() {
