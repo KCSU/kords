@@ -3,6 +3,7 @@
     <sidebar-nav
       :items="navItems"
       :subItems="navSubItems"
+      :loading="ballotsLoading"
       v-model="selected"
     ></sidebar-nav>
     <div class="flex items-center flex-col w-full p-10 overflow-y-scroll h-full">
@@ -24,7 +25,8 @@
           <toggle v-model="isGrid" first="List" second="Grid"></toggle>
         </div>
         <transition name="fade-down" mode="out-in">
-        <div key="grid" class="grid grid-cols-fill-56 gap-6 mb-6" v-if="isGrid">
+        <div key="loading" v-if="roomsLoading">Loading...</div>
+        <div key="grid" class="grid grid-cols-fill-56 gap-6 mb-6" v-else-if="isGrid">
           <room-grid-item
             v-for="room in roomResults"
             :key="room.id"
@@ -32,7 +34,7 @@
             @click="focusDetail(room)">
           </room-grid-item>
         </div>
-        <div key="list" class="flex flex-col w-full" v-if="!isGrid">
+        <div key="list" class="flex flex-col w-full" v-else>
           <room-list-item
             class="mb-6"
             v-for="room in roomResults"
@@ -159,15 +161,18 @@ export default {
   },
   created() {
     window.api.get("/rooms").then(({ data }) => {
+      this.roomsLoading = false;
       this.rooms = data.map((room) => ({
         ...room,
         image: room.images[0] || "//via.placeholder.com/300x200?text=%3F"
       }));
     });
     window.api.get("/locations").then(({data}) => {
+      this.locationsLoading = false;
       this.searchFilters.locations = data.map(l => l.name);
     });
     window.api.get("/ballots").then(({data}) => {
+      this.ballotsLoading = false;
       this.navItems = [
         {
           name: "All Rooms",
@@ -205,7 +210,10 @@ export default {
         locations: []
       },
       navItems: [],
-      navSubItems: []
+      navSubItems: [],
+      roomsLoading: true,
+      locationsLoading: true,
+      ballotsLoading: true
     };
   },
   watch: {

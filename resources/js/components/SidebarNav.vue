@@ -4,7 +4,9 @@
   >
     <div class="py-4 text-gray-500 flex flex-col h-full">
       <a class="ml-6 text-4xl font-bold text-gray-800" href="#"> KORDs </a>
-      <ul class="mt-6">
+      <transition name="fade" mode="out-in">
+      <div class="mt-6 px-6 py-3" v-if="loading">Loading...</div>
+      <ul class="mt-6" v-else>
         <li
           v-for="(item, i) in items"
           :key="`item-${i}`"
@@ -78,10 +80,12 @@
           </transition-expand>
         </li>
       </ul>
+      </transition>
       <div class="flex-grow"></div>
       <!-- User info -->
+      <transition name="fade">
       <a class="slide cursor-pointer transition-colors duration-150 py-2 mx-6 rounded-md mb-8 items-center hover:bg-gray-200 flex justify-center"
-      href="/oauth/logout">
+      href="/oauth/logout" v-if="!userLoading">
         <div
           class="bg-purple-800 text-white text-lg font-bold px-2 py-0.5 rounded-md"
         >
@@ -93,6 +97,7 @@
         </div>
         <div class="absolute text-black font-medium showhover">Log Out</div>
       </a>
+      </transition>
     </div>
   </aside>
 </template>
@@ -105,6 +110,7 @@ export default {
   components: { TransitionExpand },
   created() {
     window.api.get("/user").then(({ data }) => {
+      this.userLoading = false;
       this.user = data;
     });
   },
@@ -112,11 +118,13 @@ export default {
     items: Array,
     subItems: Array,
     value: Number,
+    loading: Boolean
   },
   data() {
     return {
       submenuOpen: false,
       logoutHover: false,
+      userLoading: true,
       user: {
         name: "?",
       },
@@ -143,5 +151,12 @@ export default {
 
 .slide > div {
   transition: opacity 0.3s, transform 0.3s;
+}
+
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .2s;
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+  opacity: 0;
 }
 </style>
