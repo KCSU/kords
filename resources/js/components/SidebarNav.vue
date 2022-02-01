@@ -122,7 +122,7 @@ export default {
   },
   data() {
     return {
-      submenuOpen: false,
+      submenuOpen: true,
       logoutHover: false,
       userLoading: true,
       user: {

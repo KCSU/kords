@@ -8,7 +8,7 @@
         <link href="https://fonts.googleapis.com/css?family=Material+Icons+Round" rel="stylesheet">
         <link href="{{ mix('css/app.css') }}" rel="stylesheet">
 
-        <title>{{ env('APP_NAME') }}</title>
+        <title>{{ config('app.name') }}</title>
 
         <!-- Fonts -->
         <!-- <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet"> -->
