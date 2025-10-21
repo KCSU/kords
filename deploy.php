@@ -11,8 +11,8 @@ set('ssh_multiplexing', true); // Speeds up deployments
 set('rsync_src', function () {
     return __DIR__; // If your project isn't in the root, you'll need to change this.
 });
-set('http_group', 'kcsu');
-set('writable_mode', 'chgrp');
+set('writable_mode', 'chmod');
+set('writable_chmod_mode', '0775'); // Owner+Group: rwx, Others: rx (group writable)
 set('keep_releases', 1); // TODO: should this be 2?
 // Configuring the rsync exclusions.
 // You'll want to exclude anything that you don't want on the production server.
