@@ -6,7 +6,7 @@
         <meta charset="UTF-8" />
         <link href="https://cdn.lineicons.com/2.0/LineIcons.css" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Material+Icons+Round" rel="stylesheet">
-        <link href="{{ mix('css/app.css') }}" rel="stylesheet">
+        @vite(['resources/css/app.css', 'resources/js/app.js'])
 
         <title>{{ config('app.name') }}</title>
 
@@ -16,5 +16,4 @@
     <body>
         <div id="app"></div>
     </body>
-    <script src="{{ mix('js/app.js') }}"></script>
 </html>

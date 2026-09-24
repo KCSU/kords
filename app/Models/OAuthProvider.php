@@ -21,15 +21,6 @@ class OAuthProvider extends Model
     protected $guarded = ['id'];
 
     /**
-     * The attributes that should be hidden for arrays.
-     *
-     * @var array
-     */
-    protected $hidden = [
-        'access_token', 'refresh_token',
-    ];
-
-    /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
     public function user()

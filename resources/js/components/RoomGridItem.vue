@@ -1,6 +1,6 @@
 <template>
   <div
-    class="bg-white overflow-hidden shadow-sm rounded-xl flex flex-col cursor-pointer hover:shadow-md transition-shadow duration-150"
+    class="bg-white overflow-hidden shadow-xs rounded-xl flex flex-col cursor-pointer hover:shadow-md transition-shadow duration-150"
     @click="$emit('click')"
   >
     <img :src="room.image" class="object-cover w-full h-32 object-center" />
@@ -26,6 +26,7 @@
 
 <script>
 export default {
+  emits: ['click'],
   props: {
     room: Object,
   },

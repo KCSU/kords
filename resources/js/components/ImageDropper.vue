@@ -19,6 +19,7 @@
 
 <script>
 export default {
+  emits: ['input'],
   props: {
     loading: {
       type: Boolean,
@@ -66,17 +67,17 @@ export default {
 .swipe-leave-active {
   transition: opacity 0.15s, transform 0.15s;
 }
-.swipe-a.swipe-enter, .swipe-a.swipe-leave-to /* .swipe-leave-active below version 2.1.8 */ {
+.swipe-a.swipe-enter-from, .swipe-a.swipe-leave-to /* .swipe-leave-active below version 2.1.8 */ {
   opacity: 0;
   transform: translateY(-50px);
 }
 
-.swipe-b.swipe-enter, .swipe-b.swipe-leave-to /* .swipe-leave-active below version 2.1.8 */ {
+.swipe-b.swipe-enter-from, .swipe-b.swipe-leave-to /* .swipe-leave-active below version 2.1.8 */ {
   opacity: 0;
   transform: translateY(50px);
 }
 
-.swipe-c.swipe-enter /* .swipe-leave-active below version 2.1.8 */ {
+.swipe-c.swipe-enter-from /* .swipe-leave-active below version 2.1.8 */ {
   opacity: 0;
   transform: translateY(-50px);
 }

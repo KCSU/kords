@@ -29,6 +29,7 @@
 
 <script>
 	export default {
+		emits: ['close'],
 		props: {
 			showing: {
 				required: true,
@@ -92,7 +93,7 @@
 	.fade-leave-active {
 		transition: all 0.6s;
 	}
-	.fade-enter,
+	.fade-enter-from,
 	.fade-leave-to {
 		opacity: 0;
 	}

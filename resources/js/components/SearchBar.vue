@@ -5,9 +5,9 @@
         class="lni lni-search-alt text-2xl absolute left-6 pointer-events-none text-gray-400"
       ></i>
       <input
-        :value="value"
+        :value="modelValue"
         @input="handleInput"
-        class="shadow-sm font-medium bg-white pr-6 pl-16 py-7 flex-grow rounded-xl text-md outline-none"
+        class="shadow-xs font-medium bg-white pr-6 pl-16 py-7 grow rounded-xl text-md outline-hidden"
         :placeholder="placeholder"
       />
       <i
@@ -22,16 +22,17 @@
 <script>
 export default {
   props: {
-    value: String,
+    modelValue: String,
     placeholder: String,
     toggled: {
       type: Boolean,
       default: false
     }
   },
+  emits: ['update:modelValue', 'toggle'],
   methods: {
     handleInput(event) {
-      this.$emit("input", event.target.value);
+      this.$emit("update:modelValue", event.target.value);
     },
   },
 };

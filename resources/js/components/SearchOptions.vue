@@ -6,8 +6,8 @@
       <div class="text-xl font-medium">Rent Bands</div>
       <multi-select
         class="m-1"
-        :value="value.bands"
-        @input="update('bands', $event)"
+        :model-value="modelValue.bands"
+        @update:model-value="update('bands', $event)"
         :options="bands"
       ></multi-select>
     </div>
@@ -17,9 +17,9 @@
         <checkbox-chip
           class="m-1"
           :disabled="anyPerks"
-          :value="anyPerks"
+          :model-value="anyPerks"
           icon="done_all"
-          @input="toggleAny()"
+          @update:model-value="toggleAny()"
           >Any</checkbox-chip
         >
         <checkbox-chip
@@ -27,18 +27,18 @@
           v-for="perk in perks"
           :key="perk.id"
           :icon="perk.icon"
-          :value="value.perks.includes(perk.name)"
-          @input="updatePerk(perk.name, $event)"
+          :model-value="modelValue.perks.includes(perk.name)"
+          @update:model-value="updatePerk(perk.name, $event)"
         >
-          {{ perk.name | prettify }}
+          {{ prettify(perk.name) }}
         </checkbox-chip>
       </div>
     </div>
     <div class="mb-3 mr-10">
       <div class="text-xl font-medium">Contract</div>
       <toggle
-        :value="value.long_contract"
-        @input="update('long_contract', $event)"
+        :model-value="modelValue.long_contract"
+        @update:model-value="update('long_contract', $event)"
         first="Any"
         second="Long"
         class="bg-gray-200"
@@ -49,9 +49,9 @@
       <div class="flex flex-wrap">
         <checkbox-chip
           class="m-1"
-          :value="anyLocations"
+          :model-value="anyLocations"
           icon="done_all"
-          @input="toggleAnyLoc()"
+          @update:model-value="toggleAnyLoc()"
         >
           Any
         </checkbox-chip>
@@ -59,8 +59,8 @@
           class="m-1"
           v-for="location in locations"
           :key="location.id"
-          :value="value.locations.includes(location.name)"
-          @input="updateLoc(location.name, $event)"
+          :model-value="modelValue.locations.includes(location.name)"
+          @update:model-value="updateLoc(location.name, $event)"
         >
           {{ location.name }}
         </checkbox-chip>
@@ -69,8 +69,8 @@
     <div class="mb-3 mr-10">
       <div class="text-xl font-medium">Availability</div>
       <toggle
-        :value="value.available"
-        @input="update('available', $event)"
+        :model-value="modelValue.available"
+        @update:model-value="update('available', $event)"
         first="Any"
         second="Available"
         class="bg-gray-200"
@@ -80,13 +80,13 @@
 </template>
 
 <script>
-import CheckboxChip from "./CheckboxChip";
-import MultiSelect from "./MultiSelect";
-import Toggle from "./Toggle";
+import CheckboxChip from "./CheckboxChip.vue";
+import MultiSelect from "./MultiSelect.vue";
+import Toggle from "./Toggle.vue";
 export default {
   components: { MultiSelect, CheckboxChip, Toggle },
   props: {
-    value: Object,
+    modelValue: Object,
   },
   created() {
     window.api.get("/perks").then(({ data }) => {
@@ -102,14 +102,7 @@ export default {
       this.locations = data;
     });
   },
-  filters: {
-    prettify(perk) {
-      return perk
-        .split("_")
-        .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
-        .join(" ");
-    },
-  },
+  emits: ['update:modelValue'],
   data() {
     return {
       perks: [],
@@ -119,18 +112,24 @@ export default {
   },
   computed: {
     anyPerks() {
-      return this.value.perks.length === 0;
+      return this.modelValue.perks.length === 0;
     },
     anyLocations() {
-      return this.locations.every((l) => this.value.locations.includes(l.name));
+      return this.locations.every((l) => this.modelValue.locations.includes(l.name));
     },
   },
   methods: {
+    prettify(perk) {
+      return perk
+        .split("_")
+        .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+        .join(" ");
+    },
     update(key, value) {
-      this.$emit("input", { ...this.value, [key]: value });
+      this.$emit("update:modelValue", { ...this.modelValue, [key]: value });
     },
     updatePerk(key, value) {
-      let perks = [...this.value.perks];
+      let perks = [...this.modelValue.perks];
       if (value) {
         perks.push(key);
       } else {
@@ -139,13 +138,13 @@ export default {
           perks.splice(index, 1);
         }
       }
-      this.$emit("input", {
-        ...this.value,
+      this.$emit("update:modelValue", {
+        ...this.modelValue,
         perks
       });
     },
     updateLoc(key, value) {
-      let locations = [...this.value.locations];
+      let locations = [...this.modelValue.locations];
       if (value) {
         locations.push(key);
       } else {
@@ -154,26 +153,26 @@ export default {
           locations.splice(index, 1);
         }
       }
-      this.$emit("input", {
-        ...this.value,
+      this.$emit("update:modelValue", {
+        ...this.modelValue,
         locations
       });
     },
     toggleAny() {
-      this.$emit("input", {
-        ...this.value,
+      this.$emit("update:modelValue", {
+        ...this.modelValue,
         perks: [],
       });
     },
     toggleAnyLoc() {
       if (this.anyLocations) {
-        this.$emit("input", {
-          ...this.value,
+        this.$emit("update:modelValue", {
+          ...this.modelValue,
           locations: [],
         });
       } else {
-        this.$emit("input", {
-          ...this.value,
+        this.$emit("update:modelValue", {
+          ...this.modelValue,
           locations: this.locations.map(l => l.name)
         });
       }

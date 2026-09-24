@@ -1,8 +1,8 @@
 <template>
   <div
     tabindex="0"
-    class="fixed inset-0 overflow-hidden z-30 outline-none"
-    :class="{ 'pointer-events-none': !value }"
+    class="fixed inset-0 overflow-hidden z-30 outline-hidden"
+    :class="{ 'pointer-events-none': !modelValue }"
     @keydown.esc="close()"
     @keydown.left="left(true)"
     @keyup.left="left(false)"
@@ -12,7 +12,7 @@
     <div class="absolute inset-0 overflow-hidden">
       <div
         class="absolute inset-0 transition-opacity duration-300 ease-in-out"
-        :class="{ 'opacity-0': !value }"
+        :class="{ 'opacity-0': !modelValue }"
         aria-hidden="true"
         @click="close()"
       ></div>
@@ -22,7 +22,7 @@
       >
         <div
           class="relative w-screen max-w-lg transform transition ease-in-out duration-300 sm:duration-500"
-          :class="{ 'translate-x-full': !value }"
+          :class="{ 'translate-x-full': !modelValue }"
         >
           <div
             class="h-full flex flex-col py-6 px-2 bg-white shadow-2xl overflow-y-auto border-l border-gray-200 rounded-l-lg"
@@ -32,8 +32,8 @@
                 <key-indicator
                   class="mr-1"
                   :pressed="leftPressed"
-                  @mousedown.native="left(true)"
-                  @mouseup.native="left(false)"
+                  @mousedown="left(true)"
+                  @mouseup="left(false)"
                 >
                   <svg
                     class="h-5"
@@ -51,8 +51,8 @@
                 <key-indicator
                   class="mr-2"
                   :pressed="rightPressed"
-                  @mousedown.native="right(true)"
-                  @mouseup.native="right(false)"
+                  @mousedown="right(true)"
+                  @mouseup="right(false)"
                 >
                   <svg
                     class="h-5"
@@ -70,7 +70,7 @@
                 <span class="text-gray-500">to navigate</span>
               </span>
               <div class="flex items-center">
-                <key-indicator class="mr-2" @mousedown.native="close()">
+                <key-indicator class="mr-2" @mousedown="close()">
                   <div class="text-xs text-gray-400 font-bold h-5 lh-sm">
                     Esc
                   </div>
@@ -97,16 +97,17 @@
 </template>
 
 <script>
-import KeyIndicator from "./KeyIndicator";
+import KeyIndicator from "./KeyIndicator.vue";
 
 export default {
+  emits: ['update:modelValue', 'back', 'next'],
   props: {
-    value: Boolean,
+    modelValue: Boolean,
     title: String,
   },
   methods: {
     close() {
-      this.$emit("input", false);
+      this.$emit("update:modelValue", false);
     },
     left(pr) {
       this.leftPressed = pr;

@@ -14,7 +14,9 @@ use App\Models\Room;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Storage;
-use Intervention\Image\Facades\Image as Img;
+use Intervention\Image\Drivers\Gd\Driver;
+use Intervention\Image\Encoders\JpegEncoder;
+use Intervention\Image\ImageManager;
 
 class ApiController extends Controller
 {
@@ -97,9 +99,10 @@ class ApiController extends Controller
         // TODO: Allow selecting 'banner image'
 
         // Resize the image using Intervention\Image and save as a jpeg
-        $img = Img::make($request->file('image'))->heighten(350, function ($constraint) {
-            $constraint->upsize();
-        })->encode('jpg', 75);
+        $img = ImageManager::usingDriver(Driver::class)
+            ->decodePath($request->file('image')->getPathname())
+            ->scaleDown(height: 350)
+            ->encode(new JpegEncoder(quality: 75));
         $path = 'images/' . $room . '/' . Str::random(40) . '.jpg';
         // TODO: Make this disk-agnostic (it can use any storage driver)
         Storage::disk('public')->put($path, $img);

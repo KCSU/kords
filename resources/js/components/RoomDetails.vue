@@ -37,7 +37,7 @@
         v-for="(img, i) in room.images"
         :key="i"
         :src="img"
-        class="rounded-xl shadow-sm transition-shadow duration-150 hover:shadow-md m-3 flex-auto h-36 w-36 object-cover cursor-pointer"
+        class="rounded-xl shadow-xs transition-shadow duration-150 hover:shadow-md m-3 flex-auto h-36 w-36 object-cover cursor-pointer"
       />
       <image-dropper class="w-36 flex-auto" :loading="imgUploading" @input="uploadImages($event)"></image-dropper>
     </div>
@@ -48,12 +48,12 @@
       <div
         v-for="perk in room.perks"
         :key="perk.id"
-        class="rounded-lg shadow inline-flex items-center bg-white text-center p-2 font-medium text-sm"
+        class="rounded-lg shadow-sm inline-flex items-center bg-white text-center p-2 font-medium text-sm"
       >
         <i class="material-icons-round text-2xl text-purple-900">{{
           perk.icon
         }}</i>
-        <span class="flex-grow text-center">{{ perk.name | prettify }}</span>
+        <span class="grow text-center">{{ prettify(perk.name) }}</span>
       </div>
     </div>
     <h3 class="text-xl font-medium mt-4 mb-2">Comments</h3>
@@ -74,24 +74,26 @@
           </div> -->
           <div class="text-black text-sm whitespace-pre-line">{{ comment.text }}</div>
           <div class="text-xs text-gray-500">
-            {{ comment.user.name }}, {{ comment.created_at | commentDate }}
+            {{ comment.user.name }}, {{ commentDate(comment.created_at) }}
           </div>
         </div>
       </div>
     </div>
     <div class="mt-4 mb-6">
-      <textarea-autosize
+      <textarea
         maxlength="1000"
-        @keydown.left.native.stop
-        @keydown.right.native.stop
-        @keydown.esc.native.stop
+        @keydown.left.stop
+        @keydown.right.stop
+        @keydown.esc.stop
+        @input="autosize($event.target)"
         id="comment"
         name="comment"
         v-model="comment"
         rows="1"
-        class="shadow-sm focus:ring-2 ring-1 outline-none focus:ring-purple-500 focus:border-purple-500 mt-1 p-3 w-full sm:text-sm ring-gray-300 rounded-md"
+        class="shadow-xs focus:ring-2 ring-1 outline-hidden focus:ring-purple-500 focus:border-purple-500 mt-1 p-3 w-full sm:text-sm ring-gray-300 rounded-md"
         placeholder="Leave a comment..."
-      ></textarea-autosize>
+        ref="commentBox"
+      ></textarea>
       <button
         @click="postComment()"
         :disabled="loading || comment.length < 5"
@@ -110,7 +112,7 @@
 
 <script>
 import EventBus from '~/services/EventBus';
-import ToggledChip from "./ToggledChip";
+import ToggledChip from "./ToggledChip.vue";
 import moment from "moment";
 import ImageDropper from './ImageDropper.vue';
 
@@ -118,17 +120,7 @@ export default {
   props: {
     room: Object,
   },
-  filters: {
-    prettify(perk) {
-      return perk
-        .split("_")
-        .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
-        .join(" ");
-    },
-    commentDate(date) {
-      return moment(date).fromNow();
-    },
-  },
+  emits: ['comment'],
   created() {
     EventBus.$on('nextImg', src => {
       let prev = this.room.images.indexOf(src);
@@ -150,12 +142,21 @@ export default {
       imgUploading: false,
     };
   },
-  computed: {
-    perks() {
-      return this.room.perks.map(prettify);
-    },
-  },
   methods: {
+    prettify(perk) {
+      return perk
+        .split("_")
+        .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+        .join(" ");
+    },
+    commentDate(date) {
+      return moment(date).fromNow();
+    },
+    // Grow the comment box with its content.
+    autosize(el) {
+      el.style.height = 'auto';
+      el.style.height = el.scrollHeight + 'px';
+    },
     postComment() {
       this.loading = true;
       window.api
@@ -167,6 +168,7 @@ export default {
           this.$emit("comment", data);
           this.loading = false;
           this.comment = "";
+          this.$nextTick(() => this.autosize(this.$refs.commentBox));
         })
         .catch((err) => {
           // TODO: handle

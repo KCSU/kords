@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-white shadow-sm rounded-xl p-6 flex cursor-pointer hover:shadow-md transition-shadow duration-150"
+  <div class="bg-white shadow-xs rounded-xl p-6 flex cursor-pointer hover:shadow-md transition-shadow duration-150"
   @click="$emit('click')">
     <img
       :src="room.image"
@@ -21,7 +21,7 @@
         <i class="lni lni-map-marker text-md"></i>
         {{ room.location }}, Floor {{ room.floor }}
       </span>
-      <div class="flex-grow"></div>
+      <div class="grow"></div>
       <div class="flex flex-wrap justify-between 2xl:flex-nowrap">
         <room-feature name="Rent" icon="credit-cards" nowrap>{{ `£${room.short_rent}${room.long_contract ? ' / £' + room.long_rent : ''}` }}</room-feature>
         <room-feature name="Contract" icon="calendar" nowrap>{{ room.long_contract ? 'Long / Short' : 'Short'}}</room-feature>
@@ -32,13 +32,14 @@
 </template>
 
 <script>
-import RoomFeature from './RoomFeature'
+import RoomFeature from "./RoomFeature.vue"
 
 function prettify(perk) {
   return perk.name.split('_').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(" ");
 }
 
 export default {
+  emits: ['click'],
   props: {
     room: Object,
   },

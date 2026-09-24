@@ -75,7 +75,7 @@ export default {
   overflow: hidden;
 }
 
-.expand-enter,
+.expand-enter-from,
 .expand-leave-to {
   height: 0;
 }

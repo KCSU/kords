@@ -1,13 +1,10 @@
-import Vue from 'vue'
-import Router from 'vue-router'
+import { createRouter, createWebHistory } from 'vue-router';
 
-import Rooms from '~/views/Rooms'
-import Homepage from '~/views/Homepage'
+import Rooms from '~/views/Rooms.vue';
 
-Vue.use(Router);
 // TODO: proper route management
-let router = new Router({
-    mode: 'history',
+export default createRouter({
+    history: createWebHistory(),
     routes: [
         {
             path: '/',
@@ -16,5 +13,3 @@ let router = new Router({
         }
     ]
 });
-
-export default router;

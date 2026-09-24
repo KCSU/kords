@@ -1,6 +1,6 @@
 <template>
   <aside
-    class="z-20 w-64 h-full overflow-y-auto bg-white md:block flex-shrink-0 border-r border-gray-200"
+    class="z-20 w-64 h-full overflow-y-auto bg-white md:block shrink-0 border-r border-gray-200"
   >
     <div class="py-4 text-gray-500 flex flex-col h-full">
       <a class="ml-6 text-4xl font-bold text-gray-800" href="#"> KORDs </a>
@@ -11,8 +11,8 @@
           v-for="(item, i) in items"
           :key="`item-${i}`"
           class="relative px-6 py-3 flex items-center cursor-pointer hover:text-gray-800"
-          :class="item.id == value ? 'text-gray-800' : 'text-gray-500'"
-          @click="$emit('input', item.id)"
+          :class="item.id == modelValue ? 'text-gray-800' : 'text-gray-500'"
+          @click="$emit('update:modelValue', item.id)"
         >
           <span
             class="pl-4 h-8 inline-flex items-center w-full text-sm font-semibold transition-colors duration-150"
@@ -20,14 +20,14 @@
             <i
               class="text-xl transition-colors duration-150 lni"
               :class="`lni-${item.icon} ${
-                item.id == value ? 'text-purple-600' : ''
+                item.id == modelValue ? 'text-purple-600' : ''
               }`"
             ></i>
             <span class="ml-4">{{ item.name }}</span>
           </span>
           <span
             class="absolute inset-y-2 right-0 bg-purple-600 w-0 rounded-tl-lg rounded-bl-lg transition-width duration-150"
-            :class="item.id == value ? 'w-1' : ''"
+            :class="item.id == modelValue ? 'w-1' : ''"
             aria-hidden="true"
           ></span>
         </li>
@@ -67,12 +67,12 @@
                 :key="`sub-${i}`"
                 class="px-4 py-4 transition-colors duration-150"
                 :class="
-                  item.id == value ? 'text-purple-600' : 'hover:text-gray-800'
+                  item.id == modelValue ? 'text-purple-600' : 'hover:text-gray-800'
                 "
               >
                 <a
                   class="w-full cursor-pointer"
-                  @click="$emit('input', item.id)"
+                  @click="$emit('update:modelValue', item.id)"
                   >{{ item.name }}</a
                 >
               </li>
@@ -81,7 +81,7 @@
         </li>
       </ul>
       </transition>
-      <div class="flex-grow"></div>
+      <div class="grow"></div>
       <!-- User info -->
       <transition name="fade">
       <a class="slide cursor-pointer transition-colors duration-150 py-2 mx-6 rounded-md mb-8 items-center hover:bg-gray-200 flex justify-center"
@@ -103,7 +103,7 @@
 </template>
 
 <script>
-import TransitionExpand from "./TransitionExpand";
+import TransitionExpand from "./TransitionExpand.vue";
 
 export default {
   name: "SidebarNav",
@@ -114,10 +114,11 @@ export default {
       this.user = data;
     });
   },
+  emits: ['update:modelValue'],
   props: {
     items: Array,
     subItems: Array,
-    value: Number,
+    modelValue: Number,
     loading: Boolean
   },
   data() {
@@ -156,7 +157,7 @@ export default {
 .fade-enter-active, .fade-leave-active {
   transition: opacity .2s;
 }
-.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+.fade-enter-from, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
   opacity: 0;
 }
 </style>

@@ -47,24 +47,24 @@
       </div>
     </div>
     <detail-panel
-      :value="detailFocused"
-      @input="detailFocused = $event || modalOpen"
+      :model-value="detailFocused"
+      @update:model-value="detailFocused = $event || modalOpen"
       ref="detail"
       @next="nextRoom"
       @back="prevRoom"
     >
       <room-details :room="selectedRoom" @comment="addComment($event)"></room-details>
     </detail-panel>
-    <modal :showing="modalOpen" @close="modalClose()" class="bg-black bg-opacity-50"
-    @keydown.right.native="nextImg()" @keydown.left.native="prevImg()"
+    <modal :showing="modalOpen" @close="modalClose()" class="bg-black/50"
+    @keydown.right="nextImg()" @keydown.left="prevImg()"
     tabindex="0"
     ref="modal">
       <div class="flex justify-center items-stretch">
-        <div @click="prevImg()" class="cursor-pointer pr-4 flex justify-end items-center flex-grow">
+        <div @click="prevImg()" class="cursor-pointer pr-4 flex justify-end items-center grow">
           <i class="lni lni-chevron-left text-3xl text-gray-700"></i>
         </div>
         <img :src="modalImg" class="modal-img"/>
-        <div @click="nextImg()" class="cursor-pointer pl-4 flex justify-start items-center flex-grow">
+        <div @click="nextImg()" class="cursor-pointer pl-4 flex justify-start items-center grow">
           <i class="lni lni-chevron-right text-3xl text-gray-700"></i>
         </div>
       </div>
@@ -76,15 +76,21 @@
 import Fuse from 'fuse.js'
 
 import EventBus from '~/services/EventBus';
-import SidebarNav from "~/components/SidebarNav";
-import SearchBar from "~/components/SearchBar";
-import Toggle from "~/components/Toggle";
-import RoomListItem from "~/components/RoomListItem";
-import DetailPanel from "~/components/DetailPanel";
-import RoomDetails from "~/components/RoomDetails";
-import SearchOptions from "~/components/SearchOptions";
-import RoomGridItem from "~/components/RoomGridItem";
-import Modal from '~/components/Modal';
+import SidebarNav from "~/components/SidebarNav.vue";
+import SearchBar from "~/components/SearchBar.vue";
+import Toggle from "~/components/Toggle.vue";
+import RoomListItem from "~/components/RoomListItem.vue";
+import DetailPanel from "~/components/DetailPanel.vue";
+import RoomDetails from "~/components/RoomDetails.vue";
+import SearchOptions from "~/components/SearchOptions.vue";
+import RoomGridItem from "~/components/RoomGridItem.vue";
+import Modal from '~/components/Modal.vue';
+
+// Grey "?" for rooms without photos (via.placeholder.com, used before, has shut down).
+const NO_IMAGE = "data:image/svg+xml," + encodeURIComponent(
+  '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 200"><rect width="300" height="200" fill="#e5e7eb"/>' +
+  '<text x="150" y="118" font-family="sans-serif" font-size="48" text-anchor="middle" fill="#9ca3af">?</text></svg>'
+);
 
 const options = {
   keys: [
@@ -131,7 +137,6 @@ export default {
     },
     addComment(comment) {
       let room = this.rooms.find(r => r.id === comment.room_id);
-      console.log(room);
       if (room) {
         room.comments.unshift(comment);
       }
@@ -164,7 +169,7 @@ export default {
       this.roomsLoading = false;
       this.rooms = data.map((room) => ({
         ...room,
-        image: room.images[0] || "//via.placeholder.com/300x200?text=%3F"
+        image: room.images[0] || NO_IMAGE
       }));
     });
     window.api.get("/locations").then(({data}) => {
@@ -239,7 +244,7 @@ export default {
 .fade-enter-active, .fade-leave-active {
   transition: opacity .15s, transform .15s;
 }
-.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+.fade-enter-from, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
   opacity: 0;
   transform: translateY(-20px);
 }
@@ -247,7 +252,7 @@ export default {
 .fade-down-enter-active, .fade-down-leave-active {
   transition: opacity .15s, transform .15s;
 }
-.fade-down-enter, .fade-down-leave-to /* .fade-leave-active below version 2.1.8 */ {
+.fade-down-enter-from, .fade-down-leave-to /* .fade-leave-active below version 2.1.8 */ {
   opacity: 0;
   transform: translateY(20px);
 }

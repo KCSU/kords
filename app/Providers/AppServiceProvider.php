@@ -28,6 +28,6 @@ class AppServiceProvider extends ServiceProvider
         RoomResource::withoutWrapping();
         if($this->app->environment('production')) {
             URL::forceScheme('https');
-        }        
+        }
     }
 }
